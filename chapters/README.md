@@ -8,6 +8,9 @@ Each chapter directory contains:
 - Character notes relevant to the chapter
 - Plot notes and scene ideas
 
+Use `/prosada/` for chapter/scene intent and ordering first; use `chapters/` for
+prose drafting output linked from ProSada units.
+
 ## Chapter Structure
 
 Create a new directory for each chapter (e.g., `chapters/01-prologue/`, `chapters/02-chapter-name/`).

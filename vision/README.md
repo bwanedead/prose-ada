@@ -1,6 +1,9 @@
 # Story Vision
 
-High-level brainstorming, themes, and overarching story concepts for Prosse Ada.
+High-level brainstorming, themes, and overarching story concepts for Prose Ada.
+
+Use this directory for idea exploration. Move structural decisions into `/prosada/`
+so the intent model remains canonical.
 
 ## Core Concepts
 

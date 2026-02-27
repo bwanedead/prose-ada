@@ -1,6 +1,6 @@
 # Inspiration
 
-A collection of inspiration materials, references, and creative sparks for Prosse Ada.
+A collection of inspiration materials, references, and creative sparks for Prose Ada.
 
 ## What Goes Here
 

@@ -1,6 +1,7 @@
 # Big Picture
 
 High-level thinking about the story, its themes, structure, and overarching vision.
+Canonical structure should be maintained in `/prosada/` after decisions are made.
 
 ## What Goes Here
 

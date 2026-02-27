@@ -1,6 +1,6 @@
 # References
 
-Research materials, historical texts, academic sources, and reference documents for Prosse Ada.
+Research materials, historical texts, academic sources, and reference documents for Prose Ada.
 
 ## What Goes Here
 
