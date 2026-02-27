@@ -1,0 +1,49 @@
+{
+  "toolingSchemaVersion": "2.0",
+  "installedAt": "2026-02-27T10:29:25.341725Z",
+  "capabilities": {
+    "rendererPng": true,
+    "rendererSvg": true,
+    "semanticRefs": true
+  },
+  "tools": {
+    "renderTimeline": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "scriptPath": "scripts/render_timeline.py",
+      "checksum": "567d60f8b667bb7c1678741a873cfea88a65afecc82223fd580a374062872d3f"
+    },
+    "checkToolingHealth": {
+      "version": "1.0.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "scriptPath": "scripts/check_tooling_health.py",
+      "checksum": "ced1c0d68716c77fa42f87681d943e1182fe51308f8c12b5e377123525bf2270"
+    }
+  },
+  "docs": {
+    "AGENT_START_HERE.md": {
+      "version": "1.2.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "docPath": "docs/AGENT_START_HERE.md",
+      "checksum": "5ceca62e7cfb1a128c994835b1a5998b4b3f248ae1d42f9bd6993f2d2e657513"
+    },
+    "FORMAT_CHEATSHEET.md": {
+      "version": "1.2.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "docPath": "docs/FORMAT_CHEATSHEET.md",
+      "checksum": "045f4239240021d97899ff600ba9e086a54adfaee504e0ffbccbc01627479fa2"
+    },
+    "WORKFLOWS.md": {
+      "version": "1.2.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "docPath": "docs/WORKFLOWS.md",
+      "checksum": "a2032a8fb7c3cb983eb2d8fb0b3af5c5c8533df5013afd619a3f1fdc1a0cd35f"
+    },
+    "TOOLING.md": {
+      "version": "1.2.0",
+      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "docPath": "docs/TOOLING.md",
+      "checksum": "512d1e173d8c27a8d6438d9970c03c803d04c075081733976840617a7543f936"
+    }
+  }
+}
