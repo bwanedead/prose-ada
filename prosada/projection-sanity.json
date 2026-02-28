@@ -1,0 +1,2365 @@
+{
+  "meta": {
+    "projectionVersion": "1.0.0",
+    "projectDir": "C:\\projects\\stories\\prose-ada\\prosada",
+    "generatedAt": "2026-02-28T08:55:00.226400Z",
+    "filters": {
+      "scope": null,
+      "streams": null,
+      "status": null,
+      "semanticKind": null,
+      "semanticEntityId": null
+    }
+  },
+  "bounds": {
+    "minStart": 1.0,
+    "maxEnd": 17.0,
+    "laneCount": 7,
+    "eventCount": 55
+  },
+  "lanes": [
+    {
+      "laneId": 0,
+      "label": "Prose Ada",
+      "type": "spine",
+      "color": "#888888"
+    },
+    {
+      "laneId": 1,
+      "label": "Ada Identity Stream",
+      "type": "stream",
+      "color": "#f06292"
+    },
+    {
+      "laneId": 2,
+      "label": "Anomaly/Fermi Stream",
+      "type": "stream",
+      "color": "#29b6f6"
+    },
+    {
+      "laneId": 3,
+      "label": "Consciousness Resonance Stream",
+      "type": "stream",
+      "color": "#ec407a"
+    },
+    {
+      "laneId": 4,
+      "label": "Edgar Potter Stream",
+      "type": "stream",
+      "color": "#8d6e63"
+    },
+    {
+      "laneId": 5,
+      "label": "OPI Suppression Stream",
+      "type": "stream",
+      "color": "#5c6bc0"
+    },
+    {
+      "laneId": 6,
+      "label": "World-Tree Code Stream",
+      "type": "stream",
+      "color": "#66bb6a"
+    }
+  ],
+  "threads": [
+    {
+      "threadId": "stream-ada-identity",
+      "label": "Ada Identity Stream",
+      "type": "plot",
+      "color": "#f06292",
+      "start": 0,
+      "span": 17,
+      "laneId": 1,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    },
+    {
+      "threadId": "stream-anomaly-fermi",
+      "label": "Anomaly/Fermi Stream",
+      "type": "plot",
+      "color": "#29b6f6",
+      "start": 2,
+      "span": 15,
+      "laneId": 2,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    },
+    {
+      "threadId": "stream-consciousness-resonance",
+      "label": "Consciousness Resonance Stream",
+      "type": "plot",
+      "color": "#ec407a",
+      "start": 3,
+      "span": 14,
+      "laneId": 3,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    },
+    {
+      "threadId": "stream-edgar-potter",
+      "label": "Edgar Potter Stream",
+      "type": "plot",
+      "color": "#8d6e63",
+      "start": 8,
+      "span": 9,
+      "laneId": 4,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    },
+    {
+      "threadId": "stream-opi-suppression",
+      "label": "OPI Suppression Stream",
+      "type": "plot",
+      "color": "#5c6bc0",
+      "start": 8,
+      "span": 8,
+      "laneId": 5,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    },
+    {
+      "threadId": "stream-world-tree-code",
+      "label": "World-Tree Code Stream",
+      "type": "plot",
+      "color": "#66bb6a",
+      "start": 4,
+      "span": 13,
+      "laneId": 6,
+      "mergeTargetId": null,
+      "birthOriginId": null
+    }
+  ],
+  "events": [
+    {
+      "eventId": "ev-act-01-the-anomaly",
+      "unitId": "act-01-the-anomaly",
+      "type": "act",
+      "title": "Act I - The Anomaly",
+      "status": "draft",
+      "start": 1.0,
+      "span": 4.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "Ada experiences a direct perceptual rupture, verifies a matching instrumentation anomaly, and crosses the threshold from skepticism to investigation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-act-02-the-archive-hunt",
+      "unitId": "act-02-the-archive-hunt",
+      "type": "act",
+      "title": "Act II - The Archive Hunt",
+      "status": "draft",
+      "start": 5.0,
+      "span": 4.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "Ada follows mythic and historical rhymes, discovers the Edgar Potter corpus, and realizes that the hidden model predates her by decades.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-act-03-the-man-who-died-twice",
+      "unitId": "act-03-the-man-who-died-twice",
+      "type": "act",
+      "title": "Act III - The Man Who Died Twice",
+      "status": "draft",
+      "start": 9.0,
+      "span": 4.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "rubies-shore",
+        "director-langley",
+        "edgar-potter"
+      ],
+      "summary": "Ada's leak triggers OPI pursuit. The hunt for Potter turns into a race where each clue costs credibility, safety, and trust.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-act-04-the-first-convergence",
+      "unitId": "act-04-the-first-convergence",
+      "type": "act",
+      "title": "Act IV - The First Convergence",
+      "status": "draft",
+      "start": 13.0,
+      "span": 4.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter provides the operational model. Ada and allies execute a constrained resonance test and achieve first direct perception of the Yggdrasil/Arboros structure.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-01-static-in-the-sky",
+      "unitId": "chapter-01-static-in-the-sky",
+      "type": "chapter",
+      "title": "Static in the Sky",
+      "status": "draft",
+      "start": 2.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "A normal workday cadence breaks when Ada notices a subtle atmospheric distortion that feels wrong before it can be measured.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-01-static-in-the-sky--stream-anomaly-fermi",
+      "unitId": "chapter-01-static-in-the-sky",
+      "type": "chapter",
+      "title": "Static in the Sky",
+      "status": "draft",
+      "start": 2.0,
+      "span": 1.0,
+      "laneId": 2,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "A normal workday cadence breaks when Ada notices a subtle atmospheric distortion that feels wrong before it can be measured.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-01-static-in-the-sky--stream-ada-identity",
+      "unitId": "chapter-01-static-in-the-sky",
+      "type": "chapter",
+      "title": "Static in the Sky",
+      "status": "draft",
+      "start": 2.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "A normal workday cadence breaks when Ada notices a subtle atmospheric distortion that feels wrong before it can be measured.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-02-four-point-five-seconds",
+      "unitId": "chapter-02-four-point-five-seconds",
+      "type": "chapter",
+      "title": "Four Point Five Seconds",
+      "status": "draft",
+      "start": 3.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-02-four-point-five-seconds--stream-anomaly-fermi",
+      "unitId": "chapter-02-four-point-five-seconds",
+      "type": "chapter",
+      "title": "Four Point Five Seconds",
+      "status": "draft",
+      "start": 3.0,
+      "span": 1.0,
+      "laneId": 2,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-02-four-point-five-seconds--stream-consciousness-resonance",
+      "unitId": "chapter-02-four-point-five-seconds",
+      "type": "chapter",
+      "title": "Four Point Five Seconds",
+      "status": "draft",
+      "start": 3.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-02-four-point-five-seconds--stream-ada-identity",
+      "unitId": "chapter-02-four-point-five-seconds",
+      "type": "chapter",
+      "title": "Four Point Five Seconds",
+      "status": "draft",
+      "start": 3.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-03-the-word-in-the-dream",
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "start": 4.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-03-the-word-in-the-dream--stream-anomaly-fermi",
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "start": 4.0,
+      "span": 1.0,
+      "laneId": 2,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-03-the-word-in-the-dream--stream-world-tree-code",
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "start": 4.0,
+      "span": 1.0,
+      "laneId": 6,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-03-the-word-in-the-dream--stream-consciousness-resonance",
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "start": 4.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-03-the-word-in-the-dream--stream-ada-identity",
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "start": 4.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist"
+      ],
+      "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-04-pattern-hunt",
+      "unitId": "chapter-04-pattern-hunt",
+      "type": "chapter",
+      "title": "Pattern Hunt",
+      "status": "draft",
+      "start": 6.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "Ada and Benny gather cross-cultural world-tree records and discover repeated structural language that exceeds folklore coincidence.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-04-pattern-hunt--stream-world-tree-code",
+      "unitId": "chapter-04-pattern-hunt",
+      "type": "chapter",
+      "title": "Pattern Hunt",
+      "status": "draft",
+      "start": 6.0,
+      "span": 1.0,
+      "laneId": 6,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "Ada and Benny gather cross-cultural world-tree records and discover repeated structural language that exceeds folklore coincidence.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-04-pattern-hunt--stream-ada-identity",
+      "unitId": "chapter-04-pattern-hunt",
+      "type": "chapter",
+      "title": "Pattern Hunt",
+      "status": "draft",
+      "start": 6.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "Ada and Benny gather cross-cultural world-tree records and discover repeated structural language that exceeds folklore coincidence.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-05-the-world-tree-corpus",
+      "unitId": "chapter-05-the-world-tree-corpus",
+      "type": "chapter",
+      "title": "The World-Tree Corpus",
+      "status": "draft",
+      "start": 7.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-05-the-world-tree-corpus--stream-world-tree-code",
+      "unitId": "chapter-05-the-world-tree-corpus",
+      "type": "chapter",
+      "title": "The World-Tree Corpus",
+      "status": "draft",
+      "start": 7.0,
+      "span": 1.0,
+      "laneId": 6,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-05-the-world-tree-corpus--stream-consciousness-resonance",
+      "unitId": "chapter-05-the-world-tree-corpus",
+      "type": "chapter",
+      "title": "The World-Tree Corpus",
+      "status": "draft",
+      "start": 7.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-05-the-world-tree-corpus--stream-ada-identity",
+      "unitId": "chapter-05-the-world-tree-corpus",
+      "type": "chapter",
+      "title": "The World-Tree Corpus",
+      "status": "draft",
+      "start": 7.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe"
+      ],
+      "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-06-the-dead-man-paper",
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "start": 8.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "edgar-potter"
+      ],
+      "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-06-the-dead-man-paper--stream-world-tree-code",
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "start": 8.0,
+      "span": 1.0,
+      "laneId": 6,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "edgar-potter"
+      ],
+      "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-06-the-dead-man-paper--stream-edgar-potter",
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "start": 8.0,
+      "span": 1.0,
+      "laneId": 4,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "edgar-potter"
+      ],
+      "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-06-the-dead-man-paper--stream-opi-suppression",
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "start": 8.0,
+      "span": 1.0,
+      "laneId": 5,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "edgar-potter"
+      ],
+      "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-06-the-dead-man-paper--stream-ada-identity",
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "start": 8.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-world-tree-code",
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "edgar-potter"
+      ],
+      "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-07-the-leak",
+      "unitId": "chapter-07-the-leak",
+      "type": "chapter",
+      "title": "The Leak",
+      "status": "draft",
+      "start": 10.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-07-the-leak--stream-opi-suppression",
+      "unitId": "chapter-07-the-leak",
+      "type": "chapter",
+      "title": "The Leak",
+      "status": "draft",
+      "start": 10.0,
+      "span": 1.0,
+      "laneId": 5,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-07-the-leak--stream-edgar-potter",
+      "unitId": "chapter-07-the-leak",
+      "type": "chapter",
+      "title": "The Leak",
+      "status": "draft",
+      "start": 10.0,
+      "span": 1.0,
+      "laneId": 4,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-07-the-leak--stream-ada-identity",
+      "unitId": "chapter-07-the-leak",
+      "type": "chapter",
+      "title": "The Leak",
+      "status": "draft",
+      "start": 10.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-08-pressure-from-opi",
+      "unitId": "chapter-08-pressure-from-opi",
+      "type": "chapter",
+      "title": "Pressure from OPI",
+      "status": "draft",
+      "start": 11.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "rubies-shore",
+        "director-langley",
+        "benny-rowe"
+      ],
+      "summary": "The Office for Public Informational Integrity closes options through soft-deniable coercion while Rubies' loyalty starts to fracture.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-08-pressure-from-opi--stream-opi-suppression",
+      "unitId": "chapter-08-pressure-from-opi",
+      "type": "chapter",
+      "title": "Pressure from OPI",
+      "status": "draft",
+      "start": 11.0,
+      "span": 1.0,
+      "laneId": 5,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "rubies-shore",
+        "director-langley",
+        "benny-rowe"
+      ],
+      "summary": "The Office for Public Informational Integrity closes options through soft-deniable coercion while Rubies' loyalty starts to fracture.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-08-pressure-from-opi--stream-ada-identity",
+      "unitId": "chapter-08-pressure-from-opi",
+      "type": "chapter",
+      "title": "Pressure from OPI",
+      "status": "draft",
+      "start": 11.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "rubies-shore",
+        "director-langley",
+        "benny-rowe"
+      ],
+      "summary": "The Office for Public Informational Integrity closes options through soft-deniable coercion while Rubies' loyalty starts to fracture.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-09-find-potter",
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "start": 12.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-09-find-potter--stream-edgar-potter",
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "start": 12.0,
+      "span": 1.0,
+      "laneId": 4,
+      "isResolved": false,
+      "threadIds": [
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-09-find-potter--stream-opi-suppression",
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "start": 12.0,
+      "span": 1.0,
+      "laneId": 5,
+      "isResolved": false,
+      "threadIds": [
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-09-find-potter--stream-consciousness-resonance",
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "start": 12.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-09-find-potter--stream-ada-identity",
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "start": 12.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-edgar-potter",
+        "stream-opi-suppression",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-10-potter-model",
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "start": 14.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-edgar-potter",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-10-potter-model--stream-anomaly-fermi",
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "start": 14.0,
+      "span": 1.0,
+      "laneId": 2,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-edgar-potter",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-10-potter-model--stream-edgar-potter",
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "start": 14.0,
+      "span": 1.0,
+      "laneId": 4,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-edgar-potter",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-10-potter-model--stream-consciousness-resonance",
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "start": 14.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-edgar-potter",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-10-potter-model--stream-ada-identity",
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "start": 14.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-edgar-potter",
+        "stream-consciousness-resonance",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-11-resonance-test",
+      "unitId": "chapter-11-resonance-test",
+      "type": "chapter",
+      "title": "Resonance Test",
+      "status": "draft",
+      "start": 15.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-consciousness-resonance",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-11-resonance-test--stream-consciousness-resonance",
+      "unitId": "chapter-11-resonance-test",
+      "type": "chapter",
+      "title": "Resonance Test",
+      "status": "draft",
+      "start": 15.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-consciousness-resonance",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-11-resonance-test--stream-opi-suppression",
+      "unitId": "chapter-11-resonance-test",
+      "type": "chapter",
+      "title": "Resonance Test",
+      "status": "draft",
+      "start": 15.0,
+      "span": 1.0,
+      "laneId": 5,
+      "isResolved": false,
+      "threadIds": [
+        "stream-consciousness-resonance",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-11-resonance-test--stream-ada-identity",
+      "unitId": "chapter-11-resonance-test",
+      "type": "chapter",
+      "title": "Resonance Test",
+      "status": "draft",
+      "start": 15.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-consciousness-resonance",
+        "stream-opi-suppression",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 0,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil--stream-anomaly-fermi",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 2,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil--stream-world-tree-code",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 6,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil--stream-consciousness-resonance",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 3,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil--stream-edgar-potter",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 4,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    },
+    {
+      "eventId": "ev-chapter-12-first-sight-of-yggdrasil--stream-ada-identity",
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "start": 16.0,
+      "span": 1.0,
+      "laneId": 1,
+      "isResolved": false,
+      "threadIds": [
+        "stream-anomaly-fermi",
+        "stream-world-tree-code",
+        "stream-consciousness-resonance",
+        "stream-edgar-potter",
+        "stream-ada-identity"
+      ],
+      "characterIds": [
+        "ada-protagonist",
+        "edgar-potter",
+        "benny-rowe",
+        "rubies-shore"
+      ],
+      "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+      "links": [],
+      "layoutMode": "auto",
+      "semantic": {
+        "refCount": 0,
+        "byKind": {},
+        "entityIds": [],
+        "unresolvedCount": 0
+      },
+      "execution": {
+        "runCount": 0,
+        "artifactCount": 0,
+        "hasExecution": false,
+        "latestRunStatus": null
+      },
+      "presentation": null
+    }
+  ],
+  "units": {
+    "act-01-the-anomaly": {
+      "unitId": "act-01-the-anomaly",
+      "type": "act",
+      "title": "Act I - The Anomaly",
+      "status": "draft",
+      "parentId": "book-prose-ada",
+      "presentation": null
+    },
+    "act-02-the-archive-hunt": {
+      "unitId": "act-02-the-archive-hunt",
+      "type": "act",
+      "title": "Act II - The Archive Hunt",
+      "status": "draft",
+      "parentId": "book-prose-ada",
+      "presentation": null
+    },
+    "act-03-the-man-who-died-twice": {
+      "unitId": "act-03-the-man-who-died-twice",
+      "type": "act",
+      "title": "Act III - The Man Who Died Twice",
+      "status": "draft",
+      "parentId": "book-prose-ada",
+      "presentation": null
+    },
+    "act-04-the-first-convergence": {
+      "unitId": "act-04-the-first-convergence",
+      "type": "act",
+      "title": "Act IV - The First Convergence",
+      "status": "draft",
+      "parentId": "book-prose-ada",
+      "presentation": null
+    },
+    "book-prose-ada": {
+      "unitId": "book-prose-ada",
+      "type": "book",
+      "title": "Prose Ada",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "chapter-01-static-in-the-sky": {
+      "unitId": "chapter-01-static-in-the-sky",
+      "type": "chapter",
+      "title": "Static in the Sky",
+      "status": "draft",
+      "parentId": "act-01-the-anomaly",
+      "presentation": null
+    },
+    "chapter-02-four-point-five-seconds": {
+      "unitId": "chapter-02-four-point-five-seconds",
+      "type": "chapter",
+      "title": "Four Point Five Seconds",
+      "status": "draft",
+      "parentId": "act-01-the-anomaly",
+      "presentation": null
+    },
+    "chapter-03-the-word-in-the-dream": {
+      "unitId": "chapter-03-the-word-in-the-dream",
+      "type": "chapter",
+      "title": "The Word in the Dream",
+      "status": "draft",
+      "parentId": "act-01-the-anomaly",
+      "presentation": null
+    },
+    "chapter-04-pattern-hunt": {
+      "unitId": "chapter-04-pattern-hunt",
+      "type": "chapter",
+      "title": "Pattern Hunt",
+      "status": "draft",
+      "parentId": "act-02-the-archive-hunt",
+      "presentation": null
+    },
+    "chapter-05-the-world-tree-corpus": {
+      "unitId": "chapter-05-the-world-tree-corpus",
+      "type": "chapter",
+      "title": "The World-Tree Corpus",
+      "status": "draft",
+      "parentId": "act-02-the-archive-hunt",
+      "presentation": null
+    },
+    "chapter-06-the-dead-man-paper": {
+      "unitId": "chapter-06-the-dead-man-paper",
+      "type": "chapter",
+      "title": "The Dead Man Paper",
+      "status": "draft",
+      "parentId": "act-02-the-archive-hunt",
+      "presentation": null
+    },
+    "chapter-07-the-leak": {
+      "unitId": "chapter-07-the-leak",
+      "type": "chapter",
+      "title": "The Leak",
+      "status": "draft",
+      "parentId": "act-03-the-man-who-died-twice",
+      "presentation": null
+    },
+    "chapter-08-pressure-from-opi": {
+      "unitId": "chapter-08-pressure-from-opi",
+      "type": "chapter",
+      "title": "Pressure from OPI",
+      "status": "draft",
+      "parentId": "act-03-the-man-who-died-twice",
+      "presentation": null
+    },
+    "chapter-09-find-potter": {
+      "unitId": "chapter-09-find-potter",
+      "type": "chapter",
+      "title": "Find Potter",
+      "status": "draft",
+      "parentId": "act-03-the-man-who-died-twice",
+      "presentation": null
+    },
+    "chapter-10-potter-model": {
+      "unitId": "chapter-10-potter-model",
+      "type": "chapter",
+      "title": "Potter Model",
+      "status": "draft",
+      "parentId": "act-04-the-first-convergence",
+      "presentation": null
+    },
+    "chapter-11-resonance-test": {
+      "unitId": "chapter-11-resonance-test",
+      "type": "chapter",
+      "title": "Resonance Test",
+      "status": "draft",
+      "parentId": "act-04-the-first-convergence",
+      "presentation": null
+    },
+    "chapter-12-first-sight-of-yggdrasil": {
+      "unitId": "chapter-12-first-sight-of-yggdrasil",
+      "type": "chapter",
+      "title": "First Sight of Yggdrasil",
+      "status": "draft",
+      "parentId": "act-04-the-first-convergence",
+      "presentation": null
+    },
+    "stream-ada-identity": {
+      "unitId": "stream-ada-identity",
+      "type": "stream",
+      "title": "Ada Identity Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "stream-anomaly-fermi": {
+      "unitId": "stream-anomaly-fermi",
+      "type": "stream",
+      "title": "Anomaly/Fermi Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "stream-consciousness-resonance": {
+      "unitId": "stream-consciousness-resonance",
+      "type": "stream",
+      "title": "Consciousness Resonance Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "stream-edgar-potter": {
+      "unitId": "stream-edgar-potter",
+      "type": "stream",
+      "title": "Edgar Potter Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "stream-opi-suppression": {
+      "unitId": "stream-opi-suppression",
+      "type": "stream",
+      "title": "OPI Suppression Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    },
+    "stream-world-tree-code": {
+      "unitId": "stream-world-tree-code",
+      "type": "stream",
+      "title": "World-Tree Code Stream",
+      "status": "draft",
+      "parentId": null,
+      "presentation": null
+    }
+  },
+  "semantic": {
+    "totalRefs": 0,
+    "byKind": {},
+    "unresolvedCount": 0,
+    "byEntity": {}
+  },
+  "registries": {}
+}

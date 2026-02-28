@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-09-find-potter",
+  "type": "chapter",
+  "title": "Find Potter",
+  "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+  "parentId": "act-03-the-man-who-died-twice",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-edgar-potter",
+      "stream-opi-suppression"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "potter-hideout"
+    ],
+    "newInfo": "Potter confirms convergence theory and personal cost history.",
+    "dripHook": "Contact protocol requires deliberate cognitive risk.",
+    "payoffDelivered": "Primary hidden mentor acquired.",
+    "beautyHooks": "Mythic clue trail pays into operational reality.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6666666666666666,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

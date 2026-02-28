@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.2.0
+> **Managed by ProsAda tooling** · Version 1.3.0
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -152,6 +152,34 @@ GET /v2/validate
 ```
 
 Returns a list of issues (missing parents, orphaned units, etc.) with suggested fixes.
+
+Strict readiness (before enabling strict-pins):
+
+```
+GET /v2/layout-readiness
+```
+
+This reports exactly which units are missing/invalid for strict pin policy.
+
+---
+
+## Strict pin migration workflow
+
+If your project still uses `legacy-auto`, migrate in this order:
+
+1. Generate strict readiness report.
+2. Generate pins from current resolved layout (dry-run first).
+3. Apply migration.
+4. Re-run strict readiness.
+5. Flip manifest policy to `strict-pins`.
+
+App-repo CLI commands (run from the ProsAda app backend repository):
+
+```bash
+python workspace_cli.py layout-readiness --repo-root "<story-repo>"
+python workspace_cli.py migrate-pins --repo-root "<story-repo>"
+python workspace_cli.py migrate-pins --repo-root "<story-repo>" --apply
+```
 
 ---
 

@@ -1,9 +1,25 @@
+"""
+Managed Health Check Script Content — ProsAda Burst 11
+
+This module holds the source text of the repo-local health check helper script
+installed as <prosadaRoot>/scripts/check_tooling_health.py.
+
+The script is self-contained: it only uses Python stdlib, reads tooling.json
+and computes checksums itself, so it works with no app backend running.
+
+VERSION constant here must match the version embedded in SCRIPT_CONTENT.
+Bump both together when changing the script.
+"""
+
+HEALTH_SCRIPT_VERSION = "1.0.0"
+
+SCRIPT_CONTENT = '''\
 #!/usr/bin/env python3
 """
 check_tooling_health.py — ProsAda repo-local tooling health check
 
 MANAGED ARTIFACT — do not edit manually.
-Version: 1.0.0
+Version: {version}
 Refresh: POST /v2/tooling/refresh  (app backend)
          Or re-run: python scripts/check_tooling_health.py --heal
 
@@ -30,7 +46,7 @@ import json
 import sys
 from pathlib import Path
 
-SCRIPT_VERSION = "1.0.0"
+SCRIPT_VERSION = "{version}"
 STATUS_OK = "ok"
 STATUS_MISSING = "missing"
 STATUS_STALE = "stale"
@@ -49,26 +65,26 @@ def _sha256_tree(root: Path) -> str:
     for path in sorted(root.rglob("*")):
         if not path.is_file():
             continue
-        if path.suffix not in {".py"}:
+        if path.suffix not in {{".py"}}:
             continue
-        rel = str(path.relative_to(root)).replace("\\", "/")
+        rel = str(path.relative_to(root)).replace("\\\\", "/")
         h.update(rel.encode("utf-8"))
-        h.update(b"\0")
+        h.update(b"\\0")
         with open(path, "rb") as f:
             for chunk in iter(lambda: f.read(65536), b""):
                 h.update(chunk)
-        h.update(b"\0")
+        h.update(b"\\0")
     return h.hexdigest()
 
 
 def _load_tooling_json(project_dir: Path) -> dict:
     path = project_dir / "tooling.json"
     if not path.exists():
-        return {}
+        return {{}}
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
-        return {}
+        return {{}}
 
 
 def _check_asset(project_dir: Path, rel_path: str, stored_checksum: str | None) -> str:
@@ -93,40 +109,40 @@ def check_project(project_dir: Path) -> dict:
     """
     Return a structured status dict for all managed assets.
 
-    {
+    {{
         "overall": "ok" | "missing" | "stale",
         "projectDir": "...",
-        "scripts": { "renderTimeline": {"status": "ok", ...}, ... },
-        "docs": { "AGENT_START_HERE.md": {"status": "ok", ...}, ... }
-    }
+        "scripts": {{ "renderTimeline": {{"status": "ok", ...}}, ... }},
+        "docs": {{ "AGENT_START_HERE.md": {{"status": "ok", ...}}, ... }}
+    }}
     """
     tooling = _load_tooling_json(project_dir)
-    tools_meta = tooling.get("tools", {})
-    docs_meta = tooling.get("docs", {})
+    tools_meta = tooling.get("tools", {{}})
+    docs_meta = tooling.get("docs", {{}})
 
-    scripts_status = {}
+    scripts_status = {{}}
     for name, meta in tools_meta.items():
         rel_path = meta.get("scriptPath", "")
         stored_checksum = meta.get("checksum")
         st = _check_asset(project_dir, rel_path, stored_checksum)
-        scripts_status[name] = {
+        scripts_status[name] = {{
             "status": st,
             "installedVersion": meta.get("version"),
             "scriptPath": rel_path,
             "checksumMatch": st != STATUS_STALE,
-        }
+        }}
 
-    docs_status = {}
+    docs_status = {{}}
     for name, meta in docs_meta.items():
         rel_path = meta.get("docPath", "")
         stored_checksum = meta.get("checksum")
         st = _check_asset(project_dir, rel_path, stored_checksum)
-        docs_status[name] = {
+        docs_status[name] = {{
             "status": st,
             "installedVersion": meta.get("version"),
             "docPath": rel_path,
             "checksumMatch": st != STATUS_STALE,
-        }
+        }}
 
     all_statuses = (
         [v["status"] for v in scripts_status.values()]
@@ -139,12 +155,12 @@ def check_project(project_dir: Path) -> dict:
     else:
         overall = STATUS_OK
 
-    return {
+    return {{
         "overall": overall,
         "projectDir": str(project_dir),
         "scripts": scripts_status,
         "docs": docs_status,
-    }
+    }}
 
 
 def _heal_via_app(project_dir: Path) -> bool:
@@ -156,37 +172,37 @@ def _heal_via_app(project_dir: Path) -> bool:
         import urllib.request, urllib.error
         url = "http://127.0.0.1:42100/v2/tooling/refresh"
         req = urllib.request.Request(url, method="POST",
-                                     headers={"Content-Type": "application/json"})
+                                     headers={{"Content-Type": "application/json"}})
         with urllib.request.urlopen(req, timeout=5) as resp:
             return resp.status == 200
     except Exception as exc:
-        print(f"  Heal failed (is the app backend running?): {exc}", file=sys.stderr)
+        print(f"  Heal failed (is the app backend running?): {{exc}}", file=sys.stderr)
         return False
 
 
 def _print_status(result: dict) -> None:
     overall = result["overall"]
     icon = "✓" if overall == STATUS_OK else ("✗" if overall == STATUS_MISSING else "~")
-    print(f"\nProsAda Tooling Health  [{icon} {overall.upper()}]")
-    print(f"Project: {result['projectDir']}\n")
+    print(f"\\nProsAda Tooling Health  [{{icon}} {{overall.upper()}}]")
+    print(f"Project: {{result['projectDir']}}\\n")
 
-    scripts = result.get("scripts", {})
+    scripts = result.get("scripts", {{}})
     if scripts:
         print("Scripts:")
         for name, info in scripts.items():
             st = info["status"]
             mark = "✓" if st == STATUS_OK else "✗"
             ver = info.get("installedVersion") or "?"
-            print(f"  {mark} {name:30s} {st:8s} v{ver}")
+            print(f"  {{mark}} {{name:30s}} {{st:8s}} v{{ver}}")
 
-    docs = result.get("docs", {})
+    docs = result.get("docs", {{}})
     if docs:
         print("Docs:")
         for name, info in docs.items():
             st = info["status"]
             mark = "✓" if st == STATUS_OK else "✗"
             ver = info.get("installedVersion") or "?"
-            print(f"  {mark} {name:30s} {st:8s} v{ver}")
+            print(f"  {{mark}} {{name:30s}} {{st:8s}} v{{ver}}")
     print()
 
 
@@ -209,10 +225,10 @@ def main(argv=None) -> int:
         project_dir = _auto_detect_project(Path(__file__).resolve())
 
     if not project_dir.exists():
-        print(f"Error: project dir not found: {project_dir}", file=sys.stderr)
+        print(f"Error: project dir not found: {{project_dir}}", file=sys.stderr)
         return 2
     if not (project_dir / "manifest.json").exists():
-        print(f"Error: no manifest.json in {project_dir}", file=sys.stderr)
+        print(f"Error: no manifest.json in {{project_dir}}", file=sys.stderr)
         return 2
 
     result = check_project(project_dir)
@@ -238,3 +254,4 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+'''.format(version=HEALTH_SCRIPT_VERSION)

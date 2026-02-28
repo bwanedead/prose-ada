@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.2.0
+> **Managed by ProsAda tooling** · Version 1.3.0
 
 ---
 
@@ -73,7 +73,7 @@ A content unit is "in" a stream by including the stream's unitId in its
 
 ## Layout Hints (view.canvas.layout)
 
-Optional manual positioning override for canvas rendering.
+Layout pins for canvas rendering. In `strict-pins`, these are required.
 
 ```json
 "layout": {
@@ -89,6 +89,12 @@ Optional manual positioning override for canvas rendering.
 **coordinateMode=relative**: `start`/`span` are fractions of the parent unit's resolved span.
   - `absStart = parentStart + start × parentSpan`
   - `absSpan  = span × parentSpan`
+
+Policy notes:
+- Root content units must use `absolute` in strict mode.
+- Child content units must use `relative` in strict mode.
+- Stream units must use `absolute` in strict mode.
+- Missing/invalid pins are validation errors in strict mode.
 
 ---
 

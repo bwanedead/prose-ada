@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-04-pattern-hunt",
+  "type": "chapter",
+  "title": "Pattern Hunt",
+  "summary": "Ada and Benny gather cross-cultural world-tree records and discover repeated structural language that exceeds folklore coincidence.",
+  "parentId": "act-02-the-archive-hunt",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-world-tree-code"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe"
+    ],
+    "locations": [
+      "blueberry-diner",
+      "research-archive-stack"
+    ],
+    "newInfo": "Symbolic overlap suggests compression of a shared observed phenomenon.",
+    "dripHook": "If the symbols are a map, where does it point?",
+    "payoffDelivered": null,
+    "beautyHooks": "Independent traditions rhyme at structure level.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

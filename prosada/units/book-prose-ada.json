@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "book-prose-ada",
+  "type": "book",
+  "title": "Prose Ada",
+  "summary": "Book 1 follows Ada's shift from observatory rationalist to active investigator of timeline convergence, ending at first direct contact with the Yggdrasil-like nexus.",
+  "parentId": null,
+  "children": [
+    "act-01-the-anomaly",
+    "act-02-the-archive-hunt",
+    "act-03-the-man-who-died-twice",
+    "act-04-the-first-convergence"
+  ],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore",
+      "director-langley"
+    ],
+    "locations": [
+      "blueberry-pond-observatory",
+      "blueberry-diner",
+      "maine-coast-town",
+      "potter-hideout"
+    ],
+    "newInfo": "Canonical Book 1 scaffold established in ProSada.",
+    "dripHook": "If the sky anomaly was not an external signal, what exactly made contact?",
+    "payoffDelivered": null,
+    "beautyHooks": "Independent threads (myth, data, state suppression, inner cognition) converge into one geometric explanation.",
+    "status": "draft",
+    "textRef": null,
+    "notes": "High-level initial draft intended for iterative refinement."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "absolute",
+        "start": 0.0,
+        "span": 17.0
+      }
+    }
+  },
+  "presentation": null
+}

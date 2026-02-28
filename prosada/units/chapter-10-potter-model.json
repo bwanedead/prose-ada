@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-10-potter-model",
+  "type": "chapter",
+  "title": "Potter Model",
+  "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+  "parentId": "act-04-the-first-convergence",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-edgar-potter",
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "potter-hideout"
+    ],
+    "newInfo": "Convergence depends on likeness resonance and conscious anchoring.",
+    "dripHook": "Understanding the model is not enough; they must run it.",
+    "payoffDelivered": "Series premise explicitly recontextualized.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Keep this chapter action-bound; no static info dump."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-02-four-point-five-seconds",
+  "type": "chapter",
+  "title": "Four Point Five Seconds",
+  "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+  "parentId": "act-01-the-anomaly",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi",
+      "stream-consciousness-resonance"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Subjective hours map to objective seconds.",
+    "dripHook": "Either cognition failed or local reality did.",
+    "payoffDelivered": "Act opens mystery with direct non-dismissable event.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Keep account concrete and instrument-adjacent."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.3333333333333333,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

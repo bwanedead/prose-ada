@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-01-static-in-the-sky",
+  "type": "chapter",
+  "title": "Static in the Sky",
+  "summary": "A normal workday cadence breaks when Ada notices a subtle atmospheric distortion that feels wrong before it can be measured.",
+  "parentId": "act-01-the-anomaly",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe"
+    ],
+    "locations": [
+      "maine-coast-town",
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "The first anomaly presents as sensory edge distortion, not spectacle.",
+    "dripHook": "Ada suspects pattern before she can justify pattern.",
+    "payoffDelivered": null,
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Anchor ordinary routine details before anomaly onset."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-03-the-word-in-the-dream",
+  "type": "chapter",
+  "title": "The Word in the Dream",
+  "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+  "parentId": "act-01-the-anomaly",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-world-tree-code",
+      "stream-consciousness-resonance"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory",
+      "blueberry-diner"
+    ],
+    "newInfo": "Dream lexicon and instrument anomaly appear linked.",
+    "dripHook": "Why does a mythic symbol behave like an operational coordinate?",
+    "payoffDelivered": "Proof-of-glitch tension tightens into specific symbolic lead.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6666666666666666,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

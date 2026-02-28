@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-05-the-world-tree-corpus",
+  "type": "chapter",
+  "title": "The World-Tree Corpus",
+  "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+  "parentId": "act-02-the-archive-hunt",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-world-tree-code"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe"
+    ],
+    "locations": [
+      "research-archive-stack",
+      "blueberry-diner"
+    ],
+    "newInfo": "Mythic forms encode process constraints, not only stories.",
+    "dripHook": "Someone before Ada already knew the process model.",
+    "payoffDelivered": "Pattern-hunt turns into formal hypothesis.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.3333333333333333,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

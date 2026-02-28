@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.2.0
+> **Managed by ProsAda tooling** · Version 1.3.0
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -23,7 +23,7 @@ prosada/
   manifest.json          ← project root pointer + metadata
   units/                 ← one JSON file per narrative unit
   registries/            ← characters, locations, symbols, concepts, …
-  scripts/               ← managed tooling scripts (renderer, health check)
+  scripts/               ← managed tooling scripts + standalone runtime packages
   docs/                  ← this directory — managed agent documentation
   tooling.json           ← tooling version + checksum metadata
 ```
@@ -54,6 +54,23 @@ ProsAda supports two project modes — the canonical `/prosada/` structure is
 - **external** — stored at `<repoRoot>/prosada/` inside a version-controlled repo
 
 Agents working inside a repo with `/prosada/` always use the **external** layout.
+
+---
+
+## Layout Policy (Important)
+
+Manifest controls layout behavior:
+
+- `legacy-auto` (default): pins are optional; composer may derive layout.
+- `strict-pins`: pins are required and treated as authoritative.
+
+Strict pin contract (v1):
+- Root content unit (`book`/`series`): manual + `coordinateMode: "absolute"`
+- Child content units (`act/chapter/scene/...`): manual + `coordinateMode: "relative"`
+- Stream units: manual + `coordinateMode: "absolute"`
+
+Use strict readiness diagnostics before switching a project:
+- API: `GET /v2/layout-readiness`
 
 ---
 

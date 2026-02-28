@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "act-03-the-man-who-died-twice",
+  "type": "act",
+  "title": "Act III - The Man Who Died Twice",
+  "summary": "Ada's leak triggers OPI pursuit. The hunt for Potter turns into a race where each clue costs credibility, safety, and trust.",
+  "parentId": "book-prose-ada",
+  "children": [
+    "chapter-07-the-leak",
+    "chapter-08-pressure-from-opi",
+    "chapter-09-find-potter"
+  ],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe",
+      "rubies-shore",
+      "director-langley",
+      "edgar-potter"
+    ],
+    "locations": [
+      "blueberry-diner",
+      "maine-coast-town",
+      "potter-hideout"
+    ],
+    "newInfo": "OPI confirms the paradigm is known and actively managed.",
+    "dripHook": "Potter is alive, but contact may expose him and collapse the window.",
+    "payoffDelivered": "Potter trail shifts from theory to physical mission.",
+    "beautyHooks": "Institutional pressure forces epistemic theory into embodied risk.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.5,
+        "span": 0.25
+      }
+    }
+  },
+  "presentation": null
+}

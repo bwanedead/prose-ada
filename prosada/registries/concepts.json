@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "concepts",
+  "entries": [
+    {
+      "id": "timeline-convergence",
+      "name": "Timeline Convergence",
+      "description": "Process where sufficiently similar timeline branches phase-lock and share transfer windows.",
+      "color": "#29b6f6"
+    },
+    {
+      "id": "resonance-likeness",
+      "name": "Resonance Likeness",
+      "description": "Compatibility rule governing whether branches can approach and merge safely.",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "consciousness-anchor",
+      "name": "Consciousness Anchor",
+      "description": "Mind-state coherence acting as a local stabilizer during convergence windows.",
+      "color": "#ec407a"
+    },
+    {
+      "id": "fermi-paradox-inversion",
+      "name": "Fermi Paradox Inversion",
+      "description": "Reframe that apparent alien encounters are adjacent human lineages, not distant species.",
+      "color": "#ffa726"
+    },
+    {
+      "id": "bundle-civilization",
+      "name": "Bundle Civilization",
+      "description": "Future social form where multiple history-lines operate as one integrated society thread.",
+      "color": "#7e57c2"
+    }
+  ]
+}
+

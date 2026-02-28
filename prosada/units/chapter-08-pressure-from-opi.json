@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-08-pressure-from-opi",
+  "type": "chapter",
+  "title": "Pressure from OPI",
+  "summary": "The Office for Public Informational Integrity closes options through soft-deniable coercion while Rubies' loyalty starts to fracture.",
+  "parentId": "act-03-the-man-who-died-twice",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-opi-suppression"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "rubies-shore",
+      "director-langley",
+      "benny-rowe"
+    ],
+    "locations": [
+      "maine-coast-town"
+    ],
+    "newInfo": "Suppression strategy is systemic, old, and justified internally as stability protection.",
+    "dripHook": "Rubies may become either execution vector or escape hinge.",
+    "payoffDelivered": "Antagonist model clarified.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.3333333333333333,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "stream-edgar-potter",
+  "type": "stream",
+  "title": "Edgar Potter Stream",
+  "summary": "Tracks the hidden-mentor line from dead-paper discovery through live contact and model transfer.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "edgar-potter",
+      "ada-protagonist"
+    ],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "absolute",
+        "start": 7.083333333333333,
+        "span": 7.083333333333333
+      }
+    }
+  },
+  "presentation": null
+}

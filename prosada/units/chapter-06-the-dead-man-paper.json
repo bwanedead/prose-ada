@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-06-the-dead-man-paper",
+  "type": "chapter",
+  "title": "The Dead Man Paper",
+  "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+  "parentId": "act-02-the-archive-hunt",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-edgar-potter",
+      "stream-opi-suppression"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe",
+      "edgar-potter"
+    ],
+    "locations": [
+      "research-archive-stack"
+    ],
+    "newInfo": "Potter disappearance likely staged under coercive pressure.",
+    "dripHook": "Who kept his work alive, and who has been burying it?",
+    "payoffDelivered": "Act II closes with target identity and direction.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6666666666666666,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

@@ -17,6 +17,16 @@ Before contributing any creative writing or structural changes, you MUST interna
 2.  **[Plot & Structure Ethos](docs/ethos/plot-structure-ethos.md)**: How we build tension, propulsion, and inevitability.
 3.  **[Beauty Ethos](docs/ethos/beauty-ethos.md)**: The aesthetic and emotional resonance we strive for.
 
+## Session-Start Requirement
+
+At the start of **every** working session, agents must:
+
+1. Re-read `docs/quality-standards.md`.
+2. Re-read all ethos docs in `docs/ethos/`.
+3. Use those standards as explicit decision criteria for outlining, drafting, revision, and structural edits.
+
+If a proposed change conflicts with these standards, revise or reject the change until it aligns.
+
 ## Directory Structure
 
 - **`/chapters`**: Current drafts and manuscripts.

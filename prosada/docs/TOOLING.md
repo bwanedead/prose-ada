@@ -1,6 +1,6 @@
 # ProsAda Tooling Reference
 
-> **Managed by ProsAda tooling** · Version 1.2.0
+> **Managed by ProsAda tooling** · Version 1.3.0
 
 ---
 
@@ -10,6 +10,9 @@
 |---------------------------|----------------------------------------------|
 | `render_timeline.py`      | Render timeline snapshot (PNG/SVG + sidecar) |
 | `check_tooling_health.py` | Check/refresh managed tooling in this repo   |
+| `domain/`                 | Managed standalone runtime package           |
+| `persistence/`            | Managed standalone runtime package           |
+| `services/`               | Managed standalone runtime package           |
 
 These are **managed copies** installed by ProsAda. Do not edit them manually —
 they will be overwritten on the next tooling refresh.
@@ -126,6 +129,12 @@ python prosada/scripts/check_tooling_health.py --heal
 python prosada/scripts/check_tooling_health.py --json
 ```
 
+Patch notes are distributed in:
+
+```text
+prosada/docs/patch-notes/
+```
+
 ---
 
 ## tooling.json — What it tracks
@@ -166,6 +175,7 @@ has been modified or is from an older version.
 |-------------------------------|--------|--------------------------------------------------|
 | `/v2/tooling/status`          | GET    | Full status for all managed assets               |
 | `/v2/tooling/refresh`         | POST   | Reinstall all managed assets                     |
+| `/v2/layout-readiness`        | GET    | Strict-pins readiness diagnostics                |
 | `/v2/projection/timeline`     | GET    | Projection payload JSON (layout+semantic+presentation) |
 | `/v2/export/prompt-packets`   | GET    | Structured prompt packets for image/video workflows |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |

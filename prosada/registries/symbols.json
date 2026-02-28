@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "symbols",
+  "entries": [
+    {
+      "id": "yggdrasil",
+      "name": "Yggdrasil",
+      "description": "Mythic world-tree symbol interpreted as compressed witness language for branch topology.",
+      "color": "#43a047"
+    },
+    {
+      "id": "arboros",
+      "name": "Arboros",
+      "description": "Working cosmological name for the emergent branch lattice and transfer structure.",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "sky-vortex",
+      "name": "Sky Vortex",
+      "description": "Recurring perceptual marker of local phase distortion before hard convergence events.",
+      "color": "#26c6da"
+    }
+  ]
+}
+

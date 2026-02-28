@@ -4,46 +4,77 @@
   "capabilities": {
     "rendererPng": true,
     "rendererSvg": true,
-    "semanticRefs": true
+    "semanticRefs": true,
+    "standaloneRuntime": true
   },
   "tools": {
     "renderTimeline": {
       "version": "1.3.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "scriptPath": "scripts/render_timeline.py",
       "checksum": "567d60f8b667bb7c1678741a873cfea88a65afecc82223fd580a374062872d3f"
     },
     "checkToolingHealth": {
       "version": "1.0.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "scriptPath": "scripts/check_tooling_health.py",
-      "checksum": "ced1c0d68716c77fa42f87681d943e1182fe51308f8c12b5e377123525bf2270"
+      "checksum": "4f6cf387f65e1735b5171923bb7864144322cdaac80fb7644d629486a9d84fe2"
+    },
+    "domainRuntime": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.604230Z",
+      "scriptPath": "scripts/domain",
+      "checksum": "6267f059fbc8496329952408e3d3c51fa6e222db67045154867314f92bcf6ee8"
+    },
+    "persistenceRuntime": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.650638Z",
+      "scriptPath": "scripts/persistence",
+      "checksum": "5872ded5fb9be96b85226e3fc379206ed6a9be6e9c72268b0ab265fdf4b42e36"
+    },
+    "servicesRuntime": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.751149Z",
+      "scriptPath": "scripts/services",
+      "checksum": "ca47be3b8830261a11e0ed24d28991fcc4fab125848a7a25b7f269da58da5f4a"
     }
   },
   "docs": {
     "AGENT_START_HERE.md": {
-      "version": "1.2.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "docPath": "docs/AGENT_START_HERE.md",
-      "checksum": "5ceca62e7cfb1a128c994835b1a5998b4b3f248ae1d42f9bd6993f2d2e657513"
+      "checksum": "0f8ae328c4c7a205372e053ec33b0a5f0c4a8758c77aa7f96b68a19545fcf6b3"
     },
     "FORMAT_CHEATSHEET.md": {
-      "version": "1.2.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "docPath": "docs/FORMAT_CHEATSHEET.md",
-      "checksum": "045f4239240021d97899ff600ba9e086a54adfaee504e0ffbccbc01627479fa2"
+      "checksum": "12af4359998087d1804812f1dcd6005707356528e6b86e3a7f7ea6ed68f3e13f"
     },
     "WORKFLOWS.md": {
-      "version": "1.2.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "docPath": "docs/WORKFLOWS.md",
-      "checksum": "a2032a8fb7c3cb983eb2d8fb0b3af5c5c8533df5013afd619a3f1fdc1a0cd35f"
+      "checksum": "30dc7595fa392ee42dbc0b00066db85390c53fdb3c8827208efa25a07fe7edfb"
     },
     "TOOLING.md": {
-      "version": "1.2.0",
-      "installedAt": "2026-02-27T10:29:25.341725Z",
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
       "docPath": "docs/TOOLING.md",
-      "checksum": "512d1e173d8c27a8d6438d9970c03c803d04c075081733976840617a7543f936"
+      "checksum": "fe95f038813cf74c328f9055ccc7b131c97f3b487760a432f1690dd972c857b6"
+    },
+    "patch-notes/README.md": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
+      "docPath": "docs/patch-notes/README.md",
+      "checksum": "1db303e46ce0d204839e864c7b125853d3c19163402ce4f26af0bed1ded8a459"
+    },
+    "patch-notes/engine-1.3.0.md": {
+      "version": "1.3.0",
+      "installedAt": "2026-02-28T10:22:09.532713Z",
+      "docPath": "docs/patch-notes/engine-1.3.0.md",
+      "checksum": "96a64a213cff5637d1d7489dfa27a1a273b7da9261135349d777b41188e8de9d"
     }
   }
 }

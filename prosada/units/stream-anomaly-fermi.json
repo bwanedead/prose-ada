@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "stream-anomaly-fermi",
+  "type": "stream",
+  "title": "Anomaly/Fermi Stream",
+  "summary": "Tracks the conversion of unexplained anomalies into a coherent inversion of the Fermi paradox.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter"
+    ],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "absolute",
+        "start": 0.0,
+        "span": 17.0
+      }
+    }
+  },
+  "presentation": null
+}

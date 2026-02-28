@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-07-the-leak",
+  "type": "chapter",
+  "title": "The Leak",
+  "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+  "parentId": "act-03-the-man-who-died-twice",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-opi-suppression"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "blueberry-diner",
+      "maine-coast-town"
+    ],
+    "newInfo": "Unknown listeners are already tracking convergence-related signals.",
+    "dripHook": "Ada now has a countdown she cannot measure.",
+    "payoffDelivered": null,
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

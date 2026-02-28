@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "threads",
+  "entries": [
+    {
+      "id": "stream-anomaly-fermi",
+      "name": "Anomaly/Fermi",
+      "description": "Anomaly chain and paradox reframe thread.",
+      "color": "#29b6f6"
+    },
+    {
+      "id": "stream-world-tree-code",
+      "name": "World-Tree Code",
+      "description": "Mythic-symbol decoding and structural correspondence thread.",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "stream-edgar-potter",
+      "name": "Edgar Potter",
+      "description": "Hidden mentor and suppressed research recovery thread.",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "stream-opi-suppression",
+      "name": "OPI Suppression",
+      "description": "Institutional containment and pursuit pressure thread.",
+      "color": "#5c6bc0"
+    },
+    {
+      "id": "stream-consciousness-resonance",
+      "name": "Consciousness Resonance",
+      "description": "Cognitive access protocol and shared mind-state test thread.",
+      "color": "#ec407a"
+    }
+  ]
+}

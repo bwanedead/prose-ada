@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "locations",
+  "entries": [
+    {
+      "id": "blueberry-pond-observatory",
+      "name": "Blueberry Pond Observatory",
+      "description": "Ada's primary workplace and site of the first direct temporal anomaly.",
+      "color": "#42a5f5"
+    },
+    {
+      "id": "blueberry-diner",
+      "name": "Blueberry Diner",
+      "description": "Conversation and synthesis hub where clues, social pressure, and missteps compound.",
+      "color": "#ffb74d"
+    },
+    {
+      "id": "maine-coast-town",
+      "name": "Maine Coast Town",
+      "description": "Small-town setting that contrasts ordinary routine with widening cosmological stakes.",
+      "color": "#26a69a"
+    },
+    {
+      "id": "research-archive-stack",
+      "name": "Research Archive Stack",
+      "description": "Libraries, records, and document collections where symbolic-to-structural mapping is built.",
+      "color": "#78909c"
+    },
+    {
+      "id": "potter-hideout",
+      "name": "Potter Hideout",
+      "description": "Remote refuge where the hidden model is operationally disclosed.",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "resonance-site",
+      "name": "Resonance Site",
+      "description": "Controlled location for first intentional shared-mind convergence protocol.",
+      "color": "#ab47bc"
+    }
+  ]
+}
+

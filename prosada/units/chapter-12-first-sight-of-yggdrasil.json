@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-12-first-sight-of-yggdrasil",
+  "type": "chapter",
+  "title": "First Sight of Yggdrasil",
+  "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+  "parentId": "act-04-the-first-convergence",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-world-tree-code",
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "resonance-site"
+    ],
+    "newInfo": "Fermi paradox inversion confirmed: contact source is parallel human lineage, not external aliens.",
+    "dripHook": "Book 2 question: how does society absorb this without collapse?",
+    "payoffDelivered": "Book 1 climax achieved.",
+    "beautyHooks": "Myth, mathematics, memory, and measurement collapse into one image.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6666666666666666,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}

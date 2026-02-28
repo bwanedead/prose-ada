@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "act-01-the-anomaly",
+  "type": "act",
+  "title": "Act I - The Anomaly",
+  "summary": "Ada experiences a direct perceptual rupture, verifies a matching instrumentation anomaly, and crosses the threshold from skepticism to investigation.",
+  "parentId": "book-prose-ada",
+  "children": [
+    "chapter-01-static-in-the-sky",
+    "chapter-02-four-point-five-seconds",
+    "chapter-03-the-word-in-the-dream"
+  ],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe"
+    ],
+    "locations": [
+      "blueberry-pond-observatory",
+      "blueberry-diner",
+      "maine-coast-town"
+    ],
+    "newInfo": "Observed anomaly and measured anomaly align at one timestamp window.",
+    "dripHook": "The event appears physically real and cognitively targeted.",
+    "payoffDelivered": null,
+    "beautyHooks": "The first tiny pattern-lock between sensory uncertainty and instrument certainty.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.25
+      }
+    }
+  },
+  "presentation": null
+}

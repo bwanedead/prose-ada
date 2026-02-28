@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "act-02-the-archive-hunt",
+  "type": "act",
+  "title": "Act II - The Archive Hunt",
+  "summary": "Ada follows mythic and historical rhymes, discovers the Edgar Potter corpus, and realizes that the hidden model predates her by decades.",
+  "parentId": "book-prose-ada",
+  "children": [
+    "chapter-04-pattern-hunt",
+    "chapter-05-the-world-tree-corpus",
+    "chapter-06-the-dead-man-paper"
+  ],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "benny-rowe"
+    ],
+    "locations": [
+      "blueberry-diner",
+      "research-archive-stack",
+      "maine-coast-town"
+    ],
+    "newInfo": "Ancient world-tree motifs map to structural timeline language, not only mythology.",
+    "dripHook": "Potter's posthumous documents imply engineered disappearance, not death.",
+    "payoffDelivered": "Act I uncertainty shifts into a searchable model.",
+    "beautyHooks": "Myth and measurement begin carrying the same geometry.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.25,
+        "span": 0.25
+      }
+    }
+  },
+  "presentation": null
+}

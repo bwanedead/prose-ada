@@ -1,0 +1,26 @@
+{
+  "prosadaPath": "C:\\projects\\stories\\prose-ada\\prosada",
+  "renderedAt": "2026-02-28T08:55:00.260161Z",
+  "rendererVersion": "1.3.0",
+  "filters": {
+    "scope": null,
+    "streams": null,
+    "status": null
+  },
+  "renderSettings": {
+    "scale": 80,
+    "format": "png"
+  },
+  "bounds": {
+    "maxEnd": 17.0,
+    "imgWidth": 1511,
+    "imgHeight": 374,
+    "numLanes": 7
+  },
+  "counts": {
+    "timelines": 1,
+    "threads": 6,
+    "events": 55,
+    "checkpoints": 0
+  }
+}

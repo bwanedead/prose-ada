@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "characters",
+  "entries": [
+    {
+      "id": "ada-protagonist",
+      "name": "Ada",
+      "description": "Astrophysicist protagonist whose anomaly encounter triggers the core investigation.",
+      "color": "#f06292"
+    },
+    {
+      "id": "edgar-potter",
+      "name": "Edgar Potter",
+      "description": "Disgraced theorist in hiding who developed early convergence/consciousness models.",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "benny-rowe",
+      "name": "Benny",
+      "description": "Diner ally grounding Ada while acting as social and practical support.",
+      "color": "#4db6ac"
+    },
+    {
+      "id": "rubies-shore",
+      "name": "Julian Rubies Shore",
+      "description": "OPI operator whose loyalty fractures as the truth conflict sharpens.",
+      "color": "#ef5350"
+    },
+    {
+      "id": "director-langley",
+      "name": "Director Langley",
+      "description": "OPI leader committed to information containment under stability doctrine.",
+      "color": "#5c6bc0"
+    }
+  ]
+}
+

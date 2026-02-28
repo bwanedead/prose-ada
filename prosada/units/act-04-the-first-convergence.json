@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "act-04-the-first-convergence",
+  "type": "act",
+  "title": "Act IV - The First Convergence",
+  "summary": "Potter provides the operational model. Ada and allies execute a constrained resonance test and achieve first direct perception of the Yggdrasil/Arboros structure.",
+  "parentId": "book-prose-ada",
+  "children": [
+    "chapter-10-potter-model",
+    "chapter-11-resonance-test",
+    "chapter-12-first-sight-of-yggdrasil"
+  ],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "potter-hideout",
+      "resonance-site"
+    ],
+    "newInfo": "The 'alien contact' pattern reframes as cross-timeline human adjacency.",
+    "dripHook": "Contact achieved, but public-scale consequences are now unavoidable.",
+    "payoffDelivered": "Book 1 promise fulfilled: direct encounter with the world-tree architecture.",
+    "beautyHooks": "Four investigative lanes collapse into one coherent cosmic model.",
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.75,
+        "span": 0.25
+      }
+    }
+  },
+  "presentation": null
+}

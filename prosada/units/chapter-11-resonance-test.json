@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "chapter-11-resonance-test",
+  "type": "chapter",
+  "title": "Resonance Test",
+  "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+  "parentId": "act-04-the-first-convergence",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-consciousness-resonance",
+      "stream-opi-suppression"
+    ],
+    "characters": [
+      "ada-protagonist",
+      "edgar-potter",
+      "benny-rowe",
+      "rubies-shore"
+    ],
+    "locations": [
+      "resonance-site"
+    ],
+    "newInfo": "Shared coherence alters access conditions in measurable ways.",
+    "dripHook": "Final alignment window may not repeat.",
+    "payoffDelivered": "Theory to first successful test transition.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.3333333333333333,
+        "span": 0.3333333333333333
+      }
+    }
+  },
+  "presentation": null
+}
