@@ -3,7 +3,7 @@
   "unitId": "chapter-05-the-world-tree-corpus",
   "type": "chapter",
   "title": "The World-Tree Corpus",
-  "summary": "The research corpus shifts from thematic to mathematical when motifs begin matching branching and convergence signatures.",
+  "summary": "The archive work shifts from thematic parallels to a proto-formal model of branching, resonance, and convergence.",
   "parentId": "act-02-the-archive-hunt",
   "children": [],
   "links": [],
@@ -19,13 +19,13 @@
       "research-archive-stack",
       "blueberry-diner"
     ],
-    "newInfo": "Mythic forms encode process constraints, not only stories.",
-    "dripHook": "Someone before Ada already knew the process model.",
-    "payoffDelivered": "Pattern-hunt turns into formal hypothesis.",
+    "newInfo": "Myth records appear to preserve process rules, not only stories.",
+    "dripHook": "Someone in the recent past likely recognized this same model.",
+    "payoffDelivered": "Pattern hunt crystallizes into hypothesis.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: second rise. Function: symbolic data -> structural theory. Exit: search target becomes person-level, not concept-level."
   },
   "view": {
     "canvas": {
@@ -40,5 +40,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "investigation",
+      "escalation"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "model_update",
+        "strength": 3,
+        "description": "Corpus shifts from symbolic motif to structural hypothesis.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 2,
+        "description": "Search orientation turns toward prior human discoverers.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      }
+    ]
+  }
 }

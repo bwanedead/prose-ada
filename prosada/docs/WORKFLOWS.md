@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.3.0
+> **Managed by ProsAda tooling** · Version 1.4.0
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -52,6 +52,9 @@ Set `"textRef": "scene-the-signal.md"` if prose exists.
 ```
 
 3. The stream unit itself does **not** need modification.
+4. If multiple streams are listed, put the intended **owner stream first**.
+   - Rendering uses first valid stream as lane owner by default.
+   - Additional stream IDs remain metadata (no auto-duplicate lane pills).
 
 ---
 

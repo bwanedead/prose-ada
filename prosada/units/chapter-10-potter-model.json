@@ -3,7 +3,7 @@
   "unitId": "chapter-10-potter-model",
   "type": "chapter",
   "title": "Potter Model",
-  "summary": "Potter reframes the paradox: no cosmic silence exists, only timeline adjacency rules and resonance thresholds misread as alien visitation.",
+  "summary": "Potter formalizes the paradox inversion: perceived alien contact is adjacency between human-lineage timelines.",
   "parentId": "act-04-the-first-convergence",
   "children": [],
   "links": [],
@@ -21,13 +21,13 @@
     "locations": [
       "potter-hideout"
     ],
-    "newInfo": "Convergence depends on likeness resonance and conscious anchoring.",
-    "dripHook": "Understanding the model is not enough; they must run it.",
-    "payoffDelivered": "Series premise explicitly recontextualized.",
+    "newInfo": "Convergence requires likeness resonance plus consciousness anchoring constraints.",
+    "dripHook": "Can Ada execute the model under pressure without collapse?",
+    "payoffDelivered": "Core cosmology is explicit and actionable.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": "Keep this chapter action-bound; no static info dump."
+    "notes": "Cadence: clarity chamber. Function: reframe prior clues into one coherent system. Exit: transition into live test preparation."
   },
   "view": {
     "canvas": {
@@ -42,5 +42,33 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "payoff",
+      "investigation"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "model_update",
+        "strength": 5,
+        "description": "Fermi inversion is articulated as a coherent rule set.",
+        "threadRefs": [
+          "stream-edgar-potter",
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 3,
+        "description": "Potter supplies actionable framing, not only exposition.",
+        "threadRefs": [
+          "stream-edgar-potter"
+        ]
+      }
+    ]
+  }
 }

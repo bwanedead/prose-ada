@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "2.0.0",
+  "type": "promises",
+  "entries": [
+    {
+      "id": "p-anomaly-nature-01",
+      "name": "Nature of the initial anomaly",
+      "promiseType": "mystery",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-01-static-in-the-sky",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 1,
+        "to": 3
+      },
+      "state": "sharpened",
+      "history": [
+        {
+          "unitId": "chapter-01-static-in-the-sky",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-02-four-point-five-seconds",
+          "transition": "sharpened"
+        },
+        {
+          "unitId": "chapter-03-the-word-in-the-dream",
+          "transition": "reframed"
+        }
+      ],
+      "paidAtUnitId": null
+    },
+    {
+      "id": "p-world-tree-meaning-01",
+      "name": "What Yggdrasil actually refers to",
+      "promiseType": "symbolic",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-03-the-word-in-the-dream",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 3,
+        "to": 12
+      },
+      "state": "partially_paid",
+      "history": [
+        {
+          "unitId": "chapter-03-the-word-in-the-dream",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-05-the-world-tree-corpus",
+          "transition": "sharpened"
+        },
+        {
+          "unitId": "chapter-12-first-sight-of-yggdrasil",
+          "transition": "partially_paid"
+        }
+      ],
+      "paidAtUnitId": null
+    },
+    {
+      "id": "p-potter-status-01",
+      "name": "Is Potter alive and what does he know",
+      "promiseType": "plot",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-06-the-dead-man-paper",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 6,
+        "to": 9
+      },
+      "state": "paid",
+      "history": [
+        {
+          "unitId": "chapter-06-the-dead-man-paper",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-07-the-leak",
+          "transition": "sharpened"
+        },
+        {
+          "unitId": "chapter-09-find-potter",
+          "transition": "paid"
+        }
+      ],
+      "paidAtUnitId": "chapter-09-find-potter"
+    },
+    {
+      "id": "p-opi-scope-01",
+      "name": "How far OPI control and suppression extends",
+      "promiseType": "plot",
+      "planningStatus": "open",
+      "openedAtUnitId": "chapter-07-the-leak",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 7,
+        "to": 11
+      },
+      "state": "sharpened",
+      "history": [
+        {
+          "unitId": "chapter-07-the-leak",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-08-pressure-from-opi",
+          "transition": "sharpened"
+        },
+        {
+          "unitId": "chapter-11-resonance-test",
+          "transition": "reframed"
+        }
+      ],
+      "paidAtUnitId": null
+    },
+    {
+      "id": "p-contact-consequence-01",
+      "name": "What first contact implies for society",
+      "promiseType": "thematic",
+      "planningStatus": "open",
+      "openedAtUnitId": "chapter-10-potter-model",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 10,
+        "to": 13
+      },
+      "state": "opened",
+      "history": [
+        {
+          "unitId": "chapter-10-potter-model",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-12-first-sight-of-yggdrasil",
+          "transition": "sharpened"
+        }
+      ],
+      "paidAtUnitId": null
+    }
+  ]
+}

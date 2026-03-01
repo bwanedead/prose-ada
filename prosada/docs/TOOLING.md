@@ -1,6 +1,6 @@
 # ProsAda Tooling Reference
 
-> **Managed by ProsAda tooling** · Version 1.3.0
+> **Managed by ProsAda tooling** · Version 1.4.0
 
 ---
 
@@ -193,3 +193,20 @@ The following are **never touched** by tooling refresh:
 - `prosada/registries/*.json` — your story bible
 - `prosada/manifest.json` — your project root config
 - Any prose `.md` files
+
+---
+
+## Rollout Update Contract (for engine updates)
+
+When ProsAda engine behavior changes, verify in this order:
+
+1. Read latest patch note in `docs/patch-notes/`.
+2. Refresh managed assets:
+   - `python scripts/check_tooling_health.py --heal`
+3. Re-check schema guidance in:
+   - `AGENT_START_HERE.md`
+   - `FORMAT_CHEATSHEET.md`
+4. Re-run validation/doctor before continuing authoring.
+
+Patch notes are the canonical changelog. If behavior differs from prior runs,
+do not assume old docs/scripts still apply.

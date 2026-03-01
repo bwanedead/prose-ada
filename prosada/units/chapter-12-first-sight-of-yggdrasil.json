@@ -3,7 +3,7 @@
   "unitId": "chapter-12-first-sight-of-yggdrasil",
   "type": "chapter",
   "title": "First Sight of Yggdrasil",
-  "summary": "Ada directly perceives the higher-dimensional branch nexus and confirms that ancient world-tree accounts were compressed witness reports.",
+  "summary": "Ada directly witnesses the branch nexus and confirms world-tree traditions as compressed witness language for real structure.",
   "parentId": "act-04-the-first-convergence",
   "children": [],
   "links": [],
@@ -21,13 +21,13 @@
     "locations": [
       "resonance-site"
     ],
-    "newInfo": "Fermi paradox inversion confirmed: contact source is parallel human lineage, not external aliens.",
-    "dripHook": "Book 2 question: how does society absorb this without collapse?",
-    "payoffDelivered": "Book 1 climax achieved.",
+    "newInfo": "Fermi paradox inversion is affirmed at experiential scale: contact source is parallel human lineage.",
+    "dripHook": "How does a society absorb this truth without fracturing?",
+    "payoffDelivered": "Book 1 promise delivered: direct encounter and paradigm reframe.",
     "beautyHooks": "Myth, mathematics, memory, and measurement collapse into one image.",
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: climax + charged aftermath. Function: convergent payoff across anomaly, myth, Potter, and protocol lanes. Exit: societal stakes open for Book 2."
   },
   "view": {
     "canvas": {
@@ -42,5 +42,42 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "climax",
+      "payoff",
+      "aftermath"
+    ],
+    "cadenceRole": "drop",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "model_update",
+        "strength": 5,
+        "description": "World-tree structure is directly perceived and recontextualizes prior clues.",
+        "threadRefs": [
+          "stream-world-tree-code",
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "model_update",
+        "strength": 5,
+        "description": "Contact source reframes from alien-other to adjacent human lineages.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "emotional",
+        "strength": 3,
+        "description": "Awe and destabilization set up the societal question for Book 2.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      }
+    ]
+  }
 }

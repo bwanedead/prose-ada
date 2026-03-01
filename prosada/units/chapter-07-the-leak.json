@@ -3,7 +3,7 @@
   "unitId": "chapter-07-the-leak",
   "type": "chapter",
   "title": "The Leak",
-  "summary": "A confidence breach exposes Ada's Potter lead, forcing her out of research mode and into evasive action.",
+  "summary": "A trust breach exposes Ada's lead, forcing immediate defensive movement and shrinking her safe options.",
   "parentId": "act-03-the-man-who-died-twice",
   "children": [],
   "links": [],
@@ -20,13 +20,13 @@
       "blueberry-diner",
       "maine-coast-town"
     ],
-    "newInfo": "Unknown listeners are already tracking convergence-related signals.",
-    "dripHook": "Ada now has a countdown she cannot measure.",
-    "payoffDelivered": null,
+    "newInfo": "External actors are actively watching for convergence-related discoveries.",
+    "dripHook": "How much time remains before the search is shut down?",
+    "payoffDelivered": "Research phase breaks; pursuit phase starts.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: pressure pulse. Function: convert knowledge cost into danger. Exit: Ada/Benny move from inquiry to evasion."
   },
   "view": {
     "canvas": {
@@ -41,5 +41,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "squeeze",
+      "escalation"
+    ],
+    "cadenceRole": "rise",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "decision",
+        "strength": 3,
+        "description": "Ada shifts from research posture to survival posture.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      },
+      {
+        "type": "contradiction",
+        "strength": 3,
+        "description": "Truth-seeking now increases risk instead of clarity.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      }
+    ]
+  }
 }

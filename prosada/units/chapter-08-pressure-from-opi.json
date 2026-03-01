@@ -3,7 +3,7 @@
   "unitId": "chapter-08-pressure-from-opi",
   "type": "chapter",
   "title": "Pressure from OPI",
-  "summary": "The Office for Public Informational Integrity closes options through soft-deniable coercion while Rubies' loyalty starts to fracture.",
+  "summary": "OPI pressure clarifies the adversarial system while exposing internal fracture points around Rubies.",
   "parentId": "act-03-the-man-who-died-twice",
   "children": [],
   "links": [],
@@ -20,13 +20,13 @@
     "locations": [
       "maine-coast-town"
     ],
-    "newInfo": "Suppression strategy is systemic, old, and justified internally as stability protection.",
-    "dripHook": "Rubies may become either execution vector or escape hinge.",
-    "payoffDelivered": "Antagonist model clarified.",
+    "newInfo": "Suppression is policy-driven and legacy-deep, framed as societal stability management.",
+    "dripHook": "Will Rubies remain enforcement or become a break in the system?",
+    "payoffDelivered": "Antagonist logic and leverage map become legible.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: sustained tension plateau. Function: define opposition architecture. Exit: tactical path to Potter narrows but remains open."
   },
   "view": {
     "canvas": {
@@ -41,5 +41,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "squeeze",
+      "investigation"
+    ],
+    "cadenceRole": "plateau",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 3,
+        "description": "OPI rationale and operational pattern become legible.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      },
+      {
+        "type": "relational",
+        "strength": 2,
+        "description": "Rubies' alignment uncertainty introduces interpersonal tension.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      }
+    ]
+  }
 }

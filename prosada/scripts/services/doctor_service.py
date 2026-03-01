@@ -23,7 +23,9 @@ Usage:
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from domain.narrative_unit import NarrativeUnit, UnitType
@@ -105,6 +107,14 @@ class DoctorService:
         strict_errors = [i for i in strict_issues if i.severity == IssueSeverity.ERROR]
         strict_warnings = [i for i in strict_issues if i.severity == IssueSeverity.WARNING]
 
+        planning_issues = DoctorService._planning_warnings(
+            units,
+            project_dir=project_dir,
+            manifest=manifest,
+        )
+        issue_dicts.extend(planning_issues)
+        warnings += len(planning_issues)
+
         fixes = DoctorService._compute_fixes(units)
         return DoctorReport(
             issues=issue_dicts,
@@ -119,6 +129,204 @@ class DoctorService:
                 "issues": [i.to_dict() for i in strict_issues],
             },
         )
+
+    @staticmethod
+    def _planning_warnings(
+        units: Dict[str, NarrativeUnit],
+        project_dir=None,
+        manifest: Optional[Dict[str, Any]] = None,
+    ) -> List[dict]:
+        """
+        Read-only planning diagnostics (no auto-fixes).
+
+        These warnings are advisory instrumentation checks for:
+          - effort/reward mismatches
+          - promise contract completeness/progression
+          - cadence envelope activity mismatches
+          - dead chapter runs with no rewards and no promise movement
+        """
+        issues: List[dict] = []
+
+        def warn(unit_id: str, field: str, message: str) -> None:
+            issues.append({
+                "severity": "warning",
+                "unitId": unit_id,
+                "field": field,
+                "message": message,
+            })
+
+        # 1) High effort units should usually pay with at least one reward token.
+        for u in units.values():
+            st = getattr(u, "structure", None)
+            if not st:
+                continue
+            if getattr(st, "effort_load", None) == "high":
+                tokens = getattr(st, "reward_tokens", None) or []
+                if len(tokens) == 0:
+                    warn(
+                        u.unit_id,
+                        "structure.rewardTokens",
+                        "effortLoad='high' but no rewardTokens are authored.",
+                    )
+
+        # Canonical promise source: registries/promises.json
+        promises = DoctorService._load_promises_registry(project_dir)
+        transitions_by_unit: Dict[str, int] = {}
+        for p in promises:
+            pid = p.get("id") or p.get("promiseId") or "(unknown)"
+            ptype = p.get("promiseType")
+            if ptype and ptype not in {"mystery", "plot", "character", "thematic", "symbolic"}:
+                warn(pid, "promiseType", f"Unknown promiseType '{ptype}'.")
+
+            opened = p.get("openedAtUnitId")
+            if not opened:
+                warn(pid, "openedAtUnitId", "Promise is missing openedAtUnitId.")
+
+            history = p.get("history") or []
+            state = p.get("state")
+            if state and state not in {
+                "opened", "sharpened", "reframed", "delayed",
+                "partially_paid", "paid", "inverted", "abandoned"
+            }:
+                warn(pid, "state", f"Unknown promise state '{state}'.")
+
+            for h in history:
+                uid = h.get("unitId")
+                tr = h.get("transition")
+                if uid:
+                    transitions_by_unit[uid] = transitions_by_unit.get(uid, 0) + 1
+                if tr and tr not in {
+                    "opened", "sharpened", "reframed", "delayed",
+                    "partially_paid", "paid", "inverted", "abandoned"
+                }:
+                    warn(pid, "history.transition", f"Unknown transition '{tr}'.")
+
+            # 2) Promise target window exceeded with no movement/payment.
+            tw = p.get("targetWindow") or {}
+            if tw.get("kind") == "chapter_range":
+                to_ch = tw.get("to")
+                if isinstance(to_ch, int) and to_ch > 0:
+                    max_ch = DoctorService._max_chapter_index(units)
+                    moved = len(history) > 0 or bool(p.get("paidAtUnitId"))
+                    if max_ch >= to_ch and not moved:
+                        warn(
+                            pid,
+                            "targetWindow",
+                            f"targetWindow chapter_range ended at {to_ch} with no promise movement/history.",
+                        )
+
+        # 3) Long chapter runs with no reward tokens and no promise movement.
+        chapter_ids = DoctorService._chapter_ids_in_order(units, manifest)
+        run_len = 0
+        run_ids: List[str] = []
+        for cid in chapter_ids:
+            cu = units.get(cid)
+            if not cu:
+                continue
+            tokens = (getattr(getattr(cu, "structure", None), "reward_tokens", None) or [])
+            moved = transitions_by_unit.get(cid, 0) > 0
+            if len(tokens) == 0 and not moved:
+                run_len += 1
+                run_ids.append(cid)
+            else:
+                if run_len >= 2:
+                    for rid in run_ids:
+                        warn(
+                            rid,
+                            "structure.rewardTokens",
+                            "Chapter is part of a no-reward/no-transition run; consider adding reward token or promise movement.",
+                        )
+                run_len = 0
+                run_ids = []
+        if run_len >= 2:
+            for rid in run_ids:
+                warn(
+                    rid,
+                    "structure.rewardTokens",
+                    "Chapter is part of a no-reward/no-transition run; consider adding reward token or promise movement.",
+                )
+
+        # 4) Stream cadence envelope exists but no unit maps to that stream.
+        for u in units.values():
+            if u.type != UnitType.STREAM:
+                continue
+            st = getattr(u, "structure", None)
+            cadence = getattr(st, "cadence_envelope", None) if st else None
+            if not cadence:
+                continue
+            has_activity = any(
+                ou.type != UnitType.STREAM
+                and u.unit_id in (ou.narrative.threads_advanced or [])
+                for ou in units.values()
+            )
+            if not has_activity:
+                warn(
+                    u.unit_id,
+                    "structure.cadenceEnvelope",
+                    "cadenceEnvelope is defined but no units reference this stream in narrative.threadsAdvanced.",
+                )
+
+        return issues
+
+    @staticmethod
+    def _load_promises_registry(project_dir) -> List[dict]:
+        if not project_dir:
+            return []
+        try:
+            path = Path(project_dir) / "registries" / "promises.json"
+            if not path.exists():
+                return []
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return data.get("entries", []) if isinstance(data, dict) else []
+        except Exception:
+            return []
+
+    @staticmethod
+    def _max_chapter_index(units: Dict[str, NarrativeUnit]) -> int:
+        max_idx = 0
+        for u in units.values():
+            if u.type != UnitType.CHAPTER:
+                continue
+            idx = DoctorService._chapter_index_from_id_or_title(u)
+            if idx > max_idx:
+                max_idx = idx
+        return max_idx
+
+    @staticmethod
+    def _chapter_index_from_id_or_title(unit: NarrativeUnit) -> int:
+        # best-effort parser for chapter-03-* or "Chapter 3" title
+        import re
+        for src in (unit.unit_id, unit.title):
+            m = re.search(r"(?:chapter[-_\s]?)(\d+)", src, flags=re.IGNORECASE)
+            if m:
+                try:
+                    return int(m.group(1))
+                except Exception:
+                    pass
+        return 0
+
+    @staticmethod
+    def _chapter_ids_in_order(units: Dict[str, NarrativeUnit], manifest: Optional[Dict[str, Any]]) -> List[str]:
+        root = (manifest or {}).get("root")
+        if not root or root not in units:
+            # fallback deterministic by index parse
+            chapters = [u for u in units.values() if u.type == UnitType.CHAPTER]
+            chapters.sort(key=lambda u: (DoctorService._chapter_index_from_id_or_title(u), u.unit_id))
+            return [u.unit_id for u in chapters]
+
+        out: List[str] = []
+        stack: List[str] = [root]
+        while stack:
+            uid = stack.pop()
+            u = units.get(uid)
+            if not u:
+                continue
+            if u.type == UnitType.CHAPTER:
+                out.append(uid)
+            for cid in reversed(u.children):
+                if cid in units:
+                    stack.append(cid)
+        return out
 
     @staticmethod
     def _compute_fixes(units: Dict[str, NarrativeUnit]) -> List[DoctorFix]:

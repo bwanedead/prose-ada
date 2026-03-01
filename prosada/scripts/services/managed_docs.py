@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.3.0"
+DOCS_VERSION = "1.4.0"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -102,6 +102,16 @@ Agents working inside a repo with `/prosada/` always use the **external** layout
 
 ---
 
+## Ownership Boundary (App vs Story Repo)
+
+- The **app repo** (`prosada-app`) owns render/composition policy and UI behavior.
+- The **story repo** owns canonical schema/content under `prosada/`.
+
+When behavior changes in visualization policy (for example stream ownership
+rendering), story agents should consult patch notes before changing schema.
+
+---
+
 ## Layout Policy (Important)
 
 Manifest controls layout behavior:
@@ -127,6 +137,26 @@ Use strict readiness diagnostics before switching a project:
 4. **Keep `parentId` consistent** with the parent's `children[]` list.
 5. **Use semantic ref syntax** for inline entity links: `Text[[kind:entity-id]]`
 6. **Run validation after edits**: `GET /v2/validate` or check manifests.
+
+---
+
+## Planning Instrumentation (Phase 1)
+
+Units may include optional `structure` planning metadata for cadence/reward design.
+This is a planning layer, not canonical plot truth unless:
+
+- `structure.planningStatus = "locked"`
+
+Use statuses intentionally:
+- `open`    → exploratory / unstable
+- `leaning` → preferred current direction
+- `locked`  → canonical planning contract
+
+Canonical promise contracts should live in:
+- `registries/promises.json`
+
+Keep promise history stateful (`opened`, `sharpened`, `reframed`, `delayed`,
+`partially_paid`, `paid`, `inverted`, `abandoned`) so diagnostics can track movement.
 
 ---
 
@@ -180,6 +210,32 @@ _FORMAT_CHEATSHEET = """\
     "notes": "Research: Fermi paradox.",
     "textRef": "scene-the-anomaly.md"   // relative path to prose file
   }},
+  "structure": {{
+    "functions": ["setup", "investigation"],
+    "cadenceRole": "rise",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {{
+        "type": "clue",
+        "strength": 3,
+        "description": "Ada observes a measurable sky inconsistency.",
+        "threadRefs": ["stream-anomaly"]
+      }}
+    ],
+    "cadenceEnvelope": {{
+      "intensityPoints": [{{"x": 0.0, "y": 0.2}}, {{"x": 0.35, "y": 0.8}}],
+      "frequencyTarget": "intermittent",
+      "spacingTarget": "every_1_to_2_chapters",
+      "planningStatus": "open"
+    }},
+    "modelUpdate": {{
+      "before": "Likely perceptual glitch",
+      "shift": "Possible external anomaly",
+      "after": "Needs verification",
+      "confidenceDelta": 1
+    }}
+  }},
   "view": {{
     "canvas": {{
       "x": null, "y": null, "collapsed": false,
@@ -188,6 +244,19 @@ _FORMAT_CHEATSHEET = """\
   }}
 }}
 ```
+
+---
+
+## Structure Enums (controlled vocabulary)
+
+- `functions`: `setup` | `escalation` | `squeeze` | `release` | `payoff` | `climax` | `bridge` | `reversal` | `investigation` | `aftermath`
+- `cadenceRole`: `rise` | `drop` | `plateau` | `spike` | `sustain` | `transition`
+- `effortLoad`: `low` | `medium` | `high`
+- `planningStatus`: `open` | `leaning` | `locked`
+- `rewardTokens.type`: `clue` | `competence` | `contradiction` | `decision` | `atmosphere` | `emotional` | `model_update` | `reversal` | `humor` | `relational`
+
+Planning rule:
+- Treat planning metadata as non-canonical until `planningStatus = "locked"`.
 
 ---
 
@@ -220,6 +289,11 @@ A content unit is "in" a stream by including the stream's unitId in its
 // stream unit:
 {{ "unitId": "stream-yggdrasil-arc", "type": "stream", "parentId": null }}
 ```
+
+Render ownership policy (app behavior):
+- A unit renders on at most one stream lane by default.
+- Owner stream = first valid stream ID in `threadsAdvanced[]`.
+- Additional stream IDs are metadata (cross-stream semantics), not duplicate pills.
 
 ---
 
@@ -276,6 +350,7 @@ Supported kinds → Registry file mapping:
 | `location` | `registries/locations.json`  |
 | `artifact` | `registries/artifacts.json`  |
 | `thread`   | `registries/threads.json`    |
+| `promise`  | `registries/promises.json`   |
 
 ---
 
@@ -295,6 +370,35 @@ Supported kinds → Registry file mapping:
   ]
 }}
 ```
+
+### Promise registry contract (`registries/promises.json`)
+
+```json
+{{
+  "schemaVersion": "2.0.0",
+  "type": "promises",
+  "entries": [
+    {{
+      "id": "p-anomaly-nature-01",
+      "name": "Nature of anomaly",
+      "promiseType": "mystery",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-01",
+      "targetWindow": {{ "kind": "chapter_range", "from": 1, "to": 4 }},
+      "state": "sharpened",
+      "history": [
+        {{ "unitId": "chapter-01", "transition": "opened" }},
+        {{ "unitId": "chapter-02", "transition": "sharpened" }}
+      ],
+      "paidAtUnitId": null
+    }}
+  ]
+}}
+```
+
+Promise enums:
+- `promiseType`: `mystery` | `plot` | `character` | `thematic` | `symbolic`
+- `history.transition`/`state`: `opened` | `sharpened` | `reframed` | `delayed` | `partially_paid` | `paid` | `inverted` | `abandoned`
 
 ---
 
@@ -404,6 +508,9 @@ Set `"textRef": "scene-the-signal.md"` if prose exists.
 ```
 
 3. The stream unit itself does **not** need modification.
+4. If multiple streams are listed, put the intended **owner stream first**.
+   - Rendering uses first valid stream as lane owner by default.
+   - Additional stream IDs remain metadata (no auto-duplicate lane pills).
 
 ---
 
@@ -906,6 +1013,23 @@ The following are **never touched** by tooling refresh:
 - `prosada/registries/*.json` — your story bible
 - `prosada/manifest.json` — your project root config
 - Any prose `.md` files
+
+---
+
+## Rollout Update Contract (for engine updates)
+
+When ProsAda engine behavior changes, verify in this order:
+
+1. Read latest patch note in `docs/patch-notes/`.
+2. Refresh managed assets:
+   - `python scripts/check_tooling_health.py --heal`
+3. Re-check schema guidance in:
+   - `AGENT_START_HERE.md`
+   - `FORMAT_CHEATSHEET.md`
+4. Re-run validation/doctor before continuing authoring.
+
+Patch notes are the canonical changelog. If behavior differs from prior runs,
+do not assume old docs/scripts still apply.
 """
 
 
@@ -923,7 +1047,92 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.4.0.md` — planning instrumentation schema + rollout update contract
+- `engine-1.3.1.md` — stream owner-lane rendering policy + interaction sanity
 - `engine-1.3.0.md` — strict-pins foundation + distributed runtime improvements
+"""
+
+
+_PATCH_NOTES_ENGINE_140 = """\
+# Patch Notes — engine-1.4.0
+
+Date: 2026-02-28
+Scope: planning instrumentation + docs rollout discipline
+
+## Summary
+
+This release adds optional planning instrumentation primitives to unit schema
+and standardizes rollout protocol so schema/docs/tooling stay in sync.
+
+## Added
+
+- Optional `unit.structure` planning block:
+  - `functions[]`, `cadenceRole`, `effortLoad`, `planningStatus`
+  - typed `rewardTokens[]` (type, strength, description, threadRefs)
+  - optional `cadenceEnvelope`
+  - optional `modelUpdate`
+- Controlled vocab enums for planning fields (documented in cheatsheet).
+- Promise registry support:
+  - canonical source: `registries/promises.json`
+  - typed promise metadata (`promiseType`, target window, state/history)
+- Doctor read-only planning warnings:
+  - high-effort units without rewards
+  - missing promise openers
+  - expired chapter-range windows with no movement
+  - long chapter runs without reward tokens or promise transitions
+  - stream cadence envelopes with no mapped activity
+
+## Changed
+
+- Managed docs now include rollout update protocol guidance.
+- External docs pack version bumped to `1.4.0`.
+
+## Why
+
+Story planning needs explicit support for cadence, reward scheduling, and
+promise/payoff tracking without forcing immediate canon lock-in.
+
+## Story Agent Guidance
+
+- Use planning metadata as exploratory unless `planningStatus = "locked"`.
+- Keep promise contracts in `registries/promises.json` (single canonical location).
+- Use typed reward/promise vocab from the cheatsheet to keep doctor diagnostics reliable.
+"""
+
+
+_PATCH_NOTES_ENGINE_131 = """\
+# Patch Notes — engine-1.3.1
+
+Date: 2026-02-28
+Scope: timeline readability + ownership semantics clarification
+
+## Summary
+
+This update reduces outline/timeline clutter by switching event rendering to a
+single-lane ownership policy for stream-affiliated units.
+
+## Changed
+
+- Content events now render on one lane only:
+  - If `threadsAdvanced[]` has valid stream IDs, owner = first valid stream ID.
+  - Otherwise event renders on spine lane.
+- Additional stream memberships remain metadata (`relatedThreadIds`) and do not
+  auto-spawn duplicate event pills across multiple stream lanes.
+- Default label behavior is now hover-first in the app for cleaner timelines.
+- Timeline baseline interaction hitbox was narrowed to reduce selection blocking.
+
+## Why
+
+Previous behavior rendered one copy per stream membership, causing repeated
+labels/pills and visual ambiguity in dense outlines.
+
+## Story Agent Guidance
+
+- Keep schema drafting the same (strict pins + hierarchy rules unchanged).
+- When assigning multiple streams to a unit, put intended owner first in
+  `narrative.threadsAdvanced[]`.
+- Use additional stream IDs intentionally for cross-stream semantics, not
+  expecting duplicate rendered pills.
 """
 
 
@@ -988,6 +1197,8 @@ DOC_FILES: list[tuple[str, str]] = [
     ("WORKFLOWS.md", _WORKFLOWS),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.4.0.md", _PATCH_NOTES_ENGINE_140),
+    ("patch-notes/engine-1.3.1.md", _PATCH_NOTES_ENGINE_131),
     ("patch-notes/engine-1.3.0.md", _PATCH_NOTES_ENGINE_130),
 ]
 

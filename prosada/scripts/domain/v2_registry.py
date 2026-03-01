@@ -21,6 +21,7 @@ class RegistryType(str, Enum):
     ARTIFACTS  = "artifacts"
     SYMBOLS    = "symbols"
     CONCEPTS   = "concepts"
+    PROMISES   = "promises"
 
 
 class RegistryEntry(BaseModel):
@@ -36,6 +37,14 @@ class RegistryEntry(BaseModel):
     # Type-specific optional fields (sparse schema — only relevant fields populated)
     archetype: Optional[str] = None   # characters
     type: Optional[str] = None        # locations, threads, etc.
+    # promise contracts (promises registry)
+    promise_type: Optional[str] = Field(default=None, alias="promiseType")
+    planning_status: Optional[str] = Field(default=None, alias="planningStatus")
+    opened_at_unit_id: Optional[str] = Field(default=None, alias="openedAtUnitId")
+    target_window: Optional[dict] = Field(default=None, alias="targetWindow")
+    state: Optional[str] = None
+    history: Optional[list] = None
+    paid_at_unit_id: Optional[str] = Field(default=None, alias="paidAtUnitId")
 
 
 class RegistryFile(BaseModel):

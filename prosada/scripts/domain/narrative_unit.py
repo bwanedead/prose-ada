@@ -35,6 +35,83 @@ class UnitStatus(str, Enum):
     LOCKED = "locked"
 
 
+class PlanningStatus(str, Enum):
+    OPEN    = "open"
+    LEANING = "leaning"
+    LOCKED  = "locked"
+
+
+class StructureFunction(str, Enum):
+    SETUP         = "setup"
+    ESCALATION    = "escalation"
+    SQUEEZE       = "squeeze"
+    RELEASE       = "release"
+    PAYOFF        = "payoff"
+    CLIMAX        = "climax"
+    BRIDGE        = "bridge"
+    REVERSAL      = "reversal"
+    INVESTIGATION = "investigation"
+    AFTERMATH     = "aftermath"
+
+
+class CadenceRole(str, Enum):
+    RISE       = "rise"
+    DROP       = "drop"
+    PLATEAU    = "plateau"
+    SPIKE      = "spike"
+    SUSTAIN    = "sustain"
+    TRANSITION = "transition"
+
+
+class EffortLoad(str, Enum):
+    LOW    = "low"
+    MEDIUM = "medium"
+    HIGH   = "high"
+
+
+class RewardTokenType(str, Enum):
+    CLUE          = "clue"
+    COMPETENCE    = "competence"
+    CONTRADICTION = "contradiction"
+    DECISION      = "decision"
+    ATMOSPHERE    = "atmosphere"
+    EMOTIONAL     = "emotional"
+    MODEL_UPDATE  = "model_update"
+    REVERSAL      = "reversal"
+    HUMOR         = "humor"
+    RELATIONAL    = "relational"
+
+
+class PromiseType(str, Enum):
+    MYSTERY   = "mystery"
+    PLOT      = "plot"
+    CHARACTER = "character"
+    THEMATIC  = "thematic"
+    SYMBOLIC  = "symbolic"
+
+
+class PromiseTransition(str, Enum):
+    OPENED         = "opened"
+    SHARPENED      = "sharpened"
+    REFRAMED       = "reframed"
+    DELAYED        = "delayed"
+    PARTIALLY_PAID = "partially_paid"
+    PAID           = "paid"
+    INVERTED       = "inverted"
+    ABANDONED      = "abandoned"
+
+
+class PromiseState(str, Enum):
+    OPENED         = "opened"
+    SHARPENED      = "sharpened"
+    REFRAMED       = "reframed"
+    DELAYED        = "delayed"
+    PARTIALLY_PAID = "partially_paid"
+    PAID           = "paid"
+    INVERTED       = "inverted"
+    ABANDONED      = "abandoned"
+
+
 # ---------------------------------------------------------------------------
 # Links — explicit unit-to-unit relationships
 # ---------------------------------------------------------------------------
@@ -154,6 +231,54 @@ class NarrativeFields(BaseModel):
         description="Relative path to external .md prose file"
     )
     notes: Optional[str] = None
+
+
+# ---------------------------------------------------------------------------
+# Planning instrumentation — optional (non-canonical unless planningStatus=locked)
+# ---------------------------------------------------------------------------
+
+class RewardToken(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    type: RewardTokenType
+    strength: int = Field(..., ge=1, le=5)
+    description: str
+    thread_refs: List[str] = Field(default_factory=list, alias="threadRefs")
+
+
+class ModelUpdate(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    before: Optional[str] = None
+    shift: Optional[str] = None
+    after: Optional[str] = None
+    confidence_delta: Optional[float] = Field(default=None, alias="confidenceDelta")
+
+
+class CadencePoint(BaseModel):
+    x: float
+    y: float
+
+
+class CadenceEnvelope(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    intensity_points: List[CadencePoint] = Field(default_factory=list, alias="intensityPoints")
+    frequency_target: Optional[str] = Field(default=None, alias="frequencyTarget")
+    spacing_target: Optional[str] = Field(default=None, alias="spacingTarget")
+    planning_status: Optional[PlanningStatus] = Field(default=None, alias="planningStatus")
+
+
+class UnitStructure(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    functions: List[StructureFunction] = Field(default_factory=list)
+    cadence_role: Optional[CadenceRole] = Field(default=None, alias="cadenceRole")
+    effort_load: Optional[EffortLoad] = Field(default=None, alias="effortLoad")
+    planning_status: Optional[PlanningStatus] = Field(default=None, alias="planningStatus")
+    reward_tokens: List[RewardToken] = Field(default_factory=list, alias="rewardTokens")
+    cadence_envelope: Optional[CadenceEnvelope] = Field(default=None, alias="cadenceEnvelope")
+    model_update: Optional[ModelUpdate] = Field(default=None, alias="modelUpdate")
 
 
 # ---------------------------------------------------------------------------
@@ -284,6 +409,13 @@ class NarrativeUnit(BaseModel):
     )
 
     narrative: NarrativeFields = Field(default_factory=NarrativeFields)
+    structure: Optional[UnitStructure] = Field(
+        default=None,
+        description=(
+            "Optional planning instrumentation metadata. "
+            "Planning-only unless planningStatus='locked'."
+        ),
+    )
     view: ViewNamespace = Field(default_factory=ViewNamespace)
     presentation: Optional[PresentationMetadata] = Field(
         default=None,

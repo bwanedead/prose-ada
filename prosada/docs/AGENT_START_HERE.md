@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.3.0
+> **Managed by ProsAda tooling** · Version 1.4.0
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -57,6 +57,16 @@ Agents working inside a repo with `/prosada/` always use the **external** layout
 
 ---
 
+## Ownership Boundary (App vs Story Repo)
+
+- The **app repo** (`prosada-app`) owns render/composition policy and UI behavior.
+- The **story repo** owns canonical schema/content under `prosada/`.
+
+When behavior changes in visualization policy (for example stream ownership
+rendering), story agents should consult patch notes before changing schema.
+
+---
+
 ## Layout Policy (Important)
 
 Manifest controls layout behavior:
@@ -82,6 +92,26 @@ Use strict readiness diagnostics before switching a project:
 4. **Keep `parentId` consistent** with the parent's `children[]` list.
 5. **Use semantic ref syntax** for inline entity links: `Text[[kind:entity-id]]`
 6. **Run validation after edits**: `GET /v2/validate` or check manifests.
+
+---
+
+## Planning Instrumentation (Phase 1)
+
+Units may include optional `structure` planning metadata for cadence/reward design.
+This is a planning layer, not canonical plot truth unless:
+
+- `structure.planningStatus = "locked"`
+
+Use statuses intentionally:
+- `open`    → exploratory / unstable
+- `leaning` → preferred current direction
+- `locked`  → canonical planning contract
+
+Canonical promise contracts should live in:
+- `registries/promises.json`
+
+Keep promise history stateful (`opened`, `sharpened`, `reframed`, `delayed`,
+`partially_paid`, `paid`, `inverted`, `abandoned`) so diagnostics can track movement.
 
 ---
 

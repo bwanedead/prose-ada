@@ -3,7 +3,7 @@
   "unitId": "chapter-03-the-word-in-the-dream",
   "type": "chapter",
   "title": "The Word in the Dream",
-  "summary": "Data review aligns with the event and a recurring dream drops one durable token: Yggdrasil.",
+  "summary": "Post-event analysis and recurring dream imagery converge on one durable token: Yggdrasil.",
   "parentId": "act-01-the-anomaly",
   "children": [],
   "links": [],
@@ -19,13 +19,13 @@
       "blueberry-pond-observatory",
       "blueberry-diner"
     ],
-    "newInfo": "Dream lexicon and instrument anomaly appear linked.",
-    "dripHook": "Why does a mythic symbol behave like an operational coordinate?",
-    "payoffDelivered": "Proof-of-glitch tension tightens into specific symbolic lead.",
+    "newInfo": "Symbolic dream content aligns with instrument-confirmed anomaly context.",
+    "dripHook": "Why is myth language behaving like operational data?",
+    "payoffDelivered": "Chapter 2 shock is converted into a concrete lead.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: controlled drop after peak. Function: translate event into investigable symbol. Exit: Ada pivots into deliberate research."
   },
   "view": {
     "canvas": {
@@ -40,5 +40,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "investigation",
+      "bridge"
+    ],
+    "cadenceRole": "drop",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 3,
+        "description": "Yggdrasil token appears as repeatable signal, not one-off noise.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      },
+      {
+        "type": "model_update",
+        "strength": 3,
+        "description": "Mythic language enters the evidence pipeline.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      }
+    ]
+  }
 }

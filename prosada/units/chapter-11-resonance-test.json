@@ -3,7 +3,7 @@
   "unitId": "chapter-11-resonance-test",
   "type": "chapter",
   "title": "Resonance Test",
-  "summary": "A constrained shared-mind protocol produces partial phase-lock, proving the doorway is cognitive-structural rather than mechanical.",
+  "summary": "A constrained shared-mind protocol yields partial phase-lock, proving practical entry conditions.",
   "parentId": "act-04-the-first-convergence",
   "children": [],
   "links": [],
@@ -21,13 +21,13 @@
     "locations": [
       "resonance-site"
     ],
-    "newInfo": "Shared coherence alters access conditions in measurable ways.",
-    "dripHook": "Final alignment window may not repeat.",
-    "payoffDelivered": "Theory to first successful test transition.",
+    "newInfo": "Coherent shared cognition measurably changes access to convergence windows.",
+    "dripHook": "A final window is opening; failure may close it permanently.",
+    "payoffDelivered": "Theory validated through operation, not interpretation.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: pre-climax acceleration. Function: proof under risk. Exit: commit to full contact attempt."
   },
   "view": {
     "canvas": {
@@ -42,5 +42,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "escalation",
+      "climax"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "competence",
+        "strength": 4,
+        "description": "Protocol execution yields measurable partial phase-lock.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 4,
+        "description": "Team commits to final contact attempt under time pressure.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      }
+    ]
+  }
 }

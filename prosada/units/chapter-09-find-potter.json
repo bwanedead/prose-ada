@@ -3,7 +3,7 @@
   "unitId": "chapter-09-find-potter",
   "type": "chapter",
   "title": "Find Potter",
-  "summary": "Following symbolic and procedural breadcrumbs, Ada reaches Potter before the containment net closes.",
+  "summary": "Ada reaches Potter through symbolic and procedural breadcrumbs before containment closes fully.",
   "parentId": "act-03-the-man-who-died-twice",
   "children": [],
   "links": [],
@@ -21,13 +21,13 @@
     "locations": [
       "potter-hideout"
     ],
-    "newInfo": "Potter confirms convergence theory and personal cost history.",
-    "dripHook": "Contact protocol requires deliberate cognitive risk.",
-    "payoffDelivered": "Primary hidden mentor acquired.",
+    "newInfo": "Potter validates core convergence claims and frames the personal cost of pursuing them.",
+    "dripHook": "Knowledge alone is insufficient; access requires an enacted protocol.",
+    "payoffDelivered": "Hidden mentor acquired and integrated.",
     "beautyHooks": "Mythic clue trail pays into operational reality.",
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: relief + re-acceleration. Function: quest payoff with new stakes. Exit: prepare to run model, not just discuss it."
   },
   "view": {
     "canvas": {
@@ -42,5 +42,40 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "payoff",
+      "bridge"
+    ],
+    "cadenceRole": "transition",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "model_update",
+        "strength": 1,
+        "description": "placeholder-for-doctor-compatibility",
+        "threadRefs": [
+          "stream-edgar-potter"
+        ]
+      },
+      {
+        "type": "emotional",
+        "strength": 3,
+        "description": "Potter contact validates the pursuit at personal cost.",
+        "threadRefs": [
+          "stream-edgar-potter"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 3,
+        "description": "Focus shifts from finding truth to executing protocol.",
+        "threadRefs": [
+          "stream-edgar-potter"
+        ]
+      }
+    ]
+  }
 }

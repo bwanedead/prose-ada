@@ -2,8 +2,8 @@
   "schemaVersion": "2.0.0",
   "unitId": "chapter-01-static-in-the-sky",
   "type": "chapter",
-  "title": "Static in the Sky",
-  "summary": "A normal workday cadence breaks when Ada notices a subtle atmospheric distortion that feels wrong before it can be measured.",
+  "title": "Something in the Air",
+  "summary": "Establish Ada's ordinary observatory rhythm and introduce the first subtle sky distortion as a quiet violation of normal reality.",
   "parentId": "act-01-the-anomaly",
   "children": [],
   "links": [],
@@ -19,13 +19,13 @@
       "maine-coast-town",
       "blueberry-pond-observatory"
     ],
-    "newInfo": "The first anomaly presents as sensory edge distortion, not spectacle.",
-    "dripHook": "Ada suspects pattern before she can justify pattern.",
-    "payoffDelivered": null,
+    "newInfo": "The anomaly appears first as perceptual inconsistency, not spectacle.",
+    "dripHook": "Ada cannot prove what she saw, but cannot dismiss it either.",
+    "payoffDelivered": "Reader baseline established: rational world, precise observer, first fracture.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": "Anchor ordinary routine details before anomaly onset."
+    "notes": "Cadence: low-intensity unease. Function: normality -> disturbance. Exit: Ada chooses to keep watching instead of dismissing."
   },
   "view": {
     "canvas": {
@@ -40,5 +40,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup",
+      "investigation"
+    ],
+    "cadenceRole": "rise",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 2,
+        "description": "Grounded routine establishes trust in Ada's observational baseline.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "clue",
+        "strength": 2,
+        "description": "First subtle air distortion appears without explicit explanation.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  }
 }

@@ -3,7 +3,7 @@
   "unitId": "chapter-04-pattern-hunt",
   "type": "chapter",
   "title": "Pattern Hunt",
-  "summary": "Ada and Benny gather cross-cultural world-tree records and discover repeated structural language that exceeds folklore coincidence.",
+  "summary": "Ada and Benny assemble cross-cultural world-tree references and identify repeated structural motifs across distant traditions.",
   "parentId": "act-02-the-archive-hunt",
   "children": [],
   "links": [],
@@ -19,13 +19,13 @@
       "blueberry-diner",
       "research-archive-stack"
     ],
-    "newInfo": "Symbolic overlap suggests compression of a shared observed phenomenon.",
-    "dripHook": "If the symbols are a map, where does it point?",
-    "payoffDelivered": null,
+    "newInfo": "Independent myth sources share a non-random branching/convergence geometry.",
+    "dripHook": "If this is an encoded map, what is the hidden referent?",
+    "payoffDelivered": "Research lane gains direction and method.",
     "beautyHooks": "Independent traditions rhyme at structure level.",
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: investigative momentum build. Function: widen evidence base. Exit: coincidence model starts collapsing."
   },
   "view": {
     "canvas": {
@@ -40,5 +40,31 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "investigation"
+    ],
+    "cadenceRole": "rise",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 3,
+        "description": "Cross-cultural overlap suggests shared encoded structure.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      },
+      {
+        "type": "relational",
+        "strength": 2,
+        "description": "Ada/Benny collaboration keeps inquiry human and readable.",
+        "threadRefs": [
+          "stream-world-tree-code"
+        ]
+      }
+    ]
+  }
 }

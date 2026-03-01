@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.3.0
+> **Managed by ProsAda tooling** · Version 1.4.0
 
 ---
 
@@ -28,6 +28,32 @@
     "notes": "Research: Fermi paradox.",
     "textRef": "scene-the-anomaly.md"   // relative path to prose file
   },
+  "structure": {
+    "functions": ["setup", "investigation"],
+    "cadenceRole": "rise",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 3,
+        "description": "Ada observes a measurable sky inconsistency.",
+        "threadRefs": ["stream-anomaly"]
+      }
+    ],
+    "cadenceEnvelope": {
+      "intensityPoints": [{"x": 0.0, "y": 0.2}, {"x": 0.35, "y": 0.8}],
+      "frequencyTarget": "intermittent",
+      "spacingTarget": "every_1_to_2_chapters",
+      "planningStatus": "open"
+    },
+    "modelUpdate": {
+      "before": "Likely perceptual glitch",
+      "shift": "Possible external anomaly",
+      "after": "Needs verification",
+      "confidenceDelta": 1
+    }
+  },
   "view": {
     "canvas": {
       "x": null, "y": null, "collapsed": false,
@@ -36,6 +62,19 @@
   }
 }
 ```
+
+---
+
+## Structure Enums (controlled vocabulary)
+
+- `functions`: `setup` | `escalation` | `squeeze` | `release` | `payoff` | `climax` | `bridge` | `reversal` | `investigation` | `aftermath`
+- `cadenceRole`: `rise` | `drop` | `plateau` | `spike` | `sustain` | `transition`
+- `effortLoad`: `low` | `medium` | `high`
+- `planningStatus`: `open` | `leaning` | `locked`
+- `rewardTokens.type`: `clue` | `competence` | `contradiction` | `decision` | `atmosphere` | `emotional` | `model_update` | `reversal` | `humor` | `relational`
+
+Planning rule:
+- Treat planning metadata as non-canonical until `planningStatus = "locked"`.
 
 ---
 
@@ -68,6 +107,11 @@ A content unit is "in" a stream by including the stream's unitId in its
 // stream unit:
 { "unitId": "stream-yggdrasil-arc", "type": "stream", "parentId": null }
 ```
+
+Render ownership policy (app behavior):
+- A unit renders on at most one stream lane by default.
+- Owner stream = first valid stream ID in `threadsAdvanced[]`.
+- Additional stream IDs are metadata (cross-stream semantics), not duplicate pills.
 
 ---
 
@@ -124,6 +168,7 @@ Supported kinds → Registry file mapping:
 | `location` | `registries/locations.json`  |
 | `artifact` | `registries/artifacts.json`  |
 | `thread`   | `registries/threads.json`    |
+| `promise`  | `registries/promises.json`   |
 
 ---
 
@@ -143,6 +188,35 @@ Supported kinds → Registry file mapping:
   ]
 }
 ```
+
+### Promise registry contract (`registries/promises.json`)
+
+```json
+{
+  "schemaVersion": "2.0.0",
+  "type": "promises",
+  "entries": [
+    {
+      "id": "p-anomaly-nature-01",
+      "name": "Nature of anomaly",
+      "promiseType": "mystery",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-01",
+      "targetWindow": { "kind": "chapter_range", "from": 1, "to": 4 },
+      "state": "sharpened",
+      "history": [
+        { "unitId": "chapter-01", "transition": "opened" },
+        { "unitId": "chapter-02", "transition": "sharpened" }
+      ],
+      "paidAtUnitId": null
+    }
+  ]
+}
+```
+
+Promise enums:
+- `promiseType`: `mystery` | `plot` | `character` | `thematic` | `symbolic`
+- `history.transition`/`state`: `opened` | `sharpened` | `reframed` | `delayed` | `partially_paid` | `paid` | `inverted` | `abandoned`
 
 ---
 

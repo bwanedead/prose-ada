@@ -3,7 +3,7 @@
   "unitId": "chapter-06-the-dead-man-paper",
   "type": "chapter",
   "title": "The Dead Man Paper",
-  "summary": "Ada finds a Potter document dated after his official death, converting archival curiosity into active mission.",
+  "summary": "Ada discovers a Potter document dated after his official death, turning scholarship into pursuit.",
   "parentId": "act-02-the-archive-hunt",
   "children": [],
   "links": [],
@@ -20,13 +20,13 @@
     "locations": [
       "research-archive-stack"
     ],
-    "newInfo": "Potter disappearance likely staged under coercive pressure.",
-    "dripHook": "Who kept his work alive, and who has been burying it?",
-    "payoffDelivered": "Act II closes with target identity and direction.",
+    "newInfo": "Potter's disappearance was likely managed, not accidental.",
+    "dripHook": "Who suppressed Potter, and who still monitors this knowledge?",
+    "payoffDelivered": "Act II closes with a named target and active trajectory.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": null
+    "notes": "Cadence: act-end spike. Function: reveal with consequence. Exit: mission state begins (find Potter)."
   },
   "view": {
     "canvas": {
@@ -41,5 +41,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "reversal",
+      "escalation"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "reversal",
+        "strength": 5,
+        "description": "Posthumous Potter document reframes the whole investigation.",
+        "threadRefs": [
+          "stream-edgar-potter"
+        ]
+      },
+      {
+        "type": "clue",
+        "strength": 4,
+        "description": "Suppression pattern becomes explicit, not speculative.",
+        "threadRefs": [
+          "stream-opi-suppression"
+        ]
+      }
+    ]
+  }
 }

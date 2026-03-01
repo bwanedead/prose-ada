@@ -3,7 +3,7 @@
   "unitId": "chapter-02-four-point-five-seconds",
   "type": "chapter",
   "title": "Four Point Five Seconds",
-  "summary": "Inside a narrow timestamp window, Ada experiences subjective duration collapse and wakes with fragmented memory and operational fear.",
+  "summary": "At the observatory, Ada experiences extreme subjective time dilation inside a measured 4.5-second event window.",
   "parentId": "act-01-the-anomaly",
   "children": [],
   "links": [],
@@ -18,13 +18,13 @@
     "locations": [
       "blueberry-pond-observatory"
     ],
-    "newInfo": "Subjective hours map to objective seconds.",
-    "dripHook": "Either cognition failed or local reality did.",
-    "payoffDelivered": "Act opens mystery with direct non-dismissable event.",
+    "newInfo": "Subjective duration and objective instrumentation diverge in a single timestamped event.",
+    "dripHook": "If the clocks are right, something beyond ordinary cognition occurred.",
+    "payoffDelivered": "Mystery upgrades from vague intuition to hard event.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": "Keep account concrete and instrument-adjacent."
+    "notes": "Cadence: first peak. Function: anomaly becomes undeniable. Exit: testability introduced via timestamp/data."
   },
   "view": {
     "canvas": {
@@ -39,5 +39,32 @@
       }
     }
   },
-  "presentation": null
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "escalation",
+      "investigation"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "contradiction",
+        "strength": 4,
+        "description": "Subjective duration and objective time window conflict sharply.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "model_update",
+        "strength": 4,
+        "description": "Reader model shifts from oddity to real event candidate.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      }
+    ]
+  }
 }

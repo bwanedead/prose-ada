@@ -42,9 +42,11 @@ Layout hint resolution (Burst 08 / 08.1):
     Relative pins for streams are reserved for a future burst.
 
 Multi-lane appearance:
-    Backbone content units always appear on lane 0.
-    They ALSO appear on a stream's lane if their
-    narrative.threadsAdvanced[] contains that stream's unitId.
+    Content units are assigned to at most one rendered lane:
+      - If narrative.threadsAdvanced[] has at least one valid stream unitId,
+        owner = first valid stream id, and the event renders on that stream lane.
+      - Otherwise, event renders on spine lane 0.
+    Additional stream memberships are preserved in relatedThreadIds metadata.
 """
 
 from __future__ import annotations
@@ -409,8 +411,14 @@ class CanvasLayoutComposer:
                 sid for sid in unit.narrative.threads_advanced
                 if sid in stream_lane_map
             ]
+            owner_stream_id: Optional[str] = related_stream_ids[0] if related_stream_ids else None
 
-            # Primary event on spine lane 0
+            # Primary event lane assignment:
+            # stream-owned events render on their owner stream lane only.
+            event_lane = stream_lane_map[owner_stream_id] if owner_stream_id is not None else SPINE_LANE
+            attached_to = owner_stream_id if owner_stream_id is not None else (root_id or "")
+
+            # Primary event (single rendered copy only)
             ev_id = f"ev-{unit.unit_id}"
             events[ev_id] = {
                 "id": ev_id,
@@ -420,32 +428,13 @@ class CanvasLayoutComposer:
                 "relativePosition": pos,
                 "duration": duration,
                 "timelineId": root_id or "",
-                "attachedToId": root_id or "",
-                "laneId": SPINE_LANE,
+                "attachedToId": attached_to,
+                "laneId": event_lane,
                 "relatedThreadIds": related_stream_ids,
                 "characterIds": unit.narrative.characters,
                 "type": ev_type,
                 "isResolved": is_resolved,
             }
-
-            # Additional event copies on stream lanes (multi-lane appearance)
-            for sid in related_stream_ids:
-                stream_ev_id = f"ev-{unit.unit_id}--{sid}"
-                events[stream_ev_id] = {
-                    "id": stream_ev_id,
-                    "title": unit.title,
-                    "summary": unit.summary or "",
-                    "position": pos,
-                    "relativePosition": pos,
-                    "duration": duration,
-                    "timelineId": root_id or "",
-                    "attachedToId": sid,
-                    "laneId": stream_lane_map[sid],
-                    "relatedThreadIds": related_stream_ids,
-                    "characterIds": unit.narrative.characters,
-                    "type": ev_type,
-                    "isResolved": is_resolved,
-                }
 
             # Checkpoint for locked units
             if is_resolved:
