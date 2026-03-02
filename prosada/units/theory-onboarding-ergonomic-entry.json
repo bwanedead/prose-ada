@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "theory-onboarding-ergonomic-entry",
+  "type": "theory",
+  "title": "Story Onboarding Theory — Ergonomic Entry, Familiar Anchors, and Rewarded Modeling",
+  "summary": "Design doctrine for story openings and re-entry ramps: reduce cognitive load without reducing intrigue by using familiarity, clarity, and frequent reward as the three primary onboarding levers.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "locked",
+    "notes": "Source document lives at docs/onboarding_theory.md. This theory applies wherever the reader must build or rebuild a mental model — people, setting, rules, stakes, tone, or pattern structure. It is not a recipe for Chapter One only; use it to evaluate any entry ramp, arc-opening, or re-entry point in the story. Core compressed target: Low-friction entry + clear focus + meaningful deltas + frequent reward = strong onboarding.",
+    "textRef": "../docs/onboarding_theory.md",
+    "threadsAdvanced": [],
+    "characters": [],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": ["setup"],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "locked",
+    "rewardTokens": []
+  }
+}

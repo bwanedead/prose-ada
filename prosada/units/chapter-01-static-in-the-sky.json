@@ -12,7 +12,9 @@
     "scene-04-system-micro-contradiction",
     "scene-05-private-commitment"
   ],
-  "links": [],
+  "links": [
+    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+  ],
   "narrative": {
     "threadsAdvanced": [
       "stream-anomaly-fermi"

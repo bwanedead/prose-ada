@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "theory-scene-01-false-morning-prose-brief",
+  "type": "theory",
+  "title": "Chapter 1, Scene 1 Prose Brief — False-Morning Routine (Initial Pages)",
+  "summary": "Intent brief for Scene 1 prose: onboard the reader into Ada's lived world through a texture-bearing false-morning wake-and-prepare sequence. This is a reward scene — make the reader want to stay before introducing wrongness. Seven-beat structure from clock-numerals-in-the-dark through threshold departure.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "locked",
+    "notes": "Scene 1 core mission: easy to enter, pleasant to inhabit, rich in atmosphere, quietly characterizing, lightly intriguing, not rushed. Success criteria: reader feels oriented, comfortable, interested in Ada, able to picture the setting, subtly aware of night-shift life, eager to continue into the drive scene. Key avoid list: overplaying time motif, backstory dumping, over-description lists, premature mystery mechanics. Opening candidate: red clock numerals in the dark. Pacing: linger but do not drift. This is a prose discovery draft — prioritize finding lived rhythm, Ada's actual voice, and right degree of atmosphere over polish.",
+    "textRef": "../docs/briefs/scene-01-false-morning-prose-brief.md",
+    "threadsAdvanced": [],
+    "characters": ["ada-protagonist"],
+    "locations": ["maine-coast-town"],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": ["setup"],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "locked",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 3,
+        "description": "Warm lamp-lit home, false morning, amber quiet — texture-bearing and inhabitable.",
+        "threadRefs": []
+      },
+      {
+        "type": "competence",
+        "strength": 2,
+        "description": "Ada's practiced pre-shift ritual communicates discipline and routine without exposition.",
+        "threadRefs": []
+      },
+      {
+        "type": "emotional",
+        "strength": 3,
+        "description": "Reader-Ada trust bond forms through interior proximity and direct voice.",
+        "threadRefs": []
+      }
+    ]
+  }
+}

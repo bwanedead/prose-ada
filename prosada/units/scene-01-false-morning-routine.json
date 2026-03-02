@@ -6,7 +6,10 @@
   "summary": "Ada wakes into a warm, lived-in pre-shift ritual that establishes voice trust, place texture, and low-friction onboarding.",
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
-  "links": [],
+  "links": [
+    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" },
+    { "type": "usesTheory", "targetId": "theory-scene-01-false-morning-prose-brief" }
+  ],
   "narrative": {
     "threadsAdvanced": [
       "stream-anomaly-fermi"

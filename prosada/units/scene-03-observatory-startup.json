@@ -6,7 +6,9 @@
   "summary": "Ada's startup procedures ground the story in concrete scientific routine and establish an operational baseline.",
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
-  "links": [],
+  "links": [
+    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+  ],
   "narrative": {
     "threadsAdvanced": [
       "stream-anomaly-fermi"
