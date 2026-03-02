@@ -22,10 +22,13 @@ class UnitType(str, Enum):
     BOOK     = "book"
     ACT      = "act"
     SEQUENCE = "sequence"
+    CONNECTIVE = "connective"
     CHAPTER  = "chapter"
     SCENE    = "scene"
     BEAT     = "beat"
     ARC      = "arc"
+    THEORY   = "theory"
+    ETHOS    = "ethos"
     STREAM   = "stream"
 
 
@@ -123,6 +126,8 @@ class LinkType(str, Enum):
     PAYOFF_FOR    = "payoffFor"
     SETS_UP       = "setsUp"
     DEPENDS_ON    = "dependsOn"
+    USES_THEORY   = "usesTheory"
+    USES_ETHOS    = "usesEthos"
 
 
 class UnitLink(BaseModel):

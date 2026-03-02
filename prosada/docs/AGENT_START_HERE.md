@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.4.0
+> **Managed by ProsAda tooling** · Version 1.6.0
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---

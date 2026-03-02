@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-06-monitoring-continuity",
+  "type": "scene",
+  "title": "Monitoring Continuity",
+  "summary": "Chapter 2 opens in direct continuity with Ada's Chapter 1 commitment: she is already observing, logging, and waiting for pattern recurrence.",
+  "parentId": "chapter-02-four-point-five-seconds",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Ada enters this chapter in method mode, not reset mode.",
+    "dripHook": "The same watchfulness that calmed her now primes the rupture window.",
+    "payoffDelivered": "Continuity reward: Chapter 1 decision has immediate narrative consequence.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Keep this short and tense; it exists to honor opening-pair continuity."
+  },
+  "structure": {
+    "functions": [
+      "bridge",
+      "investigation"
+    ],
+    "cadenceRole": "rise",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "decision",
+        "strength": 2,
+        "description": "Chapter 1 commitment pays forward immediately.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 2,
+        "description": "Ada is actively monitoring rather than passively waiting.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.16666666666666666
+      }
+    }
+  },
+  "presentation": null
+}
+

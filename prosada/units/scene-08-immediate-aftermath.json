@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-08-immediate-aftermath",
+  "type": "scene",
+  "title": "Immediate Aftermath",
+  "summary": "Ada reorients to unchanged surroundings while carrying acute cognitive and physiological residue from the rupture.",
+  "parentId": "chapter-02-four-point-five-seconds",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-consciousness-resonance"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "The room continuity and body-state mismatch make the event consequential, not ornamental.",
+    "dripHook": "If almost no external time passed, what exactly consumed Ada's subjective interval?",
+    "payoffDelivered": "Consequence reward: rupture has concrete aftermath.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Use concrete unchanged-vs-changed contrasts; avoid vague 'shaken' shorthand."
+  },
+  "structure": {
+    "functions": [
+      "aftermath",
+      "squeeze"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "emotional",
+        "strength": 3,
+        "description": "Destabilization is rendered through specific physical/cognitive aftereffects.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      },
+      {
+        "type": "atmosphere",
+        "strength": 2,
+        "description": "Ordinary observatory continuity intensifies the wrongness.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      }
+    ]
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.3333333333333333,
+        "span": 0.16666666666666666
+      }
+    }
+  },
+  "presentation": null
+}
+

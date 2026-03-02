@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-02-drive-anomaly",
+  "type": "scene",
+  "title": "Drive-Time Distortion",
+  "summary": "During the commute, a subtle air/sky wrongness appears and Ada actively tests mundane explanations.",
+  "parentId": "chapter-01-static-in-the-sky",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "maine-coast-town"
+    ],
+    "newInfo": "First anomaly is observed as spatial/depth inconsistency rather than object spectacle.",
+    "dripHook": "Self-testing reduces noise but leaves a residue of unresolved pattern suspicion.",
+    "payoffDelivered": "Competence reward: Ada investigates instead of panicking.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Keep ambiguity high and claims low; this is pattern appetite, not revelation."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.2,
+        "span": 0.2
+      }
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "investigation"
+    ],
+    "cadenceRole": "rise",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 3,
+        "description": "A subtle anomaly manifests in a familiar frame.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 3,
+        "description": "Ada runs quick explanation tests in real time.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  }
+}
+

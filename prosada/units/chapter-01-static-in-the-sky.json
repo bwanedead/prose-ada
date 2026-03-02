@@ -3,9 +3,15 @@
   "unitId": "chapter-01-static-in-the-sky",
   "type": "chapter",
   "title": "Something in the Air",
-  "summary": "Establish Ada's ordinary observatory rhythm and introduce the first subtle sky distortion as a quiet violation of normal reality.",
+  "summary": "Onboard the reader through Ada's lived-in pre-shift routine, then introduce subtle air wrongness and a small observatory contradiction that turns mood into method.",
   "parentId": "act-01-the-anomaly",
-  "children": [],
+  "children": [
+    "scene-01-false-morning-routine",
+    "scene-02-drive-anomaly",
+    "scene-03-observatory-startup",
+    "scene-04-system-micro-contradiction",
+    "scene-05-private-commitment"
+  ],
   "links": [],
   "narrative": {
     "threadsAdvanced": [
@@ -19,13 +25,13 @@
       "maine-coast-town",
       "blueberry-pond-observatory"
     ],
-    "newInfo": "The anomaly appears first as perceptual inconsistency, not spectacle.",
-    "dripHook": "Ada cannot prove what she saw, but cannot dismiss it either.",
-    "payoffDelivered": "Reader baseline established: rational world, precise observer, first fracture.",
+    "newInfo": "Two low-amplitude anomalies appear in separate domains (drive-time perception and observatory behavior), implying possible pattern rather than isolated glitch.",
+    "dripHook": "If the air anomaly and observatory contradiction rhyme, what rule is starting to emerge?",
+    "payoffDelivered": "Reader onboarding is complete: Ada's world is inhabitable, Ada is trustworthy, and the mystery is procedural rather than purely spooky.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": "Cadence: low-intensity unease. Function: normality -> disturbance. Exit: Ada chooses to keep watching instead of dismissing."
+    "notes": "Scene plan (leaning): 1) false-morning wake + warm lived-in routine, 2) drive-time subtle anomaly with self-testing, 3) observatory startup grounding, 4) micro contradiction in system world, 5) private commitment to monitor/log before reporting."
   },
   "view": {
     "canvas": {
@@ -44,28 +50,43 @@
   "structure": {
     "functions": [
       "setup",
-      "investigation"
+      "investigation",
+      "bridge"
     ],
-    "cadenceRole": "rise",
+    "cadenceRole": "sustain",
     "effortLoad": "low",
     "planningStatus": "leaning",
     "rewardTokens": [
       {
         "type": "atmosphere",
-        "strength": 2,
-        "description": "Grounded routine establishes trust in Ada's observational baseline.",
+        "strength": 3,
+        "description": "Warm, lived-in pre-shift ritual gives low-friction entry and makes Ada's interiority pleasant to inhabit.",
         "threadRefs": [
           "stream-anomaly-fermi"
         ]
       },
       {
-        "type": "clue",
-        "strength": 2,
-        "description": "First subtle air distortion appears without explicit explanation.",
+        "type": "competence",
+        "strength": 3,
+        "description": "Ada actively tests possible mundane explanations rather than surrendering to vibes.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 3,
+        "description": "Chapter closes on private monitoring commitment, creating clean propulsion into the rupture chapter.",
         "threadRefs": [
           "stream-anomaly-fermi"
         ]
       }
-    ]
+    ],
+    "modelUpdate": {
+      "before": "Unusual perception can likely be dismissed as fatigue/environment noise.",
+      "shift": "A second small contradiction appears in a different domain.",
+      "after": "Treat as possible structured anomaly and gather disciplined observations.",
+      "confidenceDelta": 2
+    }
   }
 }

@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.4.0"
+DOCS_VERSION = "1.6.0"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -192,7 +192,7 @@ _FORMAT_CHEATSHEET = """\
 {{
   "schemaVersion": "2.0.0",
   "unitId": "scene-the-anomaly",        // stable ID — never change
-  "type": "scene",                       // series|book|act|sequence|chapter|scene|beat|arc|stream
+  "type": "scene",                       // series|book|act|sequence|chapter|connective|scene|beat|arc|theory|ethos|stream
   "title": "The Anomaly",
   "summary": "Ada detects the first echo.",
   "parentId": "chapter-01",             // null for root
@@ -269,9 +269,12 @@ Planning rule:
 | `act`      | Major structural division                         |
 | `sequence` | Mid-level grouping                                |
 | `chapter`  | Chapter-level unit                                |
+| `connective` | Between-scene connective tissue (transition/bridge prose) |
 | `scene`    | Scene — primary story beat container              |
 | `beat`     | Sub-scene moment                                  |
 | `arc`      | Character/thematic arc (cross-cutting)            |
+| `theory`   | Reusable planning theory object (attach via links) |
+| `ethos`    | Reusable writing/development ethos object (attach via links) |
 | `stream`   | Parallel timeline/thread (no parentId, no children in hierarchy) |
 
 ---
@@ -443,6 +446,8 @@ See `WORKFLOWS.md` for authoring and export recipes.
   {{ "type": "payoffFor",     "targetId": "scene-setup-1" }},
   {{ "type": "setsUp",        "targetId": "scene-payoff-3" }},
   {{ "type": "dependsOn",     "targetId": "scene-prereq" }},
+  {{ "type": "usesTheory",    "targetId": "theory-onboarding-low-friction" }},
+  {{ "type": "usesEthos",     "targetId": "ethos-reader-trust-no-cheapness" }},
   {{ "type": "intersects",    "targetId": "stream-b" }}
 ]
 ```
@@ -495,6 +500,30 @@ _WORKFLOWS = """\
 
 Same as chapter, but `"type": "scene"` and parent is a chapter.
 Set `"textRef": "scene-the-signal.md"` if prose exists.
+
+---
+
+## Create a connective unit (between scenes)
+
+Use connective units when you need narrative tissue between concrete scene units
+(transition prose, bridge beats, montage glue, etc.).
+
+1. Create a unit under the chapter with `"type": "connective"`.
+2. Keep strict pin rules the same as any child content unit (relative manual pin in strict mode).
+3. Add prose via `narrative.textRef` (for example `connective-ch01-bridge-01.md`).
+
+---
+
+## Create reusable theory/ethos units
+
+Use `theory` and `ethos` as first-class reusable objects.
+
+Recommended pattern:
+1. Keep them top-level (no parent) so they stay reusable across scopes.
+2. Attach them to story units with links:
+   - `usesTheory` → target is a `theory` unit
+   - `usesEthos`  → target is an `ethos` unit
+3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 
 ---
 
@@ -585,6 +614,23 @@ GET /v2/semantic-refs?id=joey-valdez
 # Scope to subtree
 GET /v2/semantic-refs?scope=act-01
 ```
+
+---
+
+## Prose read/write API
+
+```bash
+# Load prose for one unit
+GET /v2/prose/<unitId>
+
+# Save prose for one unit
+POST /v2/prose/<unitId>
+# body: {{ "content": "...", "textRef": "optional/path.md" }}
+```
+
+Notes:
+- Works for any selected scope/unit; if `textRef` is empty, the backend defaults to `<unitId>.md`.
+- This updates prose content only; it does not bypass staged schema commit rules.
 
 ---
 
@@ -998,6 +1044,8 @@ has been modified or is from an older version.
 | `/v2/layout-readiness`        | GET    | Strict-pins readiness diagnostics                |
 | `/v2/projection/timeline`     | GET    | Projection payload JSON (layout+semantic+presentation) |
 | `/v2/export/prompt-packets`   | GET    | Structured prompt packets for image/video workflows |
+| `/v2/prose/{unitId}`          | GET    | Read prose payload for one unit (`content`, `textRef`) |
+| `/v2/prose/{unitId}`          | POST   | Write prose payload for one unit                       |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |
@@ -1047,9 +1095,93 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.6.0.md` — reusable theory/ethos unit primitives + attachment links
+- `engine-1.5.0.md` — connective units + prose editing workflow surfaces
 - `engine-1.4.0.md` — planning instrumentation schema + rollout update contract
 - `engine-1.3.1.md` — stream owner-lane rendering policy + interaction sanity
 - `engine-1.3.0.md` — strict-pins foundation + distributed runtime improvements
+"""
+
+
+_PATCH_NOTES_ENGINE_160 = """\
+# Patch Notes — engine-1.6.0
+
+Date: 2026-03-02
+Scope: reusable theory/ethos units + explicit attachment link semantics
+
+## Summary
+
+This release introduces two first-class reusable unit types so planning guidance
+can be authored once and attached across multiple scopes.
+
+## Added
+
+- Unit types:
+  - `theory`
+  - `ethos`
+- New link types:
+  - `usesTheory`
+  - `usesEthos`
+
+## Changed
+
+- Strict-pins validation excludes non-canvas reference units (theory/ethos).
+- Canvas composer excludes theory/ethos from rendered interval composition.
+- Managed docs now include reusable reference-unit authoring guidance.
+- Docs/version pack bumped to `1.6.0`.
+
+## Story Agent Guidance
+
+- Create theory/ethos as reusable objects (recommended top-level/root).
+- Attach them to scenes/chapters/acts via links, not via duplicated prose.
+- Keep strict pin drafting unchanged for timeline/content units.
+"""
+
+
+_PATCH_NOTES_ENGINE_150 = """\
+# Patch Notes — engine-1.5.0
+
+Date: 2026-03-02
+Scope: connective unit support + prose editing/read APIs + editor UX policy
+
+## Summary
+
+This update formalizes connective narrative units and improves prose editing
+workflows so prose can be accessed directly from selected units/scope.
+
+## Added
+
+- New content unit type: `connective`
+  - intended for between-scene narrative tissue (bridges/transitions/montage glue)
+  - supported by validator/composer/frontend type filters.
+- Prose API endpoints:
+  - `GET /v2/prose/{unitId}`
+  - `POST /v2/prose/{unitId}`
+- Unit editor prose-first UX:
+  - prose view/edit modes
+  - larger prose workspace modal
+  - schema artifact moved to collapsible advanced section.
+
+## Changed
+
+- Managed docs now include connective authoring guidance and prose API usage.
+- Docs/version pack bumped to `1.5.0`.
+
+## Why
+
+Story authoring needs two complementary layers:
+- canonical schema structure (units/registries/pins)
+- literal prose drafting at unit/scope level
+
+This release reduces friction between those layers without coupling external
+story repos to frontend runtime code.
+
+## Story Agent Guidance
+
+- You can begin creating `type: "connective"` units where between-scene prose is needed.
+- Keep strict pin rules unchanged: connective is still a child content unit.
+- Use `narrative.textRef` for prose files exactly like scenes/chapters.
+- No migration is required for existing units; this is additive.
 """
 
 
@@ -1197,6 +1329,8 @@ DOC_FILES: list[tuple[str, str]] = [
     ("WORKFLOWS.md", _WORKFLOWS),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.6.0.md", _PATCH_NOTES_ENGINE_160),
+    ("patch-notes/engine-1.5.0.md", _PATCH_NOTES_ENGINE_150),
     ("patch-notes/engine-1.4.0.md", _PATCH_NOTES_ENGINE_140),
     ("patch-notes/engine-1.3.1.md", _PATCH_NOTES_ENGINE_131),
     ("patch-notes/engine-1.3.0.md", _PATCH_NOTES_ENGINE_130),

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-10-evidence-alignment",
+  "type": "scene",
+  "title": "Evidence Alignment",
+  "summary": "Data/log review reveals an anomaly aligned with the rupture window: deniable as noise, but too exact for Ada to dismiss.",
+  "parentId": "chapter-02-four-point-five-seconds",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi",
+      "stream-consciousness-resonance"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Subjective rupture now has objective correlation candidate in recorded output.",
+    "dripHook": "If perception and telemetry correlate, the anomaly may be externalized, not private.",
+    "payoffDelivered": "Evidence reward: model shifts from perception-only to cross-domain pattern.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Use clean deniable-exactness tension: plausible glitch, improbable coincidence."
+  },
+  "structure": {
+    "functions": [
+      "payoff",
+      "investigation"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "clue",
+        "strength": 4,
+        "description": "Timestamped signal irregularity aligns with rupture interval.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "model_update",
+        "strength": 4,
+        "description": "The anomaly is now both experiential and instrument-adjacent.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      }
+    ],
+    "modelUpdate": {
+      "before": "Event may be internal/perceptual.",
+      "shift": "Independent data irregularity aligns with event window.",
+      "after": "Treat as possible externalized pattern with subjective coupling.",
+      "confidenceDelta": 3
+    }
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6666666666666666,
+        "span": 0.16666666666666666
+      }
+    }
+  },
+  "presentation": null
+}
+

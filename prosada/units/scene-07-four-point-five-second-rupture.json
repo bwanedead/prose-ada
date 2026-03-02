@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-07-four-point-five-second-rupture",
+  "type": "scene",
+  "title": "Four Point Five Seconds",
+  "summary": "The rupture occurs: objective time remains short while Ada experiences dense subjective expansion that cannot be fully reconstructed.",
+  "parentId": "chapter-02-four-point-five-seconds",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-consciousness-resonance",
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Subjective duration and objective duration diverge at event scale.",
+    "dripHook": "The event feels real in impact but remains open in interpretation.",
+    "payoffDelivered": "Major payoff reward: Chapter 1 teaser escalates into hard rupture.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Preserve ambiguity; avoid explanatory labeling during the event."
+  },
+  "structure": {
+    "functions": [
+      "payoff",
+      "climax"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "high",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "model_update",
+        "strength": 5,
+        "description": "Reader model shifts from subtle pattern to undeniable rupture.",
+        "threadRefs": [
+          "stream-consciousness-resonance"
+        ]
+      },
+      {
+        "type": "contradiction",
+        "strength": 4,
+        "description": "Objective clock and subjective experience no longer agree.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.16666666666666666,
+        "span": 0.16666666666666666
+      }
+    }
+  },
+  "presentation": null
+}
+

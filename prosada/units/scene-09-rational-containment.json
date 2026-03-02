@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-09-rational-containment",
+  "type": "scene",
+  "title": "Rational Containment",
+  "summary": "Ada runs disciplined non-mystical hypotheses first, trying to contain the event inside plausible cognitive or environmental frames.",
+  "parentId": "chapter-02-four-point-five-seconds",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi",
+      "stream-consciousness-resonance"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Ada's method prioritizes elimination/testing over immediate belief.",
+    "dripHook": "Plausible explanations reduce panic but fail to close the contradiction cleanly.",
+    "payoffDelivered": "Competence reward: reader trust in Ada's mind deepens under pressure.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Keep explanation attempts crisp and falsifiable."
+  },
+  "structure": {
+    "functions": [
+      "investigation"
+    ],
+    "cadenceRole": "plateau",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "competence",
+        "strength": 4,
+        "description": "Ada explicitly tests multiple non-extraordinary explanations.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 2,
+        "description": "She defers interpretation pending data review.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.5,
+        "span": 0.16666666666666666
+      }
+    }
+  },
+  "presentation": null
+}
+

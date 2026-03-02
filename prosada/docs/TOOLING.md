@@ -1,6 +1,6 @@
 # ProsAda Tooling Reference
 
-> **Managed by ProsAda tooling** · Version 1.4.0
+> **Managed by ProsAda tooling** · Version {version}
 
 ---
 
@@ -142,25 +142,25 @@ prosada/docs/patch-notes/
 `prosada/tooling.json` is the machine-readable tooling metadata file.
 
 ```json
-{
+{{
   "toolingSchemaVersion": "2.0",
   "installedAt": "<ISO timestamp of first install>",
-  "capabilities": {
+  "capabilities": {{
     "rendererPng": true,
     "rendererSvg": true,
     "semanticRefs": true
-  },
-  "tools": {
-    "renderTimeline":      { "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." },
-    "checkToolingHealth":  { "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." }
-  },
-  "docs": {
-    "AGENT_START_HERE.md": { "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." },
-    "FORMAT_CHEATSHEET.md": { ... },
-    "WORKFLOWS.md":         { ... },
-    "TOOLING.md":           { ... }
-  }
-}
+  }},
+  "tools": {{
+    "renderTimeline":      {{ "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." }},
+    "checkToolingHealth":  {{ "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." }}
+  }},
+  "docs": {{
+    "AGENT_START_HERE.md": {{ "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." }},
+    "FORMAT_CHEATSHEET.md": {{ ... }},
+    "WORKFLOWS.md":         {{ ... }},
+    "TOOLING.md":           {{ ... }}
+  }}
+}}
 ```
 
 Staleness is detected by comparing the stored checksum (SHA-256) of each
@@ -178,6 +178,8 @@ has been modified or is from an older version.
 | `/v2/layout-readiness`        | GET    | Strict-pins readiness diagnostics                |
 | `/v2/projection/timeline`     | GET    | Projection payload JSON (layout+semantic+presentation) |
 | `/v2/export/prompt-packets`   | GET    | Structured prompt packets for image/video workflows |
+| `/v2/prose/{unitId}`          | GET    | Read prose payload for one unit (`content`, `textRef`) |
+| `/v2/prose/{unitId}`          | POST   | Write prose payload for one unit                       |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |

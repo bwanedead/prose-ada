@@ -3,9 +3,16 @@
   "unitId": "chapter-02-four-point-five-seconds",
   "type": "chapter",
   "title": "Four Point Five Seconds",
-  "summary": "At the observatory, Ada experiences extreme subjective time dilation inside a measured 4.5-second event window.",
+  "summary": "Chapter 1's monitoring commitment pays off immediately as Ada enters the 4.5-second rupture and the story formally crosses into hard anomaly territory.",
   "parentId": "act-01-the-anomaly",
-  "children": [],
+  "children": [
+    "scene-06-monitoring-continuity",
+    "scene-07-four-point-five-second-rupture",
+    "scene-08-immediate-aftermath",
+    "scene-09-rational-containment",
+    "scene-10-evidence-alignment",
+    "scene-11-investigation-commitment"
+  ],
   "links": [],
   "narrative": {
     "threadsAdvanced": [
@@ -19,12 +26,12 @@
       "blueberry-pond-observatory"
     ],
     "newInfo": "Subjective duration and objective instrumentation diverge in a single timestamped event.",
-    "dripHook": "If the clocks are right, something beyond ordinary cognition occurred.",
-    "payoffDelivered": "Mystery upgrades from vague intuition to hard event.",
+    "dripHook": "What can be verified from the rupture without collapsing into over-interpretation?",
+    "payoffDelivered": "Chapter 1 teaser contract is paid: subtle wrongness escalates into measurable event.",
     "beautyHooks": null,
     "status": "draft",
     "textRef": null,
-    "notes": "Cadence: first peak. Function: anomaly becomes undeniable. Exit: testability introduced via timestamp/data."
+    "notes": "Scene plan (leaning): 1) continuity from Ch1 commitment, 2) rupture event, 3) immediate aftermath specifics, 4) rational containment attempt, 5) evidence alignment in logs, 6) explicit investigation commitment."
   },
   "view": {
     "canvas": {
@@ -60,11 +67,17 @@
       {
         "type": "model_update",
         "strength": 4,
-        "description": "Reader model shifts from oddity to real event candidate.",
+        "description": "Reader model shifts from teaser anomaly to testable rupture reality.",
         "threadRefs": [
           "stream-consciousness-resonance"
         ]
       }
-    ]
+    ],
+    "modelUpdate": {
+      "before": "Pattern suspicion exists but remains deniable.",
+      "shift": "A hard timestamped rupture occurs at observational ground zero.",
+      "after": "The investigation now requires measurement discipline, not intuition alone.",
+      "confidenceDelta": 3
+    }
   }
 }

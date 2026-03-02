@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.4.0
+> **Managed by ProsAda tooling** · Version 1.6.0
 
 ---
 
@@ -10,7 +10,7 @@
 {
   "schemaVersion": "2.0.0",
   "unitId": "scene-the-anomaly",        // stable ID — never change
-  "type": "scene",                       // series|book|act|sequence|chapter|scene|beat|arc|stream
+  "type": "scene",                       // series|book|act|sequence|chapter|connective|scene|beat|arc|theory|ethos|stream
   "title": "The Anomaly",
   "summary": "Ada detects the first echo.",
   "parentId": "chapter-01",             // null for root
@@ -87,9 +87,12 @@ Planning rule:
 | `act`      | Major structural division                         |
 | `sequence` | Mid-level grouping                                |
 | `chapter`  | Chapter-level unit                                |
+| `connective` | Between-scene connective tissue (transition/bridge prose) |
 | `scene`    | Scene — primary story beat container              |
 | `beat`     | Sub-scene moment                                  |
 | `arc`      | Character/thematic arc (cross-cutting)            |
+| `theory`   | Reusable planning theory object (attach via links) |
+| `ethos`    | Reusable writing/development ethos object (attach via links) |
 | `stream`   | Parallel timeline/thread (no parentId, no children in hierarchy) |
 
 ---
@@ -261,6 +264,8 @@ See `WORKFLOWS.md` for authoring and export recipes.
   { "type": "payoffFor",     "targetId": "scene-setup-1" },
   { "type": "setsUp",        "targetId": "scene-payoff-3" },
   { "type": "dependsOn",     "targetId": "scene-prereq" },
+  { "type": "usesTheory",    "targetId": "theory-onboarding-low-friction" },
+  { "type": "usesEthos",     "targetId": "ethos-reader-trust-no-cheapness" },
   { "type": "intersects",    "targetId": "stream-b" }
 ]
 ```

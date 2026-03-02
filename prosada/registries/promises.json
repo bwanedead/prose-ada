@@ -59,6 +59,58 @@
       "paidAtUnitId": null
     },
     {
+      "id": "p-pattern-not-random-01",
+      "name": "Is the anomaly structured rather than random",
+      "promiseType": "mystery",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-01-static-in-the-sky",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 1,
+        "to": 4
+      },
+      "state": "sharpened",
+      "history": [
+        {
+          "unitId": "chapter-01-static-in-the-sky",
+          "transition": "opened"
+        },
+        {
+          "unitId": "chapter-02-four-point-five-seconds",
+          "transition": "sharpened"
+        },
+        {
+          "unitId": "chapter-03-the-word-in-the-dream",
+          "transition": "reframed"
+        }
+      ],
+      "paidAtUnitId": null
+    },
+    {
+      "id": "p-subjective-objective-link-01",
+      "name": "Subjective anomaly leaves measurable traces",
+      "promiseType": "mystery",
+      "planningStatus": "leaning",
+      "openedAtUnitId": "chapter-02-four-point-five-seconds",
+      "targetWindow": {
+        "kind": "chapter_range",
+        "from": 2,
+        "to": 6
+      },
+      "state": "sharpened",
+      "history": [
+        {
+          "unitId": "scene-07-four-point-five-second-rupture",
+          "transition": "opened"
+        },
+        {
+          "unitId": "scene-10-evidence-alignment",
+          "transition": "sharpened"
+        }
+      ],
+      "paidAtUnitId": null
+    },
+    {
       "id": "p-potter-status-01",
       "name": "Is Potter alive and what does he know",
       "promiseType": "plot",

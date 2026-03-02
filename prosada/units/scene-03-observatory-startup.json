@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-03-observatory-startup",
+  "type": "scene",
+  "title": "Observatory Baseline",
+  "summary": "Ada's startup procedures ground the story in concrete scientific routine and establish an operational baseline.",
+  "parentId": "chapter-01-static-in-the-sky",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "Instrument and workflow baseline is set so later disturbance is measurable, not purely subjective.",
+    "dripHook": "A stable procedural world heightens the significance of any micro-breaks in behavior.",
+    "payoffDelivered": "World trust reward: observatory context feels tactile and real.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Readable procedure detail only; avoid jargon block."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.4,
+        "span": 0.2
+      }
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup",
+      "bridge"
+    ],
+    "cadenceRole": "plateau",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 2,
+        "description": "Machine-world texture contrasts with home warmth.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 2,
+        "description": "Ada's procedural fluency reinforces trust in later interpretation.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  }
+}
+

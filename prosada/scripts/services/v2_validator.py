@@ -322,11 +322,16 @@ class V2Validator:
             UnitType.BOOK,
             UnitType.ACT,
             UnitType.SEQUENCE,
+            UnitType.CONNECTIVE,
             UnitType.CHAPTER,
             UnitType.SCENE,
             UnitType.BEAT,
             UnitType.ARC,
         }
+
+    @staticmethod
+    def _is_reference(unit: NarrativeUnit) -> bool:
+        return unit.type in {UnitType.THEORY, UnitType.ETHOS}
 
     @staticmethod
     def _validate_strict_pins(
@@ -335,6 +340,10 @@ class V2Validator:
         manifest: Optional[Dict[str, Any]],
     ) -> List[ValidationIssue]:
         issues: List[ValidationIssue] = []
+        # Non-canvas reference units (theory/ethos) are intentionally exempt from
+        # strict pin requirements so they can remain reusable annotation objects.
+        if not V2Validator._is_content(unit) and unit.type != UnitType.STREAM:
+            return issues
 
         valid_layout, coord_mode, _start, span = V2Validator._layout_shape(unit)
         if not valid_layout:

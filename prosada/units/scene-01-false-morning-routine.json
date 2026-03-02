@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-01-false-morning-routine",
+  "type": "scene",
+  "title": "False-Morning Routine",
+  "summary": "Ada wakes into a warm, lived-in pre-shift ritual that establishes voice trust, place texture, and low-friction onboarding.",
+  "parentId": "chapter-01-static-in-the-sky",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "maine-coast-town"
+    ],
+    "newInfo": "Ada's baseline cognition and routine discipline are established before any overt anomaly pressure.",
+    "dripHook": "The comfort of routine makes small deviations easier to feel and harder to ignore.",
+    "payoffDelivered": "Onboarding reward: environment + voice + trust.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Use inference-driven environmental detail; prioritize inhabitable atmosphere over plot acceleration."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.0,
+        "span": 0.2
+      }
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 3,
+        "description": "Warm home details create effortless narrative entry.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "relational",
+        "strength": 2,
+        "description": "Reader-Ada trust bond forms through interior proximity.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  }
+}
+

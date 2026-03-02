@@ -67,9 +67,16 @@ _CONTENT_TYPES = frozenset({
     UnitType.ACT,
     UnitType.CHAPTER,
     UnitType.SEQUENCE,
+    UnitType.CONNECTIVE,
     UnitType.SCENE,
     UnitType.BEAT,
     UnitType.ARC,
+})
+
+# Units that should never participate in canvas interval composition.
+_NON_CANVAS_TYPES = frozenset({
+    UnitType.THEORY,
+    UnitType.ETHOS,
 })
 
 
@@ -77,6 +84,8 @@ def _event_type(unit_type: UnitType) -> str:
     if unit_type == UnitType.SCENE:
         return "scene"
     if unit_type == UnitType.BEAT:
+        return "beat"
+    if unit_type == UnitType.CONNECTIVE:
         return "beat"
     return "chapter_break"
 
@@ -185,7 +194,7 @@ def _resolve_content_intervals(
             mode = layout.coordinate_mode if layout is not None else None  # type: ignore[union-attr]
             if unit.type in {
                 UnitType.SERIES, UnitType.BOOK, UnitType.ACT, UnitType.SEQUENCE,
-                UnitType.CHAPTER, UnitType.SCENE, UnitType.BEAT, UnitType.ARC,
+                UnitType.CONNECTIVE, UnitType.CHAPTER, UnitType.SCENE, UnitType.BEAT, UnitType.ARC,
             }:
                 if is_root and mode != "absolute":
                     raise ValueError(
@@ -251,7 +260,8 @@ class CanvasLayoutComposer:
             key=lambda u: u.unit_id,  # stable, deterministic lane assignment
         )
         content_units: Dict[str, NarrativeUnit] = {
-            uid: u for uid, u in units.items() if u.type != UnitType.STREAM
+            uid: u for uid, u in units.items()
+            if u.type != UnitType.STREAM and u.type not in _NON_CANVAS_TYPES
         }
 
         flat = GraphComposer.compose_flat_timeline(content_units)

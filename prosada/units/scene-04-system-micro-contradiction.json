@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "scene-04-system-micro-contradiction",
+  "type": "scene",
+  "title": "Micro-Contradiction",
+  "summary": "A small observatory-system inconsistency rhymes with the earlier air anomaly, implying cross-domain structure.",
+  "parentId": "chapter-01-static-in-the-sky",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": "An independent contradiction appears in a second domain, reducing one-off coincidence confidence.",
+    "dripHook": "If two domains drift in similar ways, what shared process is underneath?",
+    "payoffDelivered": "Pattern reward: anomaly starts to look structured.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Do not reuse Chapter 2 timestamp mechanism; keep contradiction subtle but concrete."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.6,
+        "span": 0.2
+      }
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "escalation",
+      "reversal"
+    ],
+    "cadenceRole": "spike",
+    "effortLoad": "medium",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "contradiction",
+        "strength": 4,
+        "description": "System behavior fails to fully match expected state.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "model_update",
+        "strength": 3,
+        "description": "Reader model shifts from isolated oddity to possible patterned anomaly.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ]
+  }
+}
+

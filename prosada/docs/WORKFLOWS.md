@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.4.0
+> **Managed by ProsAda tooling** · Version 1.6.0
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -39,6 +39,30 @@
 
 Same as chapter, but `"type": "scene"` and parent is a chapter.
 Set `"textRef": "scene-the-signal.md"` if prose exists.
+
+---
+
+## Create a connective unit (between scenes)
+
+Use connective units when you need narrative tissue between concrete scene units
+(transition prose, bridge beats, montage glue, etc.).
+
+1. Create a unit under the chapter with `"type": "connective"`.
+2. Keep strict pin rules the same as any child content unit (relative manual pin in strict mode).
+3. Add prose via `narrative.textRef` (for example `connective-ch01-bridge-01.md`).
+
+---
+
+## Create reusable theory/ethos units
+
+Use `theory` and `ethos` as first-class reusable objects.
+
+Recommended pattern:
+1. Keep them top-level (no parent) so they stay reusable across scopes.
+2. Attach them to story units with links:
+   - `usesTheory` → target is a `theory` unit
+   - `usesEthos`  → target is an `ethos` unit
+3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 
 ---
 
@@ -129,6 +153,23 @@ GET /v2/semantic-refs?id=joey-valdez
 # Scope to subtree
 GET /v2/semantic-refs?scope=act-01
 ```
+
+---
+
+## Prose read/write API
+
+```bash
+# Load prose for one unit
+GET /v2/prose/<unitId>
+
+# Save prose for one unit
+POST /v2/prose/<unitId>
+# body: { "content": "...", "textRef": "optional/path.md" }
+```
+
+Notes:
+- Works for any selected scope/unit; if `textRef` is empty, the backend defaults to `<unitId>.md`.
+- This updates prose content only; it does not bypass staged schema commit rules.
 
 ---
 
