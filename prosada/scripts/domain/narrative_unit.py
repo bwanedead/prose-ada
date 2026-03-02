@@ -44,6 +44,18 @@ class PlanningStatus(str, Enum):
     LOCKED  = "locked"
 
 
+class DoctrineStatus(str, Enum):
+    OPEN     = "open"
+    LEANING  = "leaning"
+    APPROVED = "approved"
+
+
+class MutationLockMode(str, Enum):
+    MUTABLE     = "mutable"
+    SOFT_LOCKED = "soft_locked"
+    HARD_LOCKED = "hard_locked"
+
+
 class StructureFunction(str, Enum):
     SETUP         = "setup"
     ESCALATION    = "escalation"
@@ -284,6 +296,8 @@ class UnitStructure(BaseModel):
     reward_tokens: List[RewardToken] = Field(default_factory=list, alias="rewardTokens")
     cadence_envelope: Optional[CadenceEnvelope] = Field(default=None, alias="cadenceEnvelope")
     model_update: Optional[ModelUpdate] = Field(default=None, alias="modelUpdate")
+    doctrine_status: Optional[DoctrineStatus] = Field(default=None, alias="doctrineStatus")
+    mutation_lock: Optional[MutationLockMode] = Field(default=None, alias="mutationLock")
 
 
 # ---------------------------------------------------------------------------

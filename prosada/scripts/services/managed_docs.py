@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.6.0"
+DOCS_VERSION = "1.9.0"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -158,6 +158,11 @@ Canonical promise contracts should live in:
 Keep promise history stateful (`opened`, `sharpened`, `reframed`, `delayed`,
 `partially_paid`, `paid`, `inverted`, `abandoned`) so diagnostics can track movement.
 
+Reusable planning primitives:
+- `type: "theory"` and `type: "ethos"` are first-class reusable units.
+- Recommended: keep them top-level and attach to scope units via links
+  (`usesTheory`, `usesEthos`) instead of duplicating the same notes repeatedly.
+
 ---
 
 ## Done Checklist (high-level)
@@ -254,6 +259,8 @@ _FORMAT_CHEATSHEET = """\
 - `effortLoad`: `low` | `medium` | `high`
 - `planningStatus`: `open` | `leaning` | `locked`
 - `rewardTokens.type`: `clue` | `competence` | `contradiction` | `decision` | `atmosphere` | `emotional` | `model_update` | `reversal` | `humor` | `relational`
+- `doctrineStatus`: `open` | `leaning` | `approved` (theory/ethos confidence)
+- `mutationLock`: `mutable` | `soft_locked` | `hard_locked` (edit guardrail)
 
 Planning rule:
 - Treat planning metadata as non-canonical until `planningStatus = "locked"`.
@@ -1046,6 +1053,9 @@ has been modified or is from an older version.
 | `/v2/export/prompt-packets`   | GET    | Structured prompt packets for image/video workflows |
 | `/v2/prose/{unitId}`          | GET    | Read prose payload for one unit (`content`, `textRef`) |
 | `/v2/prose/{unitId}`          | POST   | Write prose payload for one unit                       |
+| `/v2/prose-assembled/{unitId}`| GET    | Read assembled prose projection + provenance segments  |
+| `/v2/prose-overlay/{unitId}`  | GET    | Read prose overlay artifact (`locks`, `variants`, `audio`) |
+| `/v2/prose-overlay/{unitId}`  | POST   | Write prose overlay artifact                               |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |
@@ -1095,6 +1105,10 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.9.0.md` — assembled prose projection with boundary overlays and segment-to-unit edit routing
+- `engine-1.8.1.md` — deterministic KEEP resolution, lock confidence metadata, merge-request KEEP conflict guard
+- `engine-1.8.0.md` — prose overlay artifacts (locks/variants/merge requests) + KEEP guardrail
+- `engine-1.7.0.md` — theory lock semantics + prose pagination overlay (phase-1)
 - `engine-1.6.0.md` — reusable theory/ethos unit primitives + attachment links
 - `engine-1.5.0.md` — connective units + prose editing workflow surfaces
 - `engine-1.4.0.md` — planning instrumentation schema + rollout update contract
@@ -1135,6 +1149,158 @@ can be authored once and attached across multiple scopes.
 - Create theory/ethos as reusable objects (recommended top-level/root).
 - Attach them to scenes/chapters/acts via links, not via duplicated prose.
 - Keep strict pin drafting unchanged for timeline/content units.
+"""
+
+
+_PATCH_NOTES_ENGINE_170 = """\
+# Patch Notes — engine-1.7.0
+
+Date: 2026-03-02
+Scope: theory lock semantics + prose pagination overlay (phase-1)
+
+## Summary
+
+This release introduces explicit theory/ethos stability semantics and adds
+prose pagination overlay controls in the editor for page-feel review.
+
+## Added
+
+- Theory/ethos structure fields:
+  - `doctrineStatus`: `open` | `leaning` | `approved`
+  - `mutationLock`: `mutable` | `soft_locked` | `hard_locked`
+- Hard-lock save guardrail:
+  - hard-locked theory/ethos units reject normal save requests unless explicit override is used.
+- Prose editor controls:
+  - overlay mode selector (phase-1 scaffold)
+  - pagination profile selector (`document`, `paperback`)
+  - page-mode viewer with visible page boundaries and computed page numbers.
+
+## Story Agent Guidance
+
+- Use `doctrineStatus` for confidence/approval.
+- Use `mutationLock` to control editability independent of doctrine confidence.
+- For stable doctrine objects, set `mutationLock: "hard_locked"` after approval.
+"""
+
+
+_PATCH_NOTES_ENGINE_180 = """\
+# Patch Notes — engine-1.8.0
+
+Date: 2026-03-02
+Scope: prose overlay artifacts (locks/variants/merge requests) + KEEP guardrail
+
+## Summary
+
+This release adds durable prose overlay artifacts and first-pass variant/merge
+planning support, with hard KEEP-span protection during prose saves.
+
+## Added
+
+- New prose overlay endpoints:
+  - `GET /v2/prose-overlay/{unitId}`
+  - `POST /v2/prose-overlay/{unitId}`
+- Overlay artifact storage under:
+  - `prose_overlays/{unitId}.json`
+- Overlay schema fields:
+  - `locks[]`
+  - `variants[]`
+  - `mergeRequests[]`
+  - `audio`
+- Unit editor UI (phase-1):
+  - lock directives from selected spans
+  - variant creation from selected spans
+  - merge request artifact creation from selected variants.
+
+## Changed
+
+- `POST /v2/prose/{unitId}` now enforces KEEP lock integrity:
+  - unresolved KEEP spans block save with conflict response
+  - resolved KEEP spans are re-anchored after successful save.
+
+## Story Agent Guidance
+
+- Use prose overlays for review directives and variant planning.
+- Keep canonical prose clean; store revision control metadata in overlay artifacts.
+"""
+
+
+_PATCH_NOTES_ENGINE_181 = """\
+# Patch Notes — engine-1.8.1
+
+Date: 2026-03-02
+Scope: prose lock/merge safety hardening
+
+## Summary
+
+This release hardens KEEP lock resolution and merge-request validation so prose
+revision workflows fail safely when anchors drift or conflict.
+
+## Added
+
+- Deterministic KEEP lock resolution outcomes:
+  - explicit failure reasons (`TEXT_EMPTY`, `TEXT_NOT_FOUND`, `ANCHOR_MISMATCH`, `AMBIGUOUS_MATCH`)
+  - ambiguous matches now fail instead of guessing.
+- Per-lock resolution metadata persisted after save:
+  - `resolvedBy` (`index` | `anchors` | `unique_text`)
+  - `resolutionConfidence` (`high` | `degraded`)
+  - `lastResolvedAt`
+  - `ambiguityCount`
+- Save response warnings:
+  - `KEEP_REANCHORED_DEGRADED` when fallback re-anchoring is used.
+
+## Changed
+
+- `POST /v2/prose-overlay/{unitId}` now rejects merge requests that overlap
+  KEEP lock ranges (`MERGE_REQUEST_KEEP_CONFLICT`).
+- `POST /v2/prose/{unitId}` now validates merge-request/KEEP overlap before write.
+- Unit editor now:
+  - blocks merge-request creation when selected range overlaps KEEP spans
+  - surfaces degraded KEEP re-anchor warnings after save
+  - displays lock resolution metadata in the lock list.
+
+## Story Agent Guidance
+
+- Treat degraded KEEP warnings as review-required signals.
+- Re-anchor or adjust locks when ambiguity conflicts are reported.
+- Keep merge regions carved around hard KEEP spans.
+"""
+
+
+_PATCH_NOTES_ENGINE_190 = """\
+# Patch Notes — engine-1.9.0
+
+Date: 2026-03-02
+Scope: assembled prose boundary overlays + provenance-safe edit routing (phase-1)
+
+## Summary
+
+This release adds assembled prose projection for any scope unit (scene/chapter/act/book)
+with explicit segment provenance and safe unit-local edit routing from assembled view.
+
+## Added
+
+- New API endpoint:
+  - `GET /v2/prose-assembled/{unitId}`
+- Assembled prose response includes:
+  - `assembledText`
+  - `segments[]` with `unitId`, `start`, `end`, title/type, word/page stats
+  - scope-level word/page totals
+- Unit editor overlay mode `Unit Boundaries` now renders:
+  - boundary cards per source segment
+  - segment metadata (type/title/range/word/pages)
+  - per-segment `Open Unit` action for provenance-safe editing.
+
+## Changed
+
+- Assembled prose is projection-only and read-only in boundary mode.
+- Editing from assembled context routes to a single underlying unit editor
+  (`Open Unit`) instead of cross-boundary direct mutation.
+
+## Story Agent Guidance
+
+- Use assembled boundary mode for chapter/act pacing review and provenance checks.
+- Continue authoring prose canon in unit-local files (`narrative.textRef`).
+- Treat assembled view as inspection/navigation, not as canonical write surface.
 """
 
 
@@ -1329,6 +1495,10 @@ DOC_FILES: list[tuple[str, str]] = [
     ("WORKFLOWS.md", _WORKFLOWS),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.9.0.md", _PATCH_NOTES_ENGINE_190),
+    ("patch-notes/engine-1.8.1.md", _PATCH_NOTES_ENGINE_181),
+    ("patch-notes/engine-1.8.0.md", _PATCH_NOTES_ENGINE_180),
+    ("patch-notes/engine-1.7.0.md", _PATCH_NOTES_ENGINE_170),
     ("patch-notes/engine-1.6.0.md", _PATCH_NOTES_ENGINE_160),
     ("patch-notes/engine-1.5.0.md", _PATCH_NOTES_ENGINE_150),
     ("patch-notes/engine-1.4.0.md", _PATCH_NOTES_ENGINE_140),

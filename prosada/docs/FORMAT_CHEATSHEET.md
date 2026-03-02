@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.6.0
+> **Managed by ProsAda tooling** · Version 1.9.0
 
 ---
 
@@ -72,6 +72,8 @@
 - `effortLoad`: `low` | `medium` | `high`
 - `planningStatus`: `open` | `leaning` | `locked`
 - `rewardTokens.type`: `clue` | `competence` | `contradiction` | `decision` | `atmosphere` | `emotional` | `model_update` | `reversal` | `humor` | `relational`
+- `doctrineStatus`: `open` | `leaning` | `approved` (theory/ethos confidence)
+- `mutationLock`: `mutable` | `soft_locked` | `hard_locked` (edit guardrail)
 
 Planning rule:
 - Treat planning metadata as non-canonical until `planningStatus = "locked"`.

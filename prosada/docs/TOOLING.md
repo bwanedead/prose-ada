@@ -180,6 +180,9 @@ has been modified or is from an older version.
 | `/v2/export/prompt-packets`   | GET    | Structured prompt packets for image/video workflows |
 | `/v2/prose/{unitId}`          | GET    | Read prose payload for one unit (`content`, `textRef`) |
 | `/v2/prose/{unitId}`          | POST   | Write prose payload for one unit                       |
+| `/v2/prose-assembled/{unitId}`| GET    | Read assembled prose projection + provenance segments  |
+| `/v2/prose-overlay/{unitId}`  | GET    | Read prose overlay artifact (`locks`, `variants`, `audio`) |
+| `/v2/prose-overlay/{unitId}`  | POST   | Write prose overlay artifact                               |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |

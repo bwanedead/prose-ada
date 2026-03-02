@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.6.0
+> **Managed by ProsAda tooling** · Version 1.9.0
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -112,6 +112,11 @@ Canonical promise contracts should live in:
 
 Keep promise history stateful (`opened`, `sharpened`, `reframed`, `delayed`,
 `partially_paid`, `paid`, `inverted`, `abandoned`) so diagnostics can track movement.
+
+Reusable planning primitives:
+- `type: "theory"` and `type: "ethos"` are first-class reusable units.
+- Recommended: keep them top-level and attach to scope units via links
+  (`usesTheory`, `usesEthos`) instead of duplicating the same notes repeatedly.
 
 ---
 
