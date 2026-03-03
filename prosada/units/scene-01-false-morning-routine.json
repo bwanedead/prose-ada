@@ -25,7 +25,7 @@
     "payoffDelivered": "Onboarding reward: environment + voice + trust.",
     "beautyHooks": null,
     "status": "draft",
-    "textRef": null,
+    "textRef": "../../chapters/01-chapter-1/scene-01-false-morning-routine.md",
     "notes": "Use inference-driven environmental detail; prioritize inhabitable atmosphere over plot acceleration."
   },
   "view": {
@@ -69,4 +69,3 @@
     ]
   }
 }
-

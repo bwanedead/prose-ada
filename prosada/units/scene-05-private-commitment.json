@@ -7,7 +7,10 @@
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+    {
+      "type": "usesTheory",
+      "targetId": "theory-onboarding-ergonomic-entry"
+    }
   ],
   "narrative": {
     "threadsAdvanced": [
@@ -24,7 +27,7 @@
     "payoffDelivered": "Decision reward: chapter closes on action posture and propulsion.",
     "beautyHooks": null,
     "status": "draft",
-    "textRef": null,
+    "textRef": "../../chapters/01-chapter-1/scene-05-private-commitment.md",
     "notes": "End quietly but decisively; this sets clean handoff into Chapter 2 rupture."
   },
   "view": {

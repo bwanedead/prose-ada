@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.9.0"
+DOCS_VERSION = "1.10.3"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -112,6 +112,62 @@ rendering), story agents should consult patch notes before changing schema.
 
 ---
 
+## Local AGENTS Layering (Required)
+
+- ProsAda tooling guidance is installed under `prosada/docs/` (managed).
+- Repo-root `AGENTS.md` remains story-repo-owned and may contain local rules.
+- Tooling refresh does not overwrite repo-root `AGENTS.md`.
+- ProsAda root `AGENTS.md` is installed with:
+  - a managed engine guidance section (updated on refresh)
+  - a preserved local section (`Local Story Repo Additions`) that keeps local edits.
+- Recommended precedence for agents in story repos:
+  1. local repo `AGENTS.md`
+  2. `prosada/AGENTS.md` (managed top + preserved local tail)
+  3. `prosada/docs/PROTOCOL_RULES.md`
+  4. `prosada/docs/WORKFLOWS.md` and patch notes
+
+Use local `AGENTS.md` for repo-specific process, and managed docs for
+engine/protocol contracts.
+
+---
+
+## Drift Prevention Protocol (Required)
+
+If behavior appears blocked by an engine limitation, do **not** solve it by
+inventing story-local schema conventions or repo-only policy docs.
+
+Required response:
+
+1. Keep canonical story intent edits separate from engine workaround edits.
+2. Record an engine handoff note under:
+   - `prosada/docs/engine-handoffs/<yyyy-mm-dd>-<slug>.md`
+3. Include:
+   - observed symptom
+   - expected behavior
+   - local workaround applied (if any)
+   - why workaround is temporary
+   - requested engine-level fix
+4. Treat local workaround as temporary debt to remove after engine update.
+
+Goal: avoid drift between story repos and ProsAda engine behavior.
+
+---
+
+## Canonical Interim Conventions (until superseded by patch notes)
+
+Use these defaults consistently across story repos:
+
+- Prose wiring:
+  - If a chapter/scene/connective has prose, set `narrative.textRef`.
+  - Use deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Do not invent repo-specific folder/filename heuristics.
+- Theory/ethos stability fields:
+  - Always set both `doctrineStatus` and `mutationLock`.
+  - Working guidance default: `leaning` + `soft_locked`.
+  - Approved doctrine default: `approved` + `hard_locked`.
+
+---
+
 ## Layout Policy (Important)
 
 Manifest controls layout behavior:
@@ -175,6 +231,7 @@ After making changes, verify:
 - [ ] Tooling is current (`python scripts/check_tooling_health.py`)
 
 See `FORMAT_CHEATSHEET.md` for schema details.
+See `PROTOCOL_RULES.md` for durable engine protocol/enforcement rules.
 See `WORKFLOWS.md` for task recipes.
 See `TOOLING.md` for renderer and tooling usage.
 """
@@ -510,6 +567,18 @@ Set `"textRef": "scene-the-signal.md"` if prose exists.
 
 ---
 
+## Prose wiring protocol (required)
+
+When prose drafting starts for a chapter/scene/connective unit:
+
+1. Set `narrative.textRef` deterministically to `<unitId>.md`.
+2. Keep prose file under `prosada/units/`.
+3. Create the prose file if missing before expecting prose surfaces to render.
+4. If the engine/UI fails to wire this automatically, file an engine handoff
+   note under `prosada/docs/engine-handoffs/` instead of inventing local path rules.
+
+---
+
 ## Create a connective unit (between scenes)
 
 Use connective units when you need narrative tissue between concrete scene units
@@ -531,6 +600,20 @@ Recommended pattern:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
+4. Set stability defaults explicitly:
+   - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`
+   - approved doctrine: `doctrineStatus: "approved"`, `mutationLock: "hard_locked"`
+
+---
+
+## Engine limitation escalation (required)
+
+If a task requires changing story data only to compensate for app/engine behavior:
+
+1. Stop and isolate whether the issue is schema truth or engine policy.
+2. If engine policy, do not normalize workaround edits as canonical protocol.
+3. Log a handoff note in `prosada/docs/engine-handoffs/` with repro + requested fix.
+4. Continue only with minimal temporary workaround needed to unblock writing.
 
 ---
 
@@ -867,7 +950,69 @@ Events with no presentation data are dimmed when any other event has data.
 
 
 # ---------------------------------------------------------------------------
-# D. TOOLING.md
+# D. PROTOCOL_RULES.md
+# ---------------------------------------------------------------------------
+
+_PROTOCOL_RULES = """\
+# ProsAda Protocol Rules
+
+> **Managed by ProsAda tooling** · Version {version}
+> Durable engine protocol contract for story-repo agents.
+
+---
+
+## Purpose
+
+This document is the non-AGENTS enforcement surface for engine protocol.
+It remains stable even if AGENTS conventions evolve.
+
+---
+
+## Hard Rules
+
+1. Do not convert engine limitations into permanent story-local schema policy.
+2. Keep story-intent edits separate from engine workaround edits.
+3. If engine behavior blocks a task, create a handoff note:
+   - `prosada/docs/engine-handoffs/<yyyy-mm-dd>-<slug>.md`
+4. Treat workarounds as temporary debt and remove after engine-native support lands.
+
+---
+
+## Canonical Defaults (until superseded by patch notes)
+
+- Prose wiring:
+  - If prose exists, set `narrative.textRef`.
+  - Deterministic path: `<unitId>.md` under `prosada/units/`.
+- Theory/ethos stability:
+  - Always set both `doctrineStatus` and `mutationLock`.
+  - Working guide default: `leaning` + `soft_locked`.
+  - Approved doctrine default: `approved` + `hard_locked`.
+
+---
+
+## Escalation Format
+
+Each handoff note should include:
+- observed symptom
+- expected behavior
+- current workaround (if any)
+- why workaround is temporary
+- requested engine-level change
+
+---
+
+## Authority Order
+
+When guidance conflicts:
+1. Latest patch notes in `prosada/docs/patch-notes/`
+2. This file (`PROTOCOL_RULES.md`)
+3. `AGENT_START_HERE.md`
+4. Local additions in `prosada/AGENTS.md`
+"""
+
+
+# ---------------------------------------------------------------------------
+# E. TOOLING.md
 # ---------------------------------------------------------------------------
 
 _TOOLING = """\
@@ -1031,6 +1176,7 @@ prosada/docs/patch-notes/
     "AGENT_START_HERE.md": {{ "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." }},
     "FORMAT_CHEATSHEET.md": {{ ... }},
     "WORKFLOWS.md":         {{ ... }},
+    "PROTOCOL_RULES.md":    {{ ... }},
     "TOOLING.md":           {{ ... }}
   }}
 }}
@@ -1067,9 +1213,15 @@ has been modified or is from an older version.
 
 Only files under `prosada/scripts/` and `prosada/docs/` are managed.
 The following are **never touched** by tooling refresh:
+- repo-root `AGENTS.md` and any non-`prosada/` docs/process files
 - `prosada/units/*.json` — your story structure
 - `prosada/registries/*.json` — your story bible
 - `prosada/manifest.json` — your project root config
+
+Special case:
+- `prosada/AGENTS.md` is managed in a layered way:
+  - managed top section is refreshed by tooling
+  - local section (`Local Story Repo Additions`) is preserved
 - Any prose `.md` files
 
 ---
@@ -1083,6 +1235,7 @@ When ProsAda engine behavior changes, verify in this order:
    - `python scripts/check_tooling_health.py --heal`
 3. Re-check schema guidance in:
    - `AGENT_START_HERE.md`
+   - `PROTOCOL_RULES.md`
    - `FORMAT_CHEATSHEET.md`
 4. Re-run validation/doctor before continuing authoring.
 
@@ -1105,6 +1258,10 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
+- `engine-1.10.2.md` — layered `prosada/AGENTS.md` (managed top + preserved local additions)
+- `engine-1.10.1.md` — local append hook for AGENT_START_HERE (`AGENT_START_HERE.local.md`)
+- `engine-1.10.0.md` — drift-prevention protocol, prose wiring convention, theory lock default guidance
 - `engine-1.9.0.md` — assembled prose projection with boundary overlays and segment-to-unit edit routing
 - `engine-1.8.1.md` — deterministic KEEP resolution, lock confidence metadata, merge-request KEEP conflict guard
 - `engine-1.8.0.md` — prose overlay artifacts (locks/variants/merge requests) + KEEP guardrail
@@ -1263,6 +1420,144 @@ revision workflows fail safely when anchors drift or conflict.
 - Treat degraded KEEP warnings as review-required signals.
 - Re-anchor or adjust locks when ambiguity conflicts are reported.
 - Keep merge regions carved around hard KEEP spans.
+"""
+
+
+_PATCH_NOTES_ENGINE_1103 = """\
+# Patch Notes — engine-1.10.3
+
+Date: 2026-03-03
+Scope: protocol resilience via managed `PROTOCOL_RULES.md`
+
+## Summary
+
+This release adds a dedicated managed protocol document so engine enforcement
+does not depend on AGENTS conventions alone.
+
+## Added
+
+- New managed doc:
+  - `prosada/docs/PROTOCOL_RULES.md`
+- `AGENT_START_HERE.md` now points to `PROTOCOL_RULES.md` for durable protocol
+  and escalation requirements.
+
+## Changed
+
+- Managed docs pack bumped to `1.10.3`.
+- Patch notes index updated with this release.
+
+## Story Agent Guidance
+
+- Continue using layered `prosada/AGENTS.md` for local project rules.
+- Treat `PROTOCOL_RULES.md` as canonical engine protocol contract.
+"""
+
+
+_PATCH_NOTES_ENGINE_1102 = """\
+# Patch Notes — engine-1.10.2
+
+Date: 2026-03-03
+Scope: layered `prosada/AGENTS.md` with preserved local additions
+
+## Summary
+
+This release moves local-guidance layering to `prosada/AGENTS.md` directly.
+Tooling now refreshes engine-owned guidance at the top while preserving story
+repo additions in a dedicated local section inside the same file.
+
+## Added
+
+- `prosada/AGENTS.md` managed write behavior:
+  - managed engine guidance section (refreshed by tooling)
+  - preserved local section header:
+    - `Local Story Repo Additions (Preserved)`
+- Legacy compatibility behavior:
+  - if an existing `prosada/AGENTS.md` has no local-section marker, existing
+    content is carried forward into the preserved local section.
+
+## Changed
+
+- Recommended precedence in story repos now includes `prosada/AGENTS.md` as the
+  canonical merged engine+local contract file.
+- Managed docs pack bumped to `1.10.2`.
+
+## Story Agent Guidance
+
+- Put project-specific rules in the local section of `prosada/AGENTS.md`.
+- Do not edit managed docs to store local-only policy.
+- Keep engine-protocol changes in app-repo patch notes/managed docs.
+"""
+
+
+_PATCH_NOTES_ENGINE_1101 = """\
+# Patch Notes — engine-1.10.1
+
+Date: 2026-03-03
+Scope: managed AGENT_START_HERE local appendix preservation
+
+## Summary
+
+This release adds a clean layering mechanism so story repos can keep local
+agent guidance while still receiving managed engine updates.
+
+## Added
+
+- Tooling refresh append hook for:
+  - `prosada/docs/AGENT_START_HERE.local.md`
+- During install/refresh, managed `AGENT_START_HERE.md` now appends the local
+  file content at the bottom under a labeled unmanaged section.
+
+## Changed
+
+- Managed docs updated with explicit layering guidance and precedence:
+  1. repo-root `AGENTS.md`
+  2. `prosada/docs/AGENT_START_HERE.md` (+ local appendix)
+  3. other managed workflow docs and patch notes
+- Managed docs pack bumped to `1.10.1`.
+
+## Story Agent Guidance
+
+- Put repo-specific ProsAda additions in:
+  - `prosada/docs/AGENT_START_HERE.local.md`
+- Avoid editing managed templates directly for local-only policy notes.
+"""
+
+
+_PATCH_NOTES_ENGINE_1100 = """\
+# Patch Notes — engine-1.10.0
+
+Date: 2026-03-03
+Scope: story-repo drift prevention protocol + prose wiring/theory defaults guidance
+
+## Summary
+
+This release formalizes a required protocol for story agents: do not encode
+engine limitations as story-local conventions. It also standardizes interim
+defaults for prose path wiring and theory lock semantics.
+
+## Added
+
+- Managed docs protocol sections:
+  - drift prevention and engine escalation contract
+  - required handoff-note path in story repos:
+    - `prosada/docs/engine-handoffs/<yyyy-mm-dd>-<slug>.md`
+- Workflow guidance for deterministic prose wiring:
+  - set `narrative.textRef` to `<unitId>.md`
+  - keep prose files in `prosada/units/`
+- Workflow guidance for explicit theory/ethos defaults:
+  - working guide: `leaning` + `soft_locked`
+  - approved doctrine: `approved` + `hard_locked`
+
+## Changed
+
+- Managed docs pack bumped to `1.10.0`.
+- Patch notes index now includes this protocol release.
+
+## Story Agent Guidance
+
+- If a behavior gap appears engine-owned, escalate via handoff note and patch notes.
+- Keep local workaround edits minimal and temporary.
+- Remove temporary workaround patterns after corresponding engine fixes land.
 """
 
 
@@ -1493,8 +1788,13 @@ DOC_FILES: list[tuple[str, str]] = [
     ("AGENT_START_HERE.md", _AGENT_START_HERE),
     ("FORMAT_CHEATSHEET.md", _FORMAT_CHEATSHEET),
     ("WORKFLOWS.md", _WORKFLOWS),
+    ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.3.md", _PATCH_NOTES_ENGINE_1103),
+    ("patch-notes/engine-1.10.2.md", _PATCH_NOTES_ENGINE_1102),
+    ("patch-notes/engine-1.10.1.md", _PATCH_NOTES_ENGINE_1101),
+    ("patch-notes/engine-1.10.0.md", _PATCH_NOTES_ENGINE_1100),
     ("patch-notes/engine-1.9.0.md", _PATCH_NOTES_ENGINE_190),
     ("patch-notes/engine-1.8.1.md", _PATCH_NOTES_ENGINE_181),
     ("patch-notes/engine-1.8.0.md", _PATCH_NOTES_ENGINE_180),

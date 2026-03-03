@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.9.0
+> **Managed by ProsAda tooling** · Version 1.10.3
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -42,6 +42,18 @@ Set `"textRef": "scene-the-signal.md"` if prose exists.
 
 ---
 
+## Prose wiring protocol (required)
+
+When prose drafting starts for a chapter/scene/connective unit:
+
+1. Set `narrative.textRef` deterministically to `<unitId>.md`.
+2. Keep prose file under `prosada/units/`.
+3. Create the prose file if missing before expecting prose surfaces to render.
+4. If the engine/UI fails to wire this automatically, file an engine handoff
+   note under `prosada/docs/engine-handoffs/` instead of inventing local path rules.
+
+---
+
 ## Create a connective unit (between scenes)
 
 Use connective units when you need narrative tissue between concrete scene units
@@ -63,6 +75,20 @@ Recommended pattern:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
+4. Set stability defaults explicitly:
+   - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`
+   - approved doctrine: `doctrineStatus: "approved"`, `mutationLock: "hard_locked"`
+
+---
+
+## Engine limitation escalation (required)
+
+If a task requires changing story data only to compensate for app/engine behavior:
+
+1. Stop and isolate whether the issue is schema truth or engine policy.
+2. If engine policy, do not normalize workaround edits as canonical protocol.
+3. Log a handoff note in `prosada/docs/engine-handoffs/` with repro + requested fix.
+4. Continue only with minimal temporary workaround needed to unblock writing.
 
 ---
 

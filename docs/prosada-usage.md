@@ -40,3 +40,17 @@ Rule: prose expresses the story; ProSada defines the structure and intent.
 - `prosada/docs/FORMAT_CHEATSHEET.md`
 - `prosada/docs/WORKFLOWS.md`
 - `prosada/docs/TOOLING.md`
+
+## Prose Wiring Convention
+
+To keep prose authoring predictable and provenance-safe, use this default protocol:
+
+1. Every authored scene/chapter unit should set `narrative.textRef`.
+2. Store prose files under `chapters/<chapter-folder>/`.
+3. Use filename = unitId + `.md` (for example `scene-02-drive-anomaly.md`).
+4. Keep `textRef` relative from `prosada/units/*.json` to the prose file.
+
+Current path pattern:
+- `../../chapters/<chapter-folder>/<unit-id>.md`
+
+When creating a new scene unit, create its prose file immediately and wire `textRef` in the same change.

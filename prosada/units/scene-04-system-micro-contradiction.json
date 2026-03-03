@@ -7,7 +7,10 @@
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+    {
+      "type": "usesTheory",
+      "targetId": "theory-onboarding-ergonomic-entry"
+    }
   ],
   "narrative": {
     "threadsAdvanced": [
@@ -24,7 +27,7 @@
     "payoffDelivered": "Pattern reward: anomaly starts to look structured.",
     "beautyHooks": null,
     "status": "draft",
-    "textRef": null,
+    "textRef": "../../chapters/01-chapter-1/scene-04-system-micro-contradiction.md",
     "notes": "Do not reuse Chapter 2 timestamp mechanism; keep contradiction subtle but concrete."
   },
   "view": {
@@ -69,4 +72,3 @@
     ]
   }
 }
-

@@ -7,7 +7,10 @@
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+    {
+      "type": "usesTheory",
+      "targetId": "theory-onboarding-ergonomic-entry"
+    }
   ],
   "narrative": {
     "threadsAdvanced": [
@@ -24,7 +27,7 @@
     "payoffDelivered": "Competence reward: Ada investigates instead of panicking.",
     "beautyHooks": null,
     "status": "draft",
-    "textRef": null,
+    "textRef": "../../chapters/01-chapter-1/scene-02-drive-anomaly.md",
     "notes": "Keep ambiguity high and claims low; this is pattern appetite, not revelation."
   },
   "view": {
@@ -68,4 +71,3 @@
     ]
   }
 }
-

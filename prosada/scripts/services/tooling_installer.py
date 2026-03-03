@@ -8,6 +8,7 @@ Manages installation of the ProsAda managed enablement pack into each project ro
     <prosadaRoot>/docs/AGENT_START_HERE.md         — agent orientation doc
     <prosadaRoot>/docs/FORMAT_CHEATSHEET.md        — schema reference
     <prosadaRoot>/docs/WORKFLOWS.md                — task recipes
+    <prosadaRoot>/docs/PROTOCOL_RULES.md           — durable protocol contract
     <prosadaRoot>/docs/TOOLING.md                  — tooling reference
     <prosadaRoot>/tooling.json                     — v2 metadata + checksums
 
@@ -28,6 +29,7 @@ tooling.json v2 schema:
             "AGENT_START_HERE.md":  { "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." },
             "FORMAT_CHEATSHEET.md": { ... },
             "WORKFLOWS.md":         { ... },
+            "PROTOCOL_RULES.md":    { ... },
             "TOOLING.md":           { ... }
         }
     }
@@ -67,6 +69,8 @@ _INSTALLED_RENDERER_NAME = "render_timeline.py"
 _INSTALLED_HEALTH_SCRIPT_NAME = "check_tooling_health.py"
 _SCRIPTS_SUBDIR = "scripts"
 _TOOLING_FILE = "tooling.json"
+_ROOT_AGENTS_FILE = "AGENTS.md"
+_ROOT_AGENTS_LOCAL_HEADER = "## Local Story Repo Additions (Preserved)"
 
 # ---------------------------------------------------------------------------
 # Capabilities manifest
@@ -199,6 +203,55 @@ def _check_asset(project_dir: Path, rel_path: str, stored_checksum: Optional[str
     return (STATUS_OK if match else STATUS_STALE), match
 
 
+def _extract_local_agents_tail(existing: str) -> str:
+    """
+    Preserve the local story-owned tail from an existing AGENTS.md file.
+
+    If the canonical local header exists, keep only content below it.
+    If no header exists, preserve entire existing file as legacy local content.
+    """
+    if not existing.strip():
+        return ""
+    marker = f"{_ROOT_AGENTS_LOCAL_HEADER}\n"
+    idx = existing.find(marker)
+    if idx >= 0:
+        tail = existing[idx + len(marker):].lstrip("\r\n")
+        return tail
+    return "### Imported Legacy Local Content\n\n" + existing.strip() + "\n"
+
+
+def _render_root_agents(docs_version: str, existing: str = "") -> str:
+    """
+    Build prosada/AGENTS.md with a managed top section and preserved local tail.
+    """
+    local_tail = _extract_local_agents_tail(existing)
+    managed = f"""# AGENTS.md
+
+## Managed Engine Guidance
+- Source: ProsAda tooling pack
+- Version: {docs_version}
+- Scope: engine-wide behavior/protocol expectations for this story workspace
+
+## Rules
+1. Follow `docs/AGENT_START_HERE.md` for orientation.
+2. Use `docs/PROTOCOL_RULES.md` for durable engine protocol contracts.
+3. Use `docs/WORKFLOWS.md` for task workflows and canonical conventions.
+3. Check `docs/patch-notes/` before introducing new local schema conventions.
+4. If behavior appears engine-limited, log an engine handoff note under:
+   `docs/engine-handoffs/<yyyy-mm-dd>-<slug>.md`.
+
+---
+
+{_ROOT_AGENTS_LOCAL_HEADER}
+
+> This section is story-repo-owned and preserved across tooling refreshes.
+> Add local operational rules, reviewer gates, and project-specific constraints here.
+"""
+    if local_tail.strip():
+        return managed.rstrip() + "\n\n" + local_tail.rstrip() + "\n"
+    return managed.rstrip() + "\n\n_Add local repo-specific agent rules below._\n"
+
+
 def _install_runtime_packages(scripts_dir: Path) -> dict:
     """
     Install standalone runtime packages used by render_timeline.py.
@@ -250,6 +303,7 @@ def install_tooling(project_dir: Path) -> dict:
         docs/AGENT_START_HERE.md
         docs/FORMAT_CHEATSHEET.md
         docs/WORKFLOWS.md
+        docs/PROTOCOL_RULES.md
         docs/TOOLING.md
         docs/patch-notes/*.md
         tooling.json  (v2 schema)
@@ -303,6 +357,17 @@ def install_tooling(project_dir: Path) -> dict:
             "docPath": f"{get_docs_subdir()}/{filename}",
             "checksum": doc_checksum,
         }
+
+    # --- root AGENTS.md (managed top + preserved local tail) ---
+    root_agents_path = project_dir / _ROOT_AGENTS_FILE
+    existing_agents = ""
+    if root_agents_path.exists():
+        try:
+            existing_agents = root_agents_path.read_text(encoding="utf-8")
+        except OSError:
+            existing_agents = ""
+    root_agents_rendered = _render_root_agents(DOCS_VERSION, existing_agents)
+    root_agents_path.write_text(root_agents_rendered, encoding="utf-8")
 
     # --- tooling.json v2 ---
     data = {

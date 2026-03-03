@@ -1,12 +1,16 @@
 # ProsAda Patch Notes
 
-> **Managed by ProsAda tooling** · Version 1.9.0
+> **Managed by ProsAda tooling** · Version 1.10.3
 
 This folder contains versioned engine/tooling update notes distributed into
 external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
+- `engine-1.10.2.md` — layered `prosada/AGENTS.md` (managed top + preserved local additions)
+- `engine-1.10.1.md` — local append hook for AGENT_START_HERE (`AGENT_START_HERE.local.md`)
+- `engine-1.10.0.md` — drift-prevention protocol, prose wiring convention, theory lock default guidance
 - `engine-1.9.0.md` — assembled prose projection with boundary overlays and segment-to-unit edit routing
 - `engine-1.8.1.md` — deterministic KEEP resolution, lock confidence metadata, merge-request KEEP conflict guard
 - `engine-1.8.0.md` — prose overlay artifacts (locks/variants/merge requests) + KEEP guardrail

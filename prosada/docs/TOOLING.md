@@ -158,6 +158,7 @@ prosada/docs/patch-notes/
     "AGENT_START_HERE.md": {{ "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." }},
     "FORMAT_CHEATSHEET.md": {{ ... }},
     "WORKFLOWS.md":         {{ ... }},
+    "PROTOCOL_RULES.md":    {{ ... }},
     "TOOLING.md":           {{ ... }}
   }}
 }}
@@ -194,9 +195,15 @@ has been modified or is from an older version.
 
 Only files under `prosada/scripts/` and `prosada/docs/` are managed.
 The following are **never touched** by tooling refresh:
+- repo-root `AGENTS.md` and any non-`prosada/` docs/process files
 - `prosada/units/*.json` — your story structure
 - `prosada/registries/*.json` — your story bible
 - `prosada/manifest.json` — your project root config
+
+Special case:
+- `prosada/AGENTS.md` is managed in a layered way:
+  - managed top section is refreshed by tooling
+  - local section (`Local Story Repo Additions`) is preserved
 - Any prose `.md` files
 
 ---
@@ -210,6 +217,7 @@ When ProsAda engine behavior changes, verify in this order:
    - `python scripts/check_tooling_health.py --heal`
 3. Re-check schema guidance in:
    - `AGENT_START_HERE.md`
+   - `PROTOCOL_RULES.md`
    - `FORMAT_CHEATSHEET.md`
 4. Re-run validation/doctor before continuing authoring.
 

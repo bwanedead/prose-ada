@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.9.0
+> **Managed by ProsAda tooling** · Version 1.10.3
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -67,6 +67,62 @@ rendering), story agents should consult patch notes before changing schema.
 
 ---
 
+## Local AGENTS Layering (Required)
+
+- ProsAda tooling guidance is installed under `prosada/docs/` (managed).
+- Repo-root `AGENTS.md` remains story-repo-owned and may contain local rules.
+- Tooling refresh does not overwrite repo-root `AGENTS.md`.
+- ProsAda root `AGENTS.md` is installed with:
+  - a managed engine guidance section (updated on refresh)
+  - a preserved local section (`Local Story Repo Additions`) that keeps local edits.
+- Recommended precedence for agents in story repos:
+  1. local repo `AGENTS.md`
+  2. `prosada/AGENTS.md` (managed top + preserved local tail)
+  3. `prosada/docs/PROTOCOL_RULES.md`
+  4. `prosada/docs/WORKFLOWS.md` and patch notes
+
+Use local `AGENTS.md` for repo-specific process, and managed docs for
+engine/protocol contracts.
+
+---
+
+## Drift Prevention Protocol (Required)
+
+If behavior appears blocked by an engine limitation, do **not** solve it by
+inventing story-local schema conventions or repo-only policy docs.
+
+Required response:
+
+1. Keep canonical story intent edits separate from engine workaround edits.
+2. Record an engine handoff note under:
+   - `prosada/docs/engine-handoffs/<yyyy-mm-dd>-<slug>.md`
+3. Include:
+   - observed symptom
+   - expected behavior
+   - local workaround applied (if any)
+   - why workaround is temporary
+   - requested engine-level fix
+4. Treat local workaround as temporary debt to remove after engine update.
+
+Goal: avoid drift between story repos and ProsAda engine behavior.
+
+---
+
+## Canonical Interim Conventions (until superseded by patch notes)
+
+Use these defaults consistently across story repos:
+
+- Prose wiring:
+  - If a chapter/scene/connective has prose, set `narrative.textRef`.
+  - Use deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Do not invent repo-specific folder/filename heuristics.
+- Theory/ethos stability fields:
+  - Always set both `doctrineStatus` and `mutationLock`.
+  - Working guidance default: `leaning` + `soft_locked`.
+  - Approved doctrine default: `approved` + `hard_locked`.
+
+---
+
 ## Layout Policy (Important)
 
 Manifest controls layout behavior:
@@ -130,5 +186,6 @@ After making changes, verify:
 - [ ] Tooling is current (`python scripts/check_tooling_health.py`)
 
 See `FORMAT_CHEATSHEET.md` for schema details.
+See `PROTOCOL_RULES.md` for durable engine protocol/enforcement rules.
 See `WORKFLOWS.md` for task recipes.
 See `TOOLING.md` for renderer and tooling usage.

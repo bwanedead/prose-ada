@@ -7,7 +7,10 @@
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+    {
+      "type": "usesTheory",
+      "targetId": "theory-onboarding-ergonomic-entry"
+    }
   ],
   "narrative": {
     "threadsAdvanced": [
@@ -24,7 +27,7 @@
     "payoffDelivered": "World trust reward: observatory context feels tactile and real.",
     "beautyHooks": null,
     "status": "draft",
-    "textRef": null,
+    "textRef": "../../chapters/01-chapter-1/scene-03-observatory-startup.md",
     "notes": "Readable procedure detail only; avoid jargon block."
   },
   "view": {
@@ -69,4 +72,3 @@
     ]
   }
 }
-
