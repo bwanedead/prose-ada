@@ -18,6 +18,11 @@ WARNING (non-blocking, reported to caller):
   5. If textRef is set, the referenced file should exist
      (missing file is allowed — it may be created later)
   7. Duplicate unitIds in children[]
+  8a. Link type doctrine-target mismatch (`usesTheory`, `usesEthos`)
+
+ERROR (blocks save):
+  8b. Stream topology links (`merges-into`, `branches-from`, `intersects`)
+      must connect stream units on both source and target
 """
 
 from dataclasses import dataclass
@@ -25,7 +30,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from domain.narrative_unit import NarrativeUnit, UnitType
+from domain.narrative_unit import LinkType, NarrativeUnit, UnitType, UnitLink
 from services.layout_policy import (
     LAYOUT_POLICY_STRICT_PINS,
     get_layout_policy,
@@ -203,9 +208,12 @@ class V2Validator:
                 break  # one warning per unit is enough
             seen_children.add(child_id)
 
-        # --- Rule 8: link targetIds should resolve ---
+        # --- Rule 8: link targetIds + semantic link checks ---
         for lnk in unit.links:
-            if lnk.target_id not in all_units:
+            # Source-only semantics must run even for forward/unresolved targets.
+            issues.extend(V2Validator._validate_link_source_semantics(unit, lnk))
+            target = all_units.get(lnk.target_id)
+            if target is None:
                 issues.append(ValidationIssue(
                     severity=IssueSeverity.WARNING,
                     unit_id=unit.unit_id,
@@ -215,6 +223,8 @@ class V2Validator:
                         "(forward references are allowed during authoring)"
                     ),
                 ))
+                continue
+            issues.extend(V2Validator._validate_link_target_semantics(unit, lnk, target))
 
         # --- Rule 9: threadsAdvanced[] values should resolve to stream units ---
         for stream_id in unit.narrative.threads_advanced:
@@ -332,6 +342,86 @@ class V2Validator:
     @staticmethod
     def _is_reference(unit: NarrativeUnit) -> bool:
         return unit.type in {UnitType.THEORY, UnitType.ETHOS}
+
+    @staticmethod
+    def _validate_link_source_semantics(
+        source: NarrativeUnit,
+        link: UnitLink,
+    ) -> List[ValidationIssue]:
+        """
+        Validate semantics that depend only on link type + source unit.
+
+        This stage runs even when the target is unresolved so forward links
+        still enforce source constraints.
+        """
+        issues: List[ValidationIssue] = []
+        if (
+            link.type in {LinkType.MERGES_INTO, LinkType.BRANCHES_FROM, LinkType.INTERSECTS}
+            and source.type != UnitType.STREAM
+        ):
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.ERROR,
+                unit_id=source.unit_id,
+                field="links",
+                message=(
+                    f"[link-semantics] {link.type.value} is only valid when source "
+                    f"unit is type 'stream'; got '{source.type.value}'."
+                ),
+            ))
+        return issues
+
+    @staticmethod
+    def _validate_link_target_semantics(
+        source: NarrativeUnit,
+        link: UnitLink,
+        target: NarrativeUnit,
+    ) -> List[ValidationIssue]:
+        """
+        Validate link-type-specific meaning when target resolution is known.
+
+        Severity policy:
+          - stream topology misuse is an error (engine contract violation)
+          - doctrine attachment type mismatch is a warning (authoring mismatch)
+        """
+        issues: List[ValidationIssue] = []
+
+        if link.type == LinkType.USES_THEORY and target.type != UnitType.THEORY:
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.WARNING,
+                unit_id=source.unit_id,
+                field="links",
+                message=(
+                    "[link-semantics] usesTheory must target a 'theory' unit; "
+                    f"got target '{target.unit_id}' of type '{target.type.value}'."
+                ),
+            ))
+
+        if link.type == LinkType.USES_ETHOS and target.type != UnitType.ETHOS:
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.WARNING,
+                unit_id=source.unit_id,
+                field="links",
+                message=(
+                    "[link-semantics] usesEthos must target an 'ethos' unit; "
+                    f"got target '{target.unit_id}' of type '{target.type.value}'."
+                ),
+            ))
+
+        if (
+            link.type in {LinkType.MERGES_INTO, LinkType.BRANCHES_FROM, LinkType.INTERSECTS}
+            and target.type != UnitType.STREAM
+        ):
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.ERROR,
+                unit_id=source.unit_id,
+                field="links",
+                message=(
+                    f"[link-semantics] {link.type.value} is only valid when target "
+                    f"unit is type 'stream'; got '{target.type.value}'."
+                ),
+            ))
+
+        return issues
 
     @staticmethod
     def _validate_strict_pins(

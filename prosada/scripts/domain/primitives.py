@@ -1,6 +1,9 @@
 """
-Core Narrative Primitives
-Matches the "Graph Native" conceptual brief.
+Legacy Graph Projection Primitives (Canvas Compatibility)
+
+These models are not the canonical persisted story schema.
+Canonical story authoring lives in backend/domain/narrative_unit.py.
+This file remains as a projection/adapter contract for legacy graph/canvas paths.
 """
 
 from enum import Enum

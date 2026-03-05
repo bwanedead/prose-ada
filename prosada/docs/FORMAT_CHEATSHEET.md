@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.10.3
+> **Managed by ProsAda tooling** · Version 1.10.4
 
 ---
 
@@ -271,3 +271,14 @@ See `WORKFLOWS.md` for authoring and export recipes.
   { "type": "intersects",    "targetId": "stream-b" }
 ]
 ```
+
+Link semantic rules:
+- `usesTheory` must target a `theory` unit.
+- `usesEthos` must target an `ethos` unit.
+- `merges-into` / `branches-from` / `intersects` are stream topology links and must connect `stream` units.
+- `payoffFor` / `setsUp` / `dependsOn` are broader relationship links.
+
+Guidance inheritance behavior (writing/editor surfaces):
+- resolve `usesTheory`/`usesEthos` from current unit and ancestors up to root
+- dedupe by target unit ID
+- show provenance (direct vs inherited source scope)

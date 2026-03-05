@@ -1,12 +1,13 @@
 # ProsAda Patch Notes
 
-> **Managed by ProsAda tooling** · Version 1.10.3
+> **Managed by ProsAda tooling** · Version 1.10.4
 
 This folder contains versioned engine/tooling update notes distributed into
 external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
 - `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
 - `engine-1.10.2.md` — layered `prosada/AGENTS.md` (managed top + preserved local additions)
 - `engine-1.10.1.md` — local append hook for AGENT_START_HERE (`AGENT_START_HERE.local.md`)

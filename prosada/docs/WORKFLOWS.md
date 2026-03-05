@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.10.3
+> **Managed by ProsAda tooling** · Version 1.10.4
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -74,6 +74,7 @@ Recommended pattern:
 2. Attach them to story units with links:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
+   - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 4. Set stability defaults explicitly:
    - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`

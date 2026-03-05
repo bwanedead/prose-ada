@@ -1,6 +1,8 @@
 """
-Timeline Service
-Manages the story graph, handling updates and ensuring logical consistency.
+Legacy Timeline Service (Projection Path)
+
+Manages the legacy in-memory graph used by compatibility canvas workflows.
+Canonical persisted story authoring uses NarrativeUnit services/endpoints.
 """
 
 from typing import Dict, List, Optional

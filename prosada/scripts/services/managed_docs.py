@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.3"
+DOCS_VERSION = "1.10.4"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -515,6 +515,17 @@ See `WORKFLOWS.md` for authoring and export recipes.
   {{ "type": "intersects",    "targetId": "stream-b" }}
 ]
 ```
+
+Link semantic rules:
+- `usesTheory` must target a `theory` unit.
+- `usesEthos` must target an `ethos` unit.
+- `merges-into` / `branches-from` / `intersects` are stream topology links and must connect `stream` units.
+- `payoffFor` / `setsUp` / `dependsOn` are broader relationship links.
+
+Guidance inheritance behavior (writing/editor surfaces):
+- resolve `usesTheory`/`usesEthos` from current unit and ancestors up to root
+- dedupe by target unit ID
+- show provenance (direct vs inherited source scope)
 """
 
 
@@ -599,6 +610,7 @@ Recommended pattern:
 2. Attach them to story units with links:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
+   - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 4. Set stability defaults explicitly:
    - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`
@@ -1258,6 +1270,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
 - `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
 - `engine-1.10.2.md` — layered `prosada/AGENTS.md` (managed top + preserved local additions)
 - `engine-1.10.1.md` — local append hook for AGENT_START_HERE (`AGENT_START_HERE.local.md`)
@@ -1420,6 +1433,43 @@ revision workflows fail safely when anchors drift or conflict.
 - Treat degraded KEEP warnings as review-required signals.
 - Re-anchor or adjust locks when ambiguity conflicts are reported.
 - Keep merge regions carved around hard KEEP spans.
+"""
+
+
+_PATCH_NOTES_ENGINE_1104 = """\
+# Patch Notes — engine-1.10.4
+
+Date: 2026-03-05
+Scope: canonical schema contract cleanup + semantic link validation + inherited guidance resolution
+
+## Summary
+
+This release removes stale schema guidance, hardens link semantics, and makes
+theory/ethos guidance inheritance explicit in writing/editor surfaces.
+
+## Added
+
+- Validator semantic checks for unit links:
+  - `usesTheory` target must be `theory` (warning when mismatched)
+  - `usesEthos` target must be `ethos` (warning when mismatched)
+  - `merges-into` / `branches-from` / `intersects` require `stream` source+target (error on mismatch)
+- Writing/editor guidance resolution now includes ancestor inheritance with
+  provenance (direct vs inherited source scope).
+
+## Changed
+
+- Managed docs now state canonical schema as `NarrativeUnit` and describe
+  legacy graph primitives as projection compatibility shapes.
+- Managed docs now document semantic link rules and inherited guidance behavior.
+- Managed docs pack bumped to `1.10.4`.
+
+## Story Agent Guidance
+
+- Treat `usesTheory`/`usesEthos` as typed links, not generic pointers.
+- Use top-down doctrine linking at higher scopes; descendants now inherit guidance
+  in writing/editor views without link duplication.
+- Do not rely on stale `execution` namespace references unless reintroduced by a
+  later schema patch note.
 """
 
 
@@ -1791,6 +1841,7 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.4.md", _PATCH_NOTES_ENGINE_1104),
     ("patch-notes/engine-1.10.3.md", _PATCH_NOTES_ENGINE_1103),
     ("patch-notes/engine-1.10.2.md", _PATCH_NOTES_ENGINE_1102),
     ("patch-notes/engine-1.10.1.md", _PATCH_NOTES_ENGINE_1101),

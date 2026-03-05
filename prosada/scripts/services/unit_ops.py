@@ -235,7 +235,12 @@ class UnitOps:
         Append a UnitLink to source unit's links[].
 
         link_type must be a valid LinkType enum value:
-          merges-into | branches-from | intersects | payoffFor | setsUp | dependsOn
+          merges-into | branches-from | intersects | payoffFor | setsUp | dependsOn | usesTheory | usesEthos
+
+        Semantic constraints (enforced by V2Validator):
+          - usesTheory target should be type "theory" (warning on mismatch)
+          - usesEthos target should be type "ethos" (warning on mismatch)
+          - merges-into / branches-from / intersects require stream source+target (error on mismatch)
         """
         all_units = repo.load_all_units()
         manifest = repo.load_manifest()
