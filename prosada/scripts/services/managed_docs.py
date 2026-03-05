@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.4"
+DOCS_VERSION = "1.10.5"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -298,6 +298,10 @@ _FORMAT_CHEATSHEET = """\
       "confidenceDelta": 1
     }}
   }},
+  "guidance": {{
+    "kind": "prose_brief",             // optional soft classification (theory/ethos focus)
+    "tags": ["scene", "voice"]         // optional free-form tags
+  }},
   "view": {{
     "canvas": {{
       "x": null, "y": null, "collapsed": false,
@@ -321,6 +325,30 @@ _FORMAT_CHEATSHEET = """\
 
 Planning rule:
 - Treat planning metadata as non-canonical until `planningStatus = "locked"`.
+
+---
+
+## Guidance Taxonomy (optional, unit.guidance)
+
+Soft classification metadata for guidance artifacts (primarily `theory`/`ethos`):
+
+- `guidance.kind`: optional free-form label
+- `guidance.tags[]`: optional free-form tags
+
+Recommended `guidance.kind` values (conventions, not hard limits):
+- `global_ethos`
+- `scope_theory`
+- `prose_brief`
+- `revision_brief`
+- `constraint`
+- `checklist`
+- `research_note`
+- `spec`
+- `prompt_scaffold`
+
+Policy:
+- keep top-level `type` stable and load-bearing
+- use `guidance.kind` for flexible taxonomy needs first
 
 ---
 
@@ -612,7 +640,10 @@ Recommended pattern:
    - `usesEthos`  → target is an `ethos` unit
    - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
-4. Set stability defaults explicitly:
+4. Optionally classify guidance using soft taxonomy metadata:
+   - `guidance.kind` (recommended examples: `scope_theory`, `prose_brief`, `checklist`)
+   - `guidance.tags[]` for free-form labels
+5. Set stability defaults explicitly:
    - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`
    - approved doctrine: `doctrineStatus: "approved"`, `mutationLock: "hard_locked"`
 
@@ -1270,6 +1301,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.5.md` — optional guidance taxonomy namespace (`guidance.kind`, `guidance.tags`) for theory/ethos units
 - `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
 - `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
 - `engine-1.10.2.md` — layered `prosada/AGENTS.md` (managed top + preserved local additions)
@@ -1433,6 +1465,41 @@ revision workflows fail safely when anchors drift or conflict.
 - Treat degraded KEEP warnings as review-required signals.
 - Re-anchor or adjust locks when ambiguity conflicts are reported.
 - Keep merge regions carved around hard KEEP spans.
+"""
+
+
+_PATCH_NOTES_ENGINE_1105 = """\
+# Patch Notes — engine-1.10.5
+
+Date: 2026-03-05
+Scope: soft guidance taxonomy namespace for theory/ethos units
+
+## Summary
+
+This release adds a lightweight, optional taxonomy layer for guidance artifacts
+without expanding top-level unit types.
+
+## Added
+
+- Optional `unit.guidance` namespace in canonical schema:
+  - `guidance.kind?: string`
+  - `guidance.tags?: string[]`
+- Writing/editor guidance displays now surface `guidance.kind` when present.
+
+## Changed
+
+- Validator adds warning-only checks for obviously bad guidance metadata shape:
+  - guidance on non-theory/non-ethos units
+  - blank `guidance.kind`
+  - empty tag values
+- Managed docs now document recommended (soft) `guidance.kind` vocabulary.
+- Managed docs pack bumped to `1.10.5`.
+
+## Story Agent Guidance
+
+- Keep top-level `type` values (`theory`, `ethos`) stable.
+- Use `guidance.kind` as the first-stop flexible classification layer.
+- Treat recommended vocabulary as conventions, not hard limits.
 """
 
 
@@ -1841,6 +1908,7 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.5.md", _PATCH_NOTES_ENGINE_1105),
     ("patch-notes/engine-1.10.4.md", _PATCH_NOTES_ENGINE_1104),
     ("patch-notes/engine-1.10.3.md", _PATCH_NOTES_ENGINE_1103),
     ("patch-notes/engine-1.10.2.md", _PATCH_NOTES_ENGINE_1102),

@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.10.4
+> **Managed by ProsAda tooling** · Version 1.10.5
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -76,7 +76,10 @@ Recommended pattern:
    - `usesEthos`  → target is an `ethos` unit
    - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
-4. Set stability defaults explicitly:
+4. Optionally classify guidance using soft taxonomy metadata:
+   - `guidance.kind` (recommended examples: `scope_theory`, `prose_brief`, `checklist`)
+   - `guidance.tags[]` for free-form labels
+5. Set stability defaults explicitly:
    - working guide: `doctrineStatus: "leaning"`, `mutationLock: "soft_locked"`
    - approved doctrine: `doctrineStatus: "approved"`, `mutationLock: "hard_locked"`
 

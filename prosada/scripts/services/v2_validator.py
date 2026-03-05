@@ -19,6 +19,7 @@ WARNING (non-blocking, reported to caller):
      (missing file is allowed — it may be created later)
   7. Duplicate unitIds in children[]
   8a. Link type doctrine-target mismatch (`usesTheory`, `usesEthos`)
+  11. guidance metadata shape sanity (optional field misuse/blank values)
 
 ERROR (blocks save):
   8b. Stream topology links (`merges-into`, `branches-from`, `intersects`)
@@ -267,7 +268,10 @@ class V2Validator:
                     ))
                     break  # one warning per stream unit is enough
 
-        # --- Rule 11+: strict pin policy enforcement ---
+        # --- Rule 11: optional guidance metadata shape sanity ---
+        issues.extend(V2Validator._validate_guidance_metadata(unit))
+
+        # --- Rule 12+: strict pin policy enforcement ---
         if strict_pins:
             issues.extend(V2Validator._validate_strict_pins(unit, all_units, manifest))
 
@@ -419,6 +423,45 @@ class V2Validator:
                     f"[link-semantics] {link.type.value} is only valid when target "
                     f"unit is type 'stream'; got '{target.type.value}'."
                 ),
+            ))
+
+        return issues
+
+    @staticmethod
+    def _validate_guidance_metadata(unit: NarrativeUnit) -> List[ValidationIssue]:
+        """
+        Warning-only checks for optional guidance taxonomy metadata.
+        """
+        issues: List[ValidationIssue] = []
+        guidance = getattr(unit, "guidance", None)
+        if guidance is None:
+            return issues
+
+        if unit.type not in {UnitType.THEORY, UnitType.ETHOS}:
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.WARNING,
+                unit_id=unit.unit_id,
+                field="guidance",
+                message=(
+                    f"guidance metadata is intended for theory/ethos units; "
+                    f"'{unit.unit_id}' has type '{unit.type.value}'."
+                ),
+            ))
+
+        if guidance.kind is not None and not guidance.kind.strip():
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.WARNING,
+                unit_id=unit.unit_id,
+                field="guidance.kind",
+                message="guidance.kind is present but empty/whitespace.",
+            ))
+
+        if any((tag is None) or (not str(tag).strip()) for tag in guidance.tags):
+            issues.append(ValidationIssue(
+                severity=IssueSeverity.WARNING,
+                unit_id=unit.unit_id,
+                field="guidance.tags",
+                message="guidance.tags contains empty values; remove blank tags.",
             ))
 
         return issues

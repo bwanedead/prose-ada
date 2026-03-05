@@ -385,6 +385,20 @@ class PresentationMetadata(BaseModel):
     )
 
 
+class GuidanceMetadata(BaseModel):
+    """
+    Optional guidance taxonomy metadata for theory/ethos units.
+
+    Soft classification layer:
+      - kind: free-form label (recommended vocabulary documented in docs)
+      - tags: optional free-form tags for filtering/grouping
+
+    This is intentionally flexible and non-enforcing.
+    """
+    kind: Optional[str] = None
+    tags: List[str] = Field(default_factory=list)
+
+
 class NarrativeUnit(BaseModel):
     """
     v2 Core Primitive: Narrative Unit
@@ -433,6 +447,13 @@ class NarrativeUnit(BaseModel):
         description=(
             "Optional planning instrumentation metadata. "
             "Planning-only unless planningStatus='locked'."
+        ),
+    )
+    guidance: Optional[GuidanceMetadata] = Field(
+        default=None,
+        description=(
+            "Optional guidance taxonomy metadata for doctrine units. "
+            "Soft/extensible classification (e.g., kind/tags)."
         ),
     )
     view: ViewNamespace = Field(default_factory=ViewNamespace)

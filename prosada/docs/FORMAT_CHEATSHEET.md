@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.10.4
+> **Managed by ProsAda tooling** · Version 1.10.5
 
 ---
 
@@ -54,6 +54,10 @@
       "confidenceDelta": 1
     }
   },
+  "guidance": {
+    "kind": "prose_brief",             // optional soft classification (theory/ethos focus)
+    "tags": ["scene", "voice"]         // optional free-form tags
+  },
   "view": {
     "canvas": {
       "x": null, "y": null, "collapsed": false,
@@ -77,6 +81,30 @@
 
 Planning rule:
 - Treat planning metadata as non-canonical until `planningStatus = "locked"`.
+
+---
+
+## Guidance Taxonomy (optional, unit.guidance)
+
+Soft classification metadata for guidance artifacts (primarily `theory`/`ethos`):
+
+- `guidance.kind`: optional free-form label
+- `guidance.tags[]`: optional free-form tags
+
+Recommended `guidance.kind` values (conventions, not hard limits):
+- `global_ethos`
+- `scope_theory`
+- `prose_brief`
+- `revision_brief`
+- `constraint`
+- `checklist`
+- `research_note`
+- `spec`
+- `prompt_scaffold`
+
+Policy:
+- keep top-level `type` stable and load-bearing
+- use `guidance.kind` for flexible taxonomy needs first
 
 ---
 
