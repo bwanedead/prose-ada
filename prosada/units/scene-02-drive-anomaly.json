@@ -6,12 +6,7 @@
   "summary": "During the commute, a subtle air/sky wrongness appears and Ada actively tests mundane explanations.",
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
-  "links": [
-    {
-      "type": "usesTheory",
-      "targetId": "theory-onboarding-ergonomic-entry"
-    }
-  ],
+  "links": [],
   "narrative": {
     "threadsAdvanced": [
       "stream-anomaly-fermi"

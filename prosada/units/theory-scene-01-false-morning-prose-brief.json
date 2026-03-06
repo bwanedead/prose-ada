@@ -61,5 +61,14 @@
     ],
     "doctrineStatus": "leaning",
     "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "prose_brief",
+    "tags": [
+      "scene",
+      "chapter-01",
+      "opening-pages",
+      "voice"
+    ]
   }
 }

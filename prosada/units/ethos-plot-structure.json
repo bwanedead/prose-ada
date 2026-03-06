@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "ethos-plot-structure",
+  "type": "ethos",
+  "title": "Plot Structure Ethos",
+  "summary": "Fractal anomaly-hypothesis-test-cost structure for the book: constant curiosity, tightening models, and convergence-driven escalation.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "locked",
+    "notes": "Canonical plotting doctrine covering anomaly -> hypothesis -> test -> cost -> new anomaly, chapter output minimums, convergence devices, cost discipline, and clarity-chamber rules. Applies book-wide unless superseded by narrower structural doctrine.",
+    "textRef": "../../docs/ethos/plot-structure-ethos.md",
+    "threadsAdvanced": [],
+    "characters": [],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [],
+    "doctrineStatus": "leaning",
+    "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "global_ethos",
+    "tags": [
+      "plot",
+      "structure",
+      "mystery",
+      "convergence"
+    ]
+  }
+}

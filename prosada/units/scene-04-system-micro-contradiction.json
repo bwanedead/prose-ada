@@ -6,12 +6,7 @@
   "summary": "A small observatory-system inconsistency rhymes with the earlier air anomaly, implying cross-domain structure.",
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
-  "links": [
-    {
-      "type": "usesTheory",
-      "targetId": "theory-onboarding-ergonomic-entry"
-    }
-  ],
+  "links": [],
   "narrative": {
     "threadsAdvanced": [
       "stream-anomaly-fermi"

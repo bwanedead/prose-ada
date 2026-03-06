@@ -11,7 +11,11 @@
     "act-03-the-man-who-died-twice",
     "act-04-the-first-convergence"
   ],
-  "links": [],
+  "links": [
+    { "type": "usesEthos", "targetId": "ethos-writing-style" },
+    { "type": "usesEthos", "targetId": "ethos-plot-structure" },
+    { "type": "usesEthos", "targetId": "ethos-beauty" }
+  ],
   "narrative": {
     "threadsAdvanced": [],
     "characters": [

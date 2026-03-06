@@ -7,7 +7,6 @@
   "parentId": "chapter-01-static-in-the-sky",
   "children": [],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" },
     { "type": "usesTheory", "targetId": "theory-scene-01-false-morning-prose-brief" }
   ],
   "narrative": {

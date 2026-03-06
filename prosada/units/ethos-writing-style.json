@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "ethos-writing-style",
+  "type": "ethos",
+  "title": "Writing Style Ethos",
+  "summary": "Voice and sentence-level doctrine for Prose Ada: clarity-first prose, investigative cognition, sustained curiosity, and earned wonder.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "locked",
+    "notes": "Canonical story voice doctrine covering clarity, cognitive intimacy, curiosity drip, honest uncertainty, scene exits, and revision filters. Applies book-wide unless a narrower local override is intentionally linked.",
+    "textRef": "../../docs/ethos/writing-style-ethos.md",
+    "threadsAdvanced": [],
+    "characters": [],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [],
+    "doctrineStatus": "leaning",
+    "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "global_ethos",
+    "tags": [
+      "voice",
+      "prose",
+      "clarity",
+      "curiosity"
+    ]
+  }
+}

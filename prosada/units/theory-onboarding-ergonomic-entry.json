@@ -38,5 +38,13 @@
     "rewardTokens": [],
     "doctrineStatus": "leaning",
     "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "scope_theory",
+    "tags": [
+      "onboarding",
+      "entry-ramp",
+      "reader-modeling"
+    ]
   }
 }

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "ethos-beauty",
+  "type": "ethos",
+  "title": "Beauty Ethos",
+  "summary": "Aesthetic doctrine for Prose Ada: beauty as earned deep-fit, layered coherence, inevitability, and multi-scale alignment.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "locked",
+    "notes": "Canonical aesthetic doctrine covering compression, inevitability, motif fit, reduction of loose ends, and earned alignment across plot, symbol, and inner life. Applies book-wide unless a narrower local aesthetic doctrine is intentionally attached.",
+    "textRef": "../../docs/ethos/beauty-ethos.md",
+    "threadsAdvanced": [],
+    "characters": [],
+    "locations": [],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [],
+    "doctrineStatus": "leaning",
+    "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "global_ethos",
+    "tags": [
+      "beauty",
+      "coherence",
+      "motif-fit",
+      "inevitability"
+    ]
+  }
+}
