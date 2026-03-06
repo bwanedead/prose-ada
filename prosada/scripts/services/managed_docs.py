@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.6"
+DOCS_VERSION = "1.10.7"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -161,7 +161,8 @@ Use these defaults consistently across story repos:
   - If a chapter/scene/connective has prose, set `narrative.textRef`.
   - Use deterministic path: `<unitId>.md` under `prosada/units/`.
   - Optional beat-boundary markers in prose:
-    - `[[[beat-id|Beat Name]]]`
+    - `[[[beat-id|Beat Name|start]]]`
+    - `[[[beat-id|Beat Name|end]]]`
     - keep markers in source prose; read viewers may hide tokens while preserving boundaries
   - Do not invent repo-specific folder/filename heuristics.
 - Theory/ethos stability fields:
@@ -619,8 +620,9 @@ When prose drafting starts for a chapter/scene/connective unit:
 3. Create the prose file if missing before expecting prose surfaces to render.
 4. If the engine/UI fails to wire this automatically, file an engine handoff
    note under `prosada/docs/engine-handoffs/` instead of inventing local path rules.
-5. Optional beat boundaries inside scene prose can use:
-   - `[[[beat-id|Beat Name]]]`
+5. Optional beat boundaries inside scene prose can use explicit bookends:
+   - `[[[beat-id|Beat Name|start]]]`
+   - `[[[beat-id|Beat Name|end]]]`
 6. Keep beat markers in source prose for machine readability; viewers may hide
    marker tokens while still exposing boundary context.
 
@@ -1034,7 +1036,9 @@ It remains stable even if AGENTS conventions evolve.
 - Prose wiring:
   - If prose exists, set `narrative.textRef`.
   - Deterministic path: `<unitId>.md` under `prosada/units/`.
-  - Optional beat-boundary marker syntax: `[[[beat-id|Beat Name]]]`.
+  - Optional beat-boundary marker syntax:
+    - `[[[beat-id|Beat Name|start]]]`
+    - `[[[beat-id|Beat Name|end]]]`
 - Theory/ethos stability:
   - Always set both `doctrineStatus` and `mutationLock`.
   - Working guide default: `leaning` + `soft_locked`.
@@ -1310,6 +1314,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.7.md` — explicit beat prose bookend markers (`start`/`end`) + parser compatibility guidance
 - `engine-1.10.6.md` — scene-resolution bars + optional prose beat-boundary marker convention (`[[[beat-id|Beat Name]]]`)
 - `engine-1.10.5.md` — optional guidance taxonomy namespace (`guidance.kind`, `guidance.tags`) for theory/ethos units
 - `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
@@ -1546,6 +1551,35 @@ boundary detail in outline and prose workflows.
   anchors.
 - Keep marker syntax stable (`[[[id|label]]]`) for parser interoperability.
 - Hidden markers in read view are display behavior only, not source deletion.
+"""
+
+
+_PATCH_NOTES_ENGINE_1107 = """\
+# Patch Notes — engine-1.10.7
+
+Date: 2026-03-06
+Scope: explicit prose beat-boundary bookend semantics
+
+## Summary
+
+This update formalizes beat markers in prose as explicit start/end bookends so
+sub-scene boundaries are unambiguous for agents and tools.
+
+## Changed
+
+- Recommended marker contract now uses explicit boundaries:
+  - `[[[beat-id|Beat Name|start]]]`
+  - `[[[beat-id|Beat Name|end]]]`
+- Parser compatibility guidance:
+  - markers without boundary suffix are treated as legacy point markers
+  - new bookend syntax is preferred for deterministic range parsing
+- Managed docs pack bumped to `1.10.7`.
+
+## Story Agent Guidance
+
+- For new beat annotations, always write paired `start` + `end` markers with
+  the same beat ID.
+- Keep existing legacy markers only as transitional data; migrate when touched.
 """
 
 
@@ -1954,6 +1988,7 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.7.md", _PATCH_NOTES_ENGINE_1107),
     ("patch-notes/engine-1.10.6.md", _PATCH_NOTES_ENGINE_1106),
     ("patch-notes/engine-1.10.5.md", _PATCH_NOTES_ENGINE_1105),
     ("patch-notes/engine-1.10.4.md", _PATCH_NOTES_ENGINE_1104),

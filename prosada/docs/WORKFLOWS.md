@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.10.6
+> **Managed by ProsAda tooling** · Version 1.10.7
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -51,8 +51,9 @@ When prose drafting starts for a chapter/scene/connective unit:
 3. Create the prose file if missing before expecting prose surfaces to render.
 4. If the engine/UI fails to wire this automatically, file an engine handoff
    note under `prosada/docs/engine-handoffs/` instead of inventing local path rules.
-5. Optional beat boundaries inside scene prose can use:
-   - `[[[beat-id|Beat Name]]]`
+5. Optional beat boundaries inside scene prose can use explicit bookends:
+   - `[[[beat-id|Beat Name|start]]]`
+   - `[[[beat-id|Beat Name|end]]]`
 6. Keep beat markers in source prose for machine readability; viewers may hide
    marker tokens while still exposing boundary context.
 
