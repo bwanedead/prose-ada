@@ -2,7 +2,7 @@
 
 ## Managed Engine Guidance
 - Source: ProsAda tooling pack
-- Version: 1.10.5
+- Version: 1.10.6
 - Scope: engine-wide behavior/protocol expectations for this story workspace
 
 ## Rules
@@ -16,6 +16,9 @@
 ---
 
 ## Local Story Repo Additions (Preserved)
+
+> This section is story-repo-owned and preserved across tooling refreshes.
+> Add local operational rules, reviewer gates, and project-specific constraints here.
 
 > This section is story-repo-owned and preserved across tooling refreshes.
 > Add local operational rules, reviewer gates, and project-specific constraints here.

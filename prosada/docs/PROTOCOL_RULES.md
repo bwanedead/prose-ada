@@ -1,6 +1,6 @@
 # ProsAda Protocol Rules
 
-> **Managed by ProsAda tooling** · Version 1.10.5
+> **Managed by ProsAda tooling** · Version 1.10.6
 > Durable engine protocol contract for story-repo agents.
 
 ---
@@ -27,6 +27,7 @@ It remains stable even if AGENTS conventions evolve.
 - Prose wiring:
   - If prose exists, set `narrative.textRef`.
   - Deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Optional beat-boundary marker syntax: `[[[beat-id|Beat Name]]]`.
 - Theory/ethos stability:
   - Always set both `doctrineStatus` and `mutationLock`.
   - Working guide default: `leaning` + `soft_locked`.

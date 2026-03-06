@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.10.5
+> **Managed by ProsAda tooling** · Version 1.10.6
 
 ---
 
@@ -145,6 +145,7 @@ Render ownership policy (app behavior):
 - A unit renders on at most one stream lane by default.
 - Owner stream = first valid stream ID in `threadsAdvanced[]`.
 - Additional stream IDs are metadata (cross-stream semantics), not duplicate pills.
+- Canvas bars/strip are scene-resolution by default; beat-level detail belongs in outline/prose surfaces.
 
 ---
 

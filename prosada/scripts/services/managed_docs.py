@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.5"
+DOCS_VERSION = "1.10.6"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -160,6 +160,9 @@ Use these defaults consistently across story repos:
 - Prose wiring:
   - If a chapter/scene/connective has prose, set `narrative.textRef`.
   - Use deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Optional beat-boundary markers in prose:
+    - `[[[beat-id|Beat Name]]]`
+    - keep markers in source prose; read viewers may hide tokens while preserving boundaries
   - Do not invent repo-specific folder/filename heuristics.
 - Theory/ethos stability fields:
   - Always set both `doctrineStatus` and `mutationLock`.
@@ -389,6 +392,7 @@ Render ownership policy (app behavior):
 - A unit renders on at most one stream lane by default.
 - Owner stream = first valid stream ID in `threadsAdvanced[]`.
 - Additional stream IDs are metadata (cross-stream semantics), not duplicate pills.
+- Canvas bars/strip are scene-resolution by default; beat-level detail belongs in outline/prose surfaces.
 
 ---
 
@@ -615,6 +619,10 @@ When prose drafting starts for a chapter/scene/connective unit:
 3. Create the prose file if missing before expecting prose surfaces to render.
 4. If the engine/UI fails to wire this automatically, file an engine handoff
    note under `prosada/docs/engine-handoffs/` instead of inventing local path rules.
+5. Optional beat boundaries inside scene prose can use:
+   - `[[[beat-id|Beat Name]]]`
+6. Keep beat markers in source prose for machine readability; viewers may hide
+   marker tokens while still exposing boundary context.
 
 ---
 
@@ -1026,6 +1034,7 @@ It remains stable even if AGENTS conventions evolve.
 - Prose wiring:
   - If prose exists, set `narrative.textRef`.
   - Deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Optional beat-boundary marker syntax: `[[[beat-id|Beat Name]]]`.
 - Theory/ethos stability:
   - Always set both `doctrineStatus` and `mutationLock`.
   - Working guide default: `leaning` + `soft_locked`.
@@ -1301,6 +1310,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.6.md` — scene-resolution bars + optional prose beat-boundary marker convention (`[[[beat-id|Beat Name]]]`)
 - `engine-1.10.5.md` — optional guidance taxonomy namespace (`guidance.kind`, `guidance.tags`) for theory/ethos units
 - `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
 - `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface
@@ -1500,6 +1510,42 @@ without expanding top-level unit types.
 - Keep top-level `type` values (`theory`, `ethos`) stable.
 - Use `guidance.kind` as the first-stop flexible classification layer.
 - Treat recommended vocabulary as conventions, not hard limits.
+"""
+
+
+_PATCH_NOTES_ENGINE_1106 = """\
+# Patch Notes — engine-1.10.6
+
+Date: 2026-03-06
+Scope: sub-scene beat boundary ergonomics across bars/outline/prose
+
+## Summary
+
+This release keeps high-level bars readable while preserving sub-scene beat
+boundary detail in outline and prose workflows.
+
+## Added
+
+- Optional prose beat-boundary marker convention:
+  - `[[[beat-id|Beat Name]]]`
+- Writing/editor surfaces can show beat-boundary context from prose markers.
+
+## Changed
+
+- Canvas stream/spine bars and beat strip now default to scene-resolution
+  presentation (beat-level pills are hidden there).
+- Outline supports expansion/collapse so beat units are visible when expanded
+  under scenes.
+- Read-oriented prose surfaces may hide marker tokens while preserving boundary
+  context metadata.
+- Managed docs pack bumped to `1.10.6`.
+
+## Story Agent Guidance
+
+- Use beat markers when sub-scene boundaries in prose need machine-readable
+  anchors.
+- Keep marker syntax stable (`[[[id|label]]]`) for parser interoperability.
+- Hidden markers in read view are display behavior only, not source deletion.
 """
 
 
@@ -1908,6 +1954,7 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.6.md", _PATCH_NOTES_ENGINE_1106),
     ("patch-notes/engine-1.10.5.md", _PATCH_NOTES_ENGINE_1105),
     ("patch-notes/engine-1.10.4.md", _PATCH_NOTES_ENGINE_1104),
     ("patch-notes/engine-1.10.3.md", _PATCH_NOTES_ENGINE_1103),

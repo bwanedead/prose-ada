@@ -1,12 +1,13 @@
 # ProsAda Patch Notes
 
-> **Managed by ProsAda tooling** · Version 1.10.5
+> **Managed by ProsAda tooling** · Version 1.10.6
 
 This folder contains versioned engine/tooling update notes distributed into
 external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.6.md` — scene-resolution bars + optional prose beat-boundary marker convention (`[[[beat-id|Beat Name]]]`)
 - `engine-1.10.5.md` — optional guidance taxonomy namespace (`guidance.kind`, `guidance.tags`) for theory/ethos units
 - `engine-1.10.4.md` — canonical schema contract cleanup, semantic link validation, and inherited guidance resolution
 - `engine-1.10.3.md` — protocol rules doc (`PROTOCOL_RULES.md`) added as non-AGENTS enforcement surface

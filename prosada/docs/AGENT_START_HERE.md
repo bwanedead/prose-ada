@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.10.5
+> **Managed by ProsAda tooling** · Version 1.10.6
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -115,6 +115,9 @@ Use these defaults consistently across story repos:
 - Prose wiring:
   - If a chapter/scene/connective has prose, set `narrative.textRef`.
   - Use deterministic path: `<unitId>.md` under `prosada/units/`.
+  - Optional beat-boundary markers in prose:
+    - `[[[beat-id|Beat Name]]]`
+    - keep markers in source prose; read viewers may hide tokens while preserving boundaries
   - Do not invent repo-specific folder/filename heuristics.
 - Theory/ethos stability fields:
   - Always set both `doctrineStatus` and `mutationLock`.
