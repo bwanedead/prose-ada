@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "theory-chapter-01-flow-and-intent",
+  "type": "theory",
+  "title": "Chapter 1 Theory Brief - Flow, Onboarding, and Exit Intent",
+  "summary": "Chapter-level guidance for Ada's opening chapter: inhabitable onboarding, subtle anomaly introduction, procedural grounding, pattern teaser, and a decision-based exit into pursuit.",
+  "parentId": null,
+  "children": [],
+  "links": [],
+  "narrative": {
+    "status": "draft",
+    "notes": "Chapter 1 mission: settle the reader into Ada's life and mind, deliver quiet atmosphere and competence rewards, introduce subtle wrongness, then end on a private commitment that turns routine into pursuit. This theory is leaning by design and should be updated if prose drafting discovers a cleaner sequence or stronger terminal beat.",
+    "textRef": "../../docs/briefs/chapter-01-theory-brief.md",
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "maine-coast-town",
+      "blueberry-pond-observatory"
+    ],
+    "newInfo": null,
+    "dripHook": null,
+    "payoffDelivered": null,
+    "beautyHooks": null
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": null
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup",
+      "investigation",
+      "bridge"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 3,
+        "description": "Warm, legible onboarding creates pleasure of entry before stronger wrongness arrives.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 3,
+        "description": "Ada's disciplined testing turns intrigue into trust.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "decision",
+        "strength": 3,
+        "description": "The chapter exits on voluntary pursuit rather than passive unease.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ],
+    "doctrineStatus": "leaning",
+    "mutationLock": "soft_locked"
+  },
+  "guidance": {
+    "kind": "scope_theory",
+    "tags": [
+      "chapter",
+      "chapter-01",
+      "flow",
+      "intent",
+      "onboarding"
+    ]
+  }
+}

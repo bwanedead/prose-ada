@@ -13,7 +13,8 @@
     "scene-05-private-commitment"
   ],
   "links": [
-    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" }
+    { "type": "usesTheory", "targetId": "theory-onboarding-ergonomic-entry" },
+    { "type": "usesTheory", "targetId": "theory-chapter-01-flow-and-intent" }
   ],
   "narrative": {
     "threadsAdvanced": [
