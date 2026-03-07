@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.7"
+DOCS_VERSION = "1.10.9"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -1258,6 +1258,11 @@ has been modified or is from an older version.
 | `/v2/prose-assembled/{unitId}`| GET    | Read assembled prose projection + provenance segments  |
 | `/v2/prose-overlay/{unitId}`  | GET    | Read prose overlay artifact (`locks`, `variants`, `audio`) |
 | `/v2/prose-overlay/{unitId}`  | POST   | Write prose overlay artifact                               |
+| `/v2/tts/config`              | GET    | Read TTS voices/formats/defaults + key availability        |
+| `/v2/tts/voices`              | GET    | List provider voices (OpenAI static, ElevenLabs live)      |
+| `/v2/tts/api-key`             | POST   | Save provider API key to project-scoped machine keyring     |
+| `/v2/tts/api-key`             | DELETE | Remove provider API key from project-scoped keyring         |
+| `/v2/tts/speak`               | POST   | Generate one TTS chunk with `cueMode` (`flat`/`emoted`)     |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |
@@ -1314,6 +1319,8 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.10.9.md` — provider-agnostic TTS adapters: live voice discovery, saved voice favorites, and `flat` vs `emoted` cue mode
+- `engine-1.10.8.md` — OpenAI TTS workflow: project-scoped keyring keys, beat-marker scrubbing, chunked playback controls
 - `engine-1.10.7.md` — explicit beat prose bookend markers (`start`/`end`) + parser compatibility guidance
 - `engine-1.10.6.md` — scene-resolution bars + optional prose beat-boundary marker convention (`[[[beat-id|Beat Name]]]`)
 - `engine-1.10.5.md` — optional guidance taxonomy namespace (`guidance.kind`, `guidance.tags`) for theory/ethos units
@@ -1580,6 +1587,91 @@ sub-scene boundaries are unambiguous for agents and tools.
 - For new beat annotations, always write paired `start` + `end` markers with
   the same beat ID.
 - Keep existing legacy markers only as transitional data; migrate when touched.
+"""
+
+
+_PATCH_NOTES_ENGINE_1108 = """\
+# Patch Notes — engine-1.10.8
+
+Date: 2026-03-06
+Scope: OpenAI TTS integration for prose workflows
+
+## Summary
+
+This release adds app-level text-to-speech for prose editing/review with
+project-scoped API key storage and safe chunked playback orchestration.
+
+## Added
+
+- Backend TTS endpoints:
+  - `GET /v2/tts/config`
+  - `POST /v2/tts/api-key`
+  - `DELETE /v2/tts/api-key`
+  - `POST /v2/tts/speak`
+- Per-project key isolation:
+  - OpenAI API keys are stored in machine keyring slots scoped by active
+    project ID (so keys do not collide across story projects).
+- Beat marker sanitation:
+  - `POST /v2/tts/speak` strips prose beat markers (`[[[...]]]`) before sending
+    text to OpenAI.
+- Frontend prose surfaces:
+  - voice selector, speed control, format selector, optional instructions
+  - listen selection / listen unit / listen scope controls
+  - pause, resume, stop controls
+  - prefetch chunk orchestration for longer prose playback
+
+## Story Agent Guidance
+
+- Keep beat markers in source prose for machine readability; TTS playback now
+  scrubs them automatically.
+- Keep requests chunked; do not attempt single-call full-manuscript synthesis.
+"""
+
+
+_PATCH_NOTES_ENGINE_1109 = """\
+# Patch Notes — engine-1.10.9
+
+Date: 2026-03-06
+Scope: provider-agnostic TTS cues + voices workflow
+
+## Summary
+
+This release expands TTS into a provider-agnostic protocol with audio-cue
+adaptation control and resilient voice selection workflow.
+
+## Added
+
+- New endpoint:
+  - `GET /v2/tts/voices` for provider voice discovery (`openai` static list,
+    `elevenlabs` live account voices via API key)
+- TTS cue mode:
+  - `cueMode=flat` strips prose metadata markers before synthesis
+  - `cueMode=emoted` adapts `[[[audio|...]]]` cues per provider/model
+- ElevenLabs/OpenAI adapter behavior:
+  - OpenAI: converts audio cues into delivery instructions
+  - ElevenLabs `eleven_v3`: converts audio cues into inline expressive tags
+  - ElevenLabs non-v3 models: cues become instruction hints with clean text
+- Voice workflow upgrades:
+  - voice finder search/load flow
+  - saved voice favorites per provider
+  - favorites persistence through workspace preferences + local fallback
+- Character voice routing:
+  - narrator + character voice assignment mapping
+  - in-prose speaker markers route chunks to assigned voices and stitch playback
+
+## Story Agent Guidance
+
+- Keep prose clean and reader-first.
+- Use hidden metadata markers for expressive intent:
+  - `[[[audio|style=whisper|start]]]`
+  - `[[[audio|emotion=excited|point]]]`
+  - `[[[audio|style=whisper|end]]]`
+- Use speaker markers for auto voice routing:
+  - `[[[speaker|character-id|start]]]`
+  - `[[[speaker|character-id|end]]]`
+- Continue using beat markers (`[[[beat-...]]]`) for structural boundaries.
+- Use `flat` mode for neutral pass listening and `emoted` mode for
+  audiobook-preview listening.
 """
 
 
@@ -1988,6 +2080,8 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.10.9.md", _PATCH_NOTES_ENGINE_1109),
+    ("patch-notes/engine-1.10.8.md", _PATCH_NOTES_ENGINE_1108),
     ("patch-notes/engine-1.10.7.md", _PATCH_NOTES_ENGINE_1107),
     ("patch-notes/engine-1.10.6.md", _PATCH_NOTES_ENGINE_1106),
     ("patch-notes/engine-1.10.5.md", _PATCH_NOTES_ENGINE_1105),

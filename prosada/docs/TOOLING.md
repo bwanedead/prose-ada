@@ -184,6 +184,11 @@ has been modified or is from an older version.
 | `/v2/prose-assembled/{unitId}`| GET    | Read assembled prose projection + provenance segments  |
 | `/v2/prose-overlay/{unitId}`  | GET    | Read prose overlay artifact (`locks`, `variants`, `audio`) |
 | `/v2/prose-overlay/{unitId}`  | POST   | Write prose overlay artifact                               |
+| `/v2/tts/config`              | GET    | Read TTS voices/formats/defaults + key availability        |
+| `/v2/tts/voices`              | GET    | List provider voices (OpenAI static, ElevenLabs live)      |
+| `/v2/tts/api-key`             | POST   | Save provider API key to project-scoped machine keyring     |
+| `/v2/tts/api-key`             | DELETE | Remove provider API key from project-scoped keyring         |
+| `/v2/tts/speak`               | POST   | Generate one TTS chunk with `cueMode` (`flat`/`emoted`)     |
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |

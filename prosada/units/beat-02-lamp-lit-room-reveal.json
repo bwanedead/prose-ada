@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "2.0.0",
+  "unitId": "beat-02-lamp-lit-room-reveal",
+  "type": "beat",
+  "title": "Lamp-Lit Room Reveal",
+  "summary": "Ada rises fully into motion, crosses into the living room, and the apartment resolves under amber lamp light as a lived-in, occupied world.",
+  "parentId": "scene-01-false-morning-routine",
+  "children": [],
+  "links": [],
+  "narrative": {
+    "threadsAdvanced": [
+      "stream-anomaly-fermi"
+    ],
+    "characters": [
+      "ada-protagonist"
+    ],
+    "locations": [
+      "maine-coast-town"
+    ],
+    "newInfo": "Ada's home reveals itself as warm, used, and stabilizing, deepening reader trust in both her life and the setting.",
+    "dripHook": "The room becomes legible, and with it the larger rhythm of Ada's routine.",
+    "payoffDelivered": "Atmosphere reward: the apartment becomes pleasurable to inhabit rather than merely functional.",
+    "beautyHooks": null,
+    "status": "draft",
+    "textRef": null,
+    "notes": "Bridge from wakefulness into full scene habitation. Prioritize inference-driven domestic detail and the false-morning feel of interior lamp light against late-day gray outside."
+  },
+  "view": {
+    "canvas": {
+      "x": null,
+      "y": null,
+      "collapsed": false,
+      "layout": {
+        "mode": "manual",
+        "coordinateMode": "relative",
+        "start": 0.18,
+        "span": 0.22
+      }
+    }
+  },
+  "presentation": null,
+  "structure": {
+    "functions": [
+      "setup"
+    ],
+    "cadenceRole": "sustain",
+    "effortLoad": "low",
+    "planningStatus": "leaning",
+    "rewardTokens": [
+      {
+        "type": "atmosphere",
+        "strength": 3,
+        "description": "Amber lamp light and selective domestic detail make the apartment feel real and inhabited.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      },
+      {
+        "type": "competence",
+        "strength": 1,
+        "description": "Ada moves through the apartment by practiced memory, suggesting routine before work.",
+        "threadRefs": [
+          "stream-anomaly-fermi"
+        ]
+      }
+    ],
+    "modelUpdate": {
+      "before": "The reader is grounded in bodily waking and darkness.",
+      "shift": "The apartment resolves as a stable, lived-in environment.",
+      "after": "Ada's world feels trustworthy enough that later deviations will register cleanly.",
+      "confidenceDelta": 1
+    }
+  }
+}
