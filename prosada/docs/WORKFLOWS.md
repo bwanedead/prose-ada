@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.10.9
+> **Managed by ProsAda tooling** · Version 1.12.1
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---
@@ -56,6 +56,12 @@ When prose drafting starts for a chapter/scene/connective unit:
    - `[[[beat-id|Beat Name|end]]]`
 6. Keep beat markers in source prose for machine readability; viewers may hide
    marker tokens while still exposing boundary context.
+7. Lock directives are prose-local inline markers (authoring metadata):
+   - `[[[lock|KEEP|<lockId>|start]]] ... [[[lock|KEEP|<lockId>|end]]]`
+   - same pattern for `SOFT_KEEP`, `REWRITE`, `EXPLORE`
+8. Lock overlays and lock APIs derive from marker state; assignment/reassignment/
+   clear in UI should mutate markers (not detached offset-only state).
+9. Reader-facing surfaces (viewer/TTS/exports) should scrub marker tokens.
 
 ---
 
@@ -79,7 +85,7 @@ Recommended pattern:
 2. Attach them to story units with links:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
-   - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
+   - writing surfaces resolve inherited governance from current unit + ancestors
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 4. Optionally classify guidance using soft taxonomy metadata:
    - `guidance.kind` (recommended examples: `scope_theory`, `prose_brief`, `checklist`)
@@ -188,6 +194,38 @@ GET /v2/semantic-refs?id=joey-valdez
 # Scope to subtree
 GET /v2/semantic-refs?scope=act-01
 ```
+
+---
+
+## Resolve a guidance governance stack
+
+Use one endpoint to deterministically resolve what governs a scope:
+
+```bash
+GET /v2/guidance-stack/<unitId>
+```
+
+Returned stack semantics include:
+- inherited-only vs local-only vs local+inherited artifact applicability
+- attachment provenance (where each artifact enters the hierarchy)
+- deterministic ordering contract metadata
+
+---
+
+## Resolve canonical story guidance documents
+
+For story-agent consumption, use the document-facing stack:
+
+```bash
+GET /v2/guidance-doc-stack/<unitId>
+```
+
+This returns:
+- canonical story guidance documents only (readable doctrine corpus)
+- includes additive story-wide docs from `docs/ethos/*.md` when present
+- de-duplicated wrapper+doc representation
+- inherited/local scope provenance and deterministic governance ordering
+- no managed operational docs (`AGENTS.md`, `WORKFLOWS.md`, patch notes, etc.)
 
 ---
 

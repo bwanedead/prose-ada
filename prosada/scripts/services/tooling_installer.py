@@ -5,6 +5,7 @@ Manages installation of the ProsAda managed enablement pack into each project ro
 
     <prosadaRoot>/scripts/render_timeline.py       — renderer (copied from app source)
     <prosadaRoot>/scripts/check_tooling_health.py  — health checker (rendered from template)
+    <prosadaRoot>/scripts/resolve_guidance_doc_stack.py — guidance doc-stack resolver
     <prosadaRoot>/docs/AGENT_START_HERE.md         — agent orientation doc
     <prosadaRoot>/docs/FORMAT_CHEATSHEET.md        — schema reference
     <prosadaRoot>/docs/WORKFLOWS.md                — task recipes
@@ -24,6 +25,7 @@ tooling.json v2 schema:
         "tools": {
             "renderTimeline":     { "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." },
             "checkToolingHealth": { "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." }
+            "resolveGuidanceDocStack": { "version": "...", "installedAt": "...", "scriptPath": "...", "checksum": "..." }
         },
         "docs": {
             "AGENT_START_HERE.md":  { "version": "...", "installedAt": "...", "docPath": "...", "checksum": "..." },
@@ -60,6 +62,7 @@ from typing import Optional, Tuple
 
 _BACKEND_DIR = Path(__file__).parent.parent
 _SOURCE_RENDERER = _BACKEND_DIR / "render_timeline.py"
+_SOURCE_GUIDANCE_DOC_STACK_SCRIPT = _BACKEND_DIR / "resolve_guidance_doc_stack.py"
 _SOURCE_DOMAIN_DIR = _BACKEND_DIR / "domain"
 _SOURCE_PERSISTENCE_DIR = _BACKEND_DIR / "persistence"
 _SOURCE_SERVICES_DIR = _BACKEND_DIR / "services"
@@ -67,6 +70,7 @@ _SOURCE_SERVICES_DIR = _BACKEND_DIR / "services"
 TOOLING_SCHEMA_VERSION = "2.0"
 _INSTALLED_RENDERER_NAME = "render_timeline.py"
 _INSTALLED_HEALTH_SCRIPT_NAME = "check_tooling_health.py"
+_INSTALLED_GUIDANCE_DOC_STACK_SCRIPT_NAME = "resolve_guidance_doc_stack.py"
 _SCRIPTS_SUBDIR = "scripts"
 _TOOLING_FILE = "tooling.json"
 _ROOT_AGENTS_FILE = "AGENTS.md"
@@ -300,6 +304,7 @@ def install_tooling(project_dir: Path) -> dict:
     Creates/overwrites:
         scripts/render_timeline.py
         scripts/check_tooling_health.py
+        scripts/resolve_guidance_doc_stack.py
         docs/AGENT_START_HERE.md
         docs/FORMAT_CHEATSHEET.md
         docs/WORKFLOWS.md
@@ -336,6 +341,21 @@ def install_tooling(project_dir: Path) -> dict:
     health_dst = scripts_dir / _INSTALLED_HEALTH_SCRIPT_NAME
     health_dst.write_text(SCRIPT_CONTENT, encoding="utf-8")
     health_checksum = _sha256(health_dst)
+    guidance_doc_stack_version = None
+    guidance_doc_stack_checksum = None
+
+    # Install guidance doc-stack script (copied from app source)
+    if _SOURCE_GUIDANCE_DOC_STACK_SCRIPT.exists():
+        guidance_doc_stack_dst = scripts_dir / _INSTALLED_GUIDANCE_DOC_STACK_SCRIPT_NAME
+        shutil.copy2(_SOURCE_GUIDANCE_DOC_STACK_SCRIPT, guidance_doc_stack_dst)
+        guidance_doc_stack_checksum = _sha256(guidance_doc_stack_dst)
+        guidance_doc_stack_version = (
+            _read_version_from_file(
+                guidance_doc_stack_dst,
+                constant="GUIDANCE_DOC_STACK_SCRIPT_VERSION",
+            )
+            or "unknown"
+        )
 
     # Install standalone runtime package dirs required by render script
     runtime_meta = _install_runtime_packages(scripts_dir)
@@ -387,6 +407,20 @@ def install_tooling(project_dir: Path) -> dict:
                 "scriptPath": f"{_SCRIPTS_SUBDIR}/{_INSTALLED_HEALTH_SCRIPT_NAME}",
                 "checksum": health_checksum,
             },
+            **(
+                {
+                    "resolveGuidanceDocStack": {
+                        "version": guidance_doc_stack_version,
+                        "installedAt": now,
+                        "scriptPath": (
+                            f"{_SCRIPTS_SUBDIR}/{_INSTALLED_GUIDANCE_DOC_STACK_SCRIPT_NAME}"
+                        ),
+                        "checksum": guidance_doc_stack_checksum,
+                    }
+                }
+                if guidance_doc_stack_version is not None
+                else {}
+            ),
             **{
                 f"{name}Runtime": meta
                 for name, meta in runtime_meta.items()
@@ -473,6 +507,34 @@ def check_tooling_status(project_dir: Path) -> dict:
         "sourceVersion": HEALTH_SCRIPT_VERSION,
         "checksumMatch": hs_checksum_match,
     }
+
+    # resolveGuidanceDocStack
+    gd_meta = tools_meta.get("resolveGuidanceDocStack", {})
+    if _SOURCE_GUIDANCE_DOC_STACK_SCRIPT.exists() or gd_meta:
+        gd_rel = gd_meta.get(
+            "scriptPath",
+            f"{_SCRIPTS_SUBDIR}/{_INSTALLED_GUIDANCE_DOC_STACK_SCRIPT_NAME}",
+        )
+        gd_status, gd_checksum_match = _check_asset(
+            project_dir, gd_rel, gd_meta.get("checksum")
+        )
+        gd_source_version = (
+            _read_version_from_file(
+                _SOURCE_GUIDANCE_DOC_STACK_SCRIPT,
+                constant="GUIDANCE_DOC_STACK_SCRIPT_VERSION",
+            )
+            if _SOURCE_GUIDANCE_DOC_STACK_SCRIPT.exists()
+            else None
+        )
+        gd_installed_version = gd_meta.get("version")
+        if gd_status == STATUS_OK and gd_source_version and gd_installed_version != gd_source_version:
+            gd_status = STATUS_STALE
+        scripts_result["resolveGuidanceDocStack"] = {
+            "status": gd_status,
+            "installedVersion": gd_installed_version,
+            "sourceVersion": gd_source_version,
+            "checksumMatch": gd_checksum_match,
+        }
 
     # Runtime package dirs (standalone renderer dependencies)
     runtime_source_dirs = {

@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.10.9"
+DOCS_VERSION = "1.12.1"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -222,6 +222,18 @@ Reusable planning primitives:
 - `type: "theory"` and `type: "ethos"` are first-class reusable units.
 - Recommended: keep them top-level and attach to scope units via links
   (`usesTheory`, `usesEthos`) instead of duplicating the same notes repeatedly.
+
+Guidance governance stack:
+- Guidance stack is engine-derived inheritance, not a prose-only concept.
+- Resolve it from one endpoint for deterministic governance context:
+  - `GET /v2/guidance-stack/<unitId>`
+- For a story-agent reading list of canonical guidance docs only:
+  - `GET /v2/guidance-doc-stack/<unitId>`
+- Stack includes:
+  - ancestor-attached artifacts (inherited)
+  - directly attached artifacts (local)
+  - optional additive global docs layer (`docs/ethos/*.md`) for structural context
+  - document-stack view excludes operational/engine docs by design
 
 ---
 
@@ -625,6 +637,12 @@ When prose drafting starts for a chapter/scene/connective unit:
    - `[[[beat-id|Beat Name|end]]]`
 6. Keep beat markers in source prose for machine readability; viewers may hide
    marker tokens while still exposing boundary context.
+7. Lock directives are prose-local inline markers (authoring metadata):
+   - `[[[lock|KEEP|<lockId>|start]]] ... [[[lock|KEEP|<lockId>|end]]]`
+   - same pattern for `SOFT_KEEP`, `REWRITE`, `EXPLORE`
+8. Lock overlays and lock APIs derive from marker state; assignment/reassignment/
+   clear in UI should mutate markers (not detached offset-only state).
+9. Reader-facing surfaces (viewer/TTS/exports) should scrub marker tokens.
 
 ---
 
@@ -648,7 +666,7 @@ Recommended pattern:
 2. Attach them to story units with links:
    - `usesTheory` → target is a `theory` unit
    - `usesEthos`  → target is an `ethos` unit
-   - writing surfaces resolve these links from current unit + ancestors (inherited guidance)
+   - writing surfaces resolve inherited governance from current unit + ancestors
 3. Store detailed rationale in `summary`, `narrative.notes`, and optional prose `textRef`.
 4. Optionally classify guidance using soft taxonomy metadata:
    - `guidance.kind` (recommended examples: `scope_theory`, `prose_brief`, `checklist`)
@@ -757,6 +775,38 @@ GET /v2/semantic-refs?id=joey-valdez
 # Scope to subtree
 GET /v2/semantic-refs?scope=act-01
 ```
+
+---
+
+## Resolve a guidance governance stack
+
+Use one endpoint to deterministically resolve what governs a scope:
+
+```bash
+GET /v2/guidance-stack/<unitId>
+```
+
+Returned stack semantics include:
+- inherited-only vs local-only vs local+inherited artifact applicability
+- attachment provenance (where each artifact enters the hierarchy)
+- deterministic ordering contract metadata
+
+---
+
+## Resolve canonical story guidance documents
+
+For story-agent consumption, use the document-facing stack:
+
+```bash
+GET /v2/guidance-doc-stack/<unitId>
+```
+
+This returns:
+- canonical story guidance documents only (readable doctrine corpus)
+- includes additive story-wide docs from `docs/ethos/*.md` when present
+- de-duplicated wrapper+doc representation
+- inherited/local scope provenance and deterministic governance ordering
+- no managed operational docs (`AGENTS.md`, `WORKFLOWS.md`, patch notes, etc.)
 
 ---
 
@@ -1039,6 +1089,10 @@ It remains stable even if AGENTS conventions evolve.
   - Optional beat-boundary marker syntax:
     - `[[[beat-id|Beat Name|start]]]`
     - `[[[beat-id|Beat Name|end]]]`
+  - Lock directives use inline marker wrappers:
+    - `[[[lock|KEEP|<lockId>|start]]] ... [[[lock|KEEP|<lockId>|end]]]`
+    - `SOFT_KEEP`, `REWRITE`, `EXPLORE` use the same form.
+  - Marker tokens are authoring metadata and should be scrubbed from reader/TTS/export output.
 - Theory/ethos stability:
   - Always set both `doctrineStatus` and `mutationLock`.
   - Working guide default: `leaning` + `soft_locked`.
@@ -1084,6 +1138,7 @@ _TOOLING = """\
 |---------------------------|----------------------------------------------|
 | `render_timeline.py`      | Render timeline snapshot (PNG/SVG + sidecar) |
 | `check_tooling_health.py` | Check/refresh managed tooling in this repo   |
+| `resolve_guidance_doc_stack.py` | Resolve canonical story guidance docs for a unit |
 | `domain/`                 | Managed standalone runtime package           |
 | `persistence/`            | Managed standalone runtime package           |
 | `services/`               | Managed standalone runtime package           |
@@ -1203,6 +1258,21 @@ python prosada/scripts/check_tooling_health.py --heal
 python prosada/scripts/check_tooling_health.py --json
 ```
 
+---
+
+## resolve_guidance_doc_stack.py — CLI Reference
+
+```bash
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId>
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId> --json
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId> --prefer-local
+```
+
+Purpose:
+- resolve canonical story guidance document stack for one target scope
+- use engine endpoint when available; fallback to local derived resolution
+- output deterministic guidance document order for story-agent consumption
+
 Patch notes are distributed in:
 
 ```text
@@ -1266,6 +1336,8 @@ has been modified or is from an older version.
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |
+| `/v2/guidance-stack/{unitId}` | GET    | Resolve inherited guidance governance stack      |
+| `/v2/guidance-doc-stack/{unitId}` | GET | Resolve canonical story guidance document stack  |
 | `/v2/validate`                | GET    | Validate project integrity                       |
 
 ---
@@ -1319,6 +1391,9 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.12.1.md` — inline prose lock marker protocol (`[[[lock|...|start/end]]]`), lock-overlay derivation, and source-scrub expectations for reader/TTS/export surfaces
+- `engine-1.12.0.md` — canonical story guidance document stack (`/v2/guidance-doc-stack/{unitId}`), wrapper/doc de-duplication semantics, and story-agent resolver script
+- `engine-1.11.0.md` — inherited guidance governance stack protocol (`/v2/guidance-stack/{unitId}`), explicit applicability/ordering semantics, and hardening rollout updates
 - `engine-1.10.9.md` — provider-agnostic TTS adapters: live voice discovery, saved voice favorites, and `flat` vs `emoted` cue mode
 - `engine-1.10.8.md` — OpenAI TTS workflow: project-scoped keyring keys, beat-marker scrubbing, chunked playback controls
 - `engine-1.10.7.md` — explicit beat prose bookend markers (`start`/`end`) + parser compatibility guidance
@@ -1625,6 +1700,138 @@ project-scoped API key storage and safe chunked playback orchestration.
 - Keep beat markers in source prose for machine readability; TTS playback now
   scrubs them automatically.
 - Keep requests chunked; do not attempt single-call full-manuscript synthesis.
+"""
+
+
+_PATCH_NOTES_ENGINE_1110 = """\
+# Patch Notes — engine-1.11.0
+
+Date: 2026-03-08
+Scope: inherited guidance governance stack protocol + integrity hardening rollout
+
+## Summary
+
+This release formalizes guidance stack resolution as an engine-level derived
+protocol and tightens integrity behavior across validation, doctor, and safe
+mutation seams.
+
+## Added
+
+- Guidance governance endpoint:
+  - `GET /v2/guidance-stack/{unitId}`
+- Deterministic stack semantics:
+  - inherited vs local applicability
+  - attachment provenance by scope
+  - explicit ordering contract metadata
+- Guidance stack protocol coverage in backend tests.
+
+## Changed
+
+- Delete semantics:
+  - `/v2/unit/{unitId}` now performs safe structural delete for in-tree leaves
+    (with parent cleanup), while still blocking destructive deletes
+    (root, descendants, inbound references).
+- Validation/doctor diagnostics:
+  - malformed/corrupt unit load diagnostics are surfaced in core integrity
+    surfaces (`/v2/validate`, `/v2/doctor`) in addition to project load.
+- Renderer dependency behavior:
+  - renderer-backed endpoints fail explicitly when optional renderer deps are
+    unavailable (instead of crashing import/route execution).
+
+## Story Agent Guidance
+
+- Treat guidance as inherited governance, not a scene-local brief convention.
+- Attach reusable `theory`/`ethos` artifacts explicitly at intended scopes.
+- Resolve applicable guidance through `/v2/guidance-stack/{unitId}` instead of
+  guessing from one local file.
+- Continue using canonical units/registries as source of truth; guidance stack
+  is derived at read-time (not persisted).
+
+## Compatibility Notes
+
+- No canonical story schema migration required.
+- Existing projects in `legacy-auto` remain supported.
+- If renderer dependencies are absent locally, rendering endpoints may return
+  dependency-related failures until tooling/runtime is restored.
+"""
+
+
+_PATCH_NOTES_ENGINE_1120 = """\
+# Patch Notes — engine-1.12.0
+
+Date: 2026-03-08
+Scope: canonical story guidance document stack protocol
+
+## Summary
+
+This release adds a document-facing guidance protocol so story agents can
+resolve a clean, deterministic reading stack for any unit without mixing in
+governed story units or operational engine docs.
+
+## Added
+
+- New endpoint:
+  - `GET /v2/guidance-doc-stack/{unitId}`
+- New managed script:
+  - `prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId>`
+  - supports `--json` and `--prefer-local`
+- Document stack semantics:
+  - canonical story guidance docs only
+  - wrapper/doc de-duplication
+  - artifact fallback when no `narrative.textRef` exists
+  - deterministic ordering + attachment provenance
+
+## Clarifications
+
+- Structural and document-facing layers are distinct:
+  - `/v2/guidance-stack/{unitId}` = structural/provenance governance
+  - `/v2/guidance-doc-stack/{unitId}` = canonical readable guidance corpus
+- Story guidance stack excludes operational docs:
+  - `AGENTS.md`, managed workflow docs, protocol docs, patch notes
+
+## Compatibility Notes
+
+- No canonical schema migration required.
+- Existing guidance links (`usesTheory`, `usesEthos`) remain the attachment
+  mechanism; document stack is derived at read-time.
+"""
+
+
+_PATCH_NOTES_ENGINE_1121 = """\
+# Patch Notes — engine-1.12.1
+
+Date: 2026-03-09
+Scope: inline prose lock marker protocol + lock overlay reliability
+
+## Summary
+
+This release formalizes lock directives as prose-local inline markers and
+clarifies that lock overlays are derived from marker state, not detached offset
+records.
+
+## Added / Clarified
+
+- Inline lock marker protocol:
+  - `[[[lock|KEEP|<lockId>|start]]] ... [[[lock|KEEP|<lockId>|end]]]`
+  - same wrapper form for `SOFT_KEEP`, `REWRITE`, `EXPLORE`
+- Prose lock handling expectation:
+  - UI assignment/reassignment/clear operations mutate inline markers.
+  - lock overlay spans are derived from marker-bearing prose content.
+- Reader-surface scrubbing expectation:
+  - marker tokens are authoring metadata and should be removed from
+    prose-view/TTS/export outputs.
+
+## Story Agent Guidance
+
+- Treat lock directives as local prose boundaries, not detached index-only data.
+- When lock state changes, preserve marker integrity (`start`/`end` pairs).
+- Do not author custom lock syntax variants outside this protocol.
+
+## Compatibility Notes
+
+- No canonical schema migration required.
+- Existing prose overlay endpoints remain supported; lock span payloads are
+  derived from marker state during app workflows.
 """
 
 
@@ -2080,6 +2287,9 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.12.1.md", _PATCH_NOTES_ENGINE_1121),
+    ("patch-notes/engine-1.12.0.md", _PATCH_NOTES_ENGINE_1120),
+    ("patch-notes/engine-1.11.0.md", _PATCH_NOTES_ENGINE_1110),
     ("patch-notes/engine-1.10.9.md", _PATCH_NOTES_ENGINE_1109),
     ("patch-notes/engine-1.10.8.md", _PATCH_NOTES_ENGINE_1108),
     ("patch-notes/engine-1.10.7.md", _PATCH_NOTES_ENGINE_1107),

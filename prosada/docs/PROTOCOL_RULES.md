@@ -1,6 +1,6 @@
 # ProsAda Protocol Rules
 
-> **Managed by ProsAda tooling** · Version 1.10.9
+> **Managed by ProsAda tooling** · Version 1.12.1
 > Durable engine protocol contract for story-repo agents.
 
 ---
@@ -30,6 +30,10 @@ It remains stable even if AGENTS conventions evolve.
   - Optional beat-boundary marker syntax:
     - `[[[beat-id|Beat Name|start]]]`
     - `[[[beat-id|Beat Name|end]]]`
+  - Lock directives use inline marker wrappers:
+    - `[[[lock|KEEP|<lockId>|start]]] ... [[[lock|KEEP|<lockId>|end]]]`
+    - `SOFT_KEEP`, `REWRITE`, `EXPLORE` use the same form.
+  - Marker tokens are authoring metadata and should be scrubbed from reader/TTS/export output.
 - Theory/ethos stability:
   - Always set both `doctrineStatus` and `mutationLock`.
   - Working guide default: `leaning` + `soft_locked`.

@@ -1,6 +1,6 @@
 # ProsAda — Agent Start Here
 
-> **Managed by ProsAda tooling** · Version 1.10.9
+> **Managed by ProsAda tooling** · Version 1.12.1
 > Refresh: `python scripts/check_tooling_health.py` · `POST /v2/tooling/refresh`
 
 ---
@@ -177,6 +177,18 @@ Reusable planning primitives:
 - `type: "theory"` and `type: "ethos"` are first-class reusable units.
 - Recommended: keep them top-level and attach to scope units via links
   (`usesTheory`, `usesEthos`) instead of duplicating the same notes repeatedly.
+
+Guidance governance stack:
+- Guidance stack is engine-derived inheritance, not a prose-only concept.
+- Resolve it from one endpoint for deterministic governance context:
+  - `GET /v2/guidance-stack/<unitId>`
+- For a story-agent reading list of canonical guidance docs only:
+  - `GET /v2/guidance-doc-stack/<unitId>`
+- Stack includes:
+  - ancestor-attached artifacts (inherited)
+  - directly attached artifacts (local)
+  - optional additive global docs layer (`docs/ethos/*.md`) for structural context
+  - document-stack view excludes operational/engine docs by design
 
 ---
 

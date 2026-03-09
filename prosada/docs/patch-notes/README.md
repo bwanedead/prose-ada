@@ -1,12 +1,15 @@
 # ProsAda Patch Notes
 
-> **Managed by ProsAda tooling** · Version 1.10.9
+> **Managed by ProsAda tooling** · Version {version}
 
 This folder contains versioned engine/tooling update notes distributed into
 external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.12.1.md` — inline prose lock marker protocol (`[[[lock|...|start/end]]]`), lock-overlay derivation, and source-scrub expectations for reader/TTS/export surfaces
+- `engine-1.12.0.md` — canonical story guidance document stack (`/v2/guidance-doc-stack/{unitId}`), wrapper/doc de-duplication semantics, and story-agent resolver script
+- `engine-1.11.0.md` — inherited guidance governance stack protocol (`/v2/guidance-stack/{unitId}`), explicit applicability/ordering semantics, and hardening rollout updates
 - `engine-1.10.9.md` — provider-agnostic TTS adapters: live voice discovery, saved voice favorites, and `flat` vs `emoted` cue mode
 - `engine-1.10.8.md` — OpenAI TTS workflow: project-scoped keyring keys, beat-marker scrubbing, chunked playback controls
 - `engine-1.10.7.md` — explicit beat prose bookend markers (`start`/`end`) + parser compatibility guidance

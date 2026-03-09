@@ -10,6 +10,7 @@
 |---------------------------|----------------------------------------------|
 | `render_timeline.py`      | Render timeline snapshot (PNG/SVG + sidecar) |
 | `check_tooling_health.py` | Check/refresh managed tooling in this repo   |
+| `resolve_guidance_doc_stack.py` | Resolve canonical story guidance docs for a unit |
 | `domain/`                 | Managed standalone runtime package           |
 | `persistence/`            | Managed standalone runtime package           |
 | `services/`               | Managed standalone runtime package           |
@@ -129,6 +130,21 @@ python prosada/scripts/check_tooling_health.py --heal
 python prosada/scripts/check_tooling_health.py --json
 ```
 
+---
+
+## resolve_guidance_doc_stack.py — CLI Reference
+
+```bash
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId>
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId> --json
+python prosada/scripts/resolve_guidance_doc_stack.py --unit-id <unitId> --prefer-local
+```
+
+Purpose:
+- resolve canonical story guidance document stack for one target scope
+- use engine endpoint when available; fallback to local derived resolution
+- output deterministic guidance document order for story-agent consumption
+
 Patch notes are distributed in:
 
 ```text
@@ -192,6 +208,8 @@ has been modified or is from an older version.
 | `/v2/render/timeline`         | GET    | Render PNG snapshot                              |
 | `/v2/render/timeline/svg`     | GET    | Render SVG snapshot                              |
 | `/v2/semantic-refs`           | GET    | Query semantic entity references                 |
+| `/v2/guidance-stack/{unitId}` | GET    | Resolve inherited guidance governance stack      |
+| `/v2/guidance-doc-stack/{unitId}` | GET | Resolve canonical story guidance document stack  |
 | `/v2/validate`                | GET    | Validate project integrity                       |
 
 ---

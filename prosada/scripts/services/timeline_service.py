@@ -47,4 +47,4 @@ class TimelineService:
         return thread
 
     def get_full_graph(self) -> dict:
-        return self.graph.model_dump()
+        return self.graph.model_dump(by_alias=True)

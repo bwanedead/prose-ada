@@ -1,20 +1,6 @@
 [[[beat-01-wake-dark-room|Wake in the Dark Room|start]]]
 
-Nothing showed at first.
-
-The room was there, but not in any way that could be named yet. No edges. No objects. Just the closed dark and the stillness inside it.
-
-It held for a few seconds like that.
-
-Then a dim red glow began to separate itself.
-
-Not enough to light the room. Just enough to interrupt it.
-
-The numbers came first, blurred by distance and sleep, then the faint wash around them, a low red spill that touched the blanket and thinned across what lay beyond it. A patch of skin. The curve of something still not fully clear. Then the shine of an eye, already open.
-
-Ada was watching the clock.
-
-She had been watching it long enough that the numbers no longer felt like something to read. Just something to wait on.
+[[[lock|KEEP|lock_1773054462449_bepa4h|start]]]The room was still too dark for anything in it to come clear at once. The furniture was all there, but the darkness between it did most of the work of holding it together—outlines hinted at, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection—an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada’s pupil than in her actual attention, where the red numbers had blurred and blended into a diffuse lack of focus. They’d become scenery, a backdrop for her first thoughts of the day to project over.[[[lock|KEEP|lock_1773054462449_bepa4h|end]]]
 
 The red reflection shifted across her eye.
 

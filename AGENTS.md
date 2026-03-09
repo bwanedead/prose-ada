@@ -27,6 +27,37 @@ At the start of **every** working session, agents must:
 
 If a proposed change conflicts with these standards, revise or reject the change until it aligns.
 
+## Guidance Stack Definition
+
+For this repository, a **guidance stack** means the canonical story guidance document stack that applies to the current scope of concern.
+
+In practice, this includes:
+
+1. `docs/quality-standards.md`
+2. all story-wide ethos docs in `docs/ethos/`
+3. the canonical readable docs linked from applicable `theory` / `ethos` guidance artifacts in `prosada/`
+4. inherited higher-scope story guidance that governs the current unit or prose scope
+
+Working rule:
+- Do not treat only the immediate unit brief as the full guidance stack.
+- When asking for the guidance stack for a unit, prefer the canonical readable document corpus rather than structural wrappers.
+- In ProsAda terms, guidance-doc stack resolution is derived at read-time, not persisted as separate story data.
+- Story-wide ethos and higher-scope guidance remain part of evaluation unless a lower-scope instruction legitimately refines them without contradicting them.
+- The story guidance stack excludes governed story units and excludes operational engine/repo docs.
+
+Engine protocol alignment:
+- Use attached `theory` / `ethos` artifacts in `prosada/` as the structural attachment layer for guidance.
+- Treat ancestor-attached artifacts as inherited guidance.
+- Treat directly attached artifacts as local guidance.
+- Use `GET /v2/guidance-doc-stack/<unitId>` as the authoritative discovery mechanism for a story-agent reading stack.
+- Use `GET /v2/guidance-stack/<unitId>` only when structural governance/provenance details are specifically needed.
+
+When mentioning guidance documents from a resolved guidance stack:
+- Include the guidance type explicitly.
+- Prefer this format: `Document Name — artifact type / guidance kind / applicability`.
+- Example: `Scene 1 Prose Brief — theory / prose_brief / local_only`.
+- If `guidance.kind` is unavailable, still report `artifact type`.
+
 ## Directory Structure
 
 - **`/chapters`**: Current drafts and manuscripts.

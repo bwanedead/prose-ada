@@ -53,6 +53,7 @@ class UnitRepository:
         self.units_dir = self.project_dir / "units"
         self.registries_dir = self.project_dir / "registries"
         self._unit_index: Optional[Dict[str, Path]] = None
+        self._last_load_issues: list[dict] = []
 
     # ------------------------------------------------------------------
     # Manifest
@@ -80,8 +81,10 @@ class UnitRepository:
     def _build_index(self) -> Dict[str, Path]:
         """
         Scan units/ and build { unitId: filepath } mapping.
-        Files that are missing a unitId or are malformed JSON are skipped.
+        Files that are missing a unitId or are malformed JSON are skipped and
+        recorded in load diagnostics.
         """
+        self._last_load_issues = []
         index: Dict[str, Path] = {}
         if not self.units_dir.exists():
             return index
@@ -92,8 +95,18 @@ class UnitRepository:
                 unit_id = data.get("unitId")
                 if unit_id:
                     index[unit_id] = path
+                else:
+                    self._last_load_issues.append({
+                        "path": str(path),
+                        "stage": "index",
+                        "error": "Missing required field 'unitId'",
+                    })
             except (json.JSONDecodeError, OSError):
-                pass  # Malformed or unreadable file — skip silently
+                self._last_load_issues.append({
+                    "path": str(path),
+                    "stage": "index",
+                    "error": "Malformed or unreadable JSON",
+                })
         return index
 
     def _get_index(self, force_rebuild: bool = False) -> Dict[str, Path]:
@@ -131,9 +144,18 @@ class UnitRepository:
                 with open(path, "r", encoding="utf-8") as f:
                     data = json.load(f)
                 units[unit_id] = NarrativeUnit(**data)
-            except Exception:
-                pass  # Malformed unit — skip, don't crash the full load
+            except Exception as exc:
+                self._last_load_issues.append({
+                    "path": str(path),
+                    "unitId": unit_id,
+                    "stage": "model-parse",
+                    "error": str(exc),
+                })
         return units
+
+    def get_load_issues(self) -> list[dict]:
+        """Return diagnostics from the last unit index/load cycle."""
+        return list(self._last_load_issues)
 
     # ------------------------------------------------------------------
     # Units — write

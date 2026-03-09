@@ -412,3 +412,140 @@ class UnitOps:
 
         _save_all(repo, [parent])
         return OpsResult(success=True, dry_run=False, warnings=warnings, modified=modified)
+
+    # -----------------------------------------------------------------------
+
+    @staticmethod
+    def delete_unit(
+        repo,
+        unit_id: str,
+        dry_run: bool = False,
+    ) -> OpsResult:
+        """
+        Delete a unit only when doing so is structurally safe.
+
+        Current policy: safe structural delete.
+          - cannot delete the manifest root
+          - cannot delete units with children (descendants remain owned)
+          - removes structural references from parent.children[] lists
+          - cannot delete while inbound links target this unit
+          - cannot delete while referenced in narrative.threadsAdvanced[]
+        """
+        all_units = repo.load_all_units()
+        manifest = repo.load_manifest()
+        unit = all_units.get(unit_id)
+        if not unit:
+            return _err(unit_id, "unitId", f"Unit '{unit_id}' not found")
+
+        errors: List[dict] = []
+
+        root_id = manifest.get("root")
+        if root_id == unit_id:
+            errors.append({
+                "severity": "error",
+                "unitId": unit_id,
+                "field": "manifest.root",
+                "message": (
+                    f"Unit '{unit_id}' is the manifest root and cannot be deleted directly. "
+                    "Move root ownership first, then retry deletion."
+                ),
+            })
+
+        if unit.children:
+            errors.append({
+                "severity": "error",
+                "unitId": unit_id,
+                "field": "children",
+                "message": (
+                    f"Unit '{unit_id}' has children and cannot be deleted safely. "
+                    "Reparent or delete descendants first."
+                ),
+            })
+
+        parents_to_cleanup: List[NarrativeUnit] = []
+        for other in all_units.values():
+            if other.unit_id == unit_id:
+                continue
+            if unit_id in other.children:
+                cleaned_children = [cid for cid in other.children if cid != unit_id]
+                if cleaned_children != other.children:
+                    other.children = cleaned_children
+                    all_units[other.unit_id] = other
+                    parents_to_cleanup.append(other)
+
+        inbound_link_sources = []
+        inbound_stream_sources = []
+        for other in all_units.values():
+            if other.unit_id == unit_id:
+                continue
+            if any(link.target_id == unit_id for link in other.links):
+                inbound_link_sources.append(other.unit_id)
+            if unit_id in other.narrative.threads_advanced:
+                inbound_stream_sources.append(other.unit_id)
+
+        if inbound_link_sources:
+            errors.append({
+                "severity": "error",
+                "unitId": unit_id,
+                "field": "links",
+                "message": (
+                    f"Unit '{unit_id}' is referenced by links from: {sorted(inbound_link_sources)}. "
+                    "Remove inbound links before deleting."
+                ),
+            })
+
+        if inbound_stream_sources:
+            errors.append({
+                "severity": "error",
+                "unitId": unit_id,
+                "field": "narrative.threadsAdvanced",
+                "message": (
+                    f"Unit '{unit_id}' is referenced in threadsAdvanced by: {sorted(inbound_stream_sources)}. "
+                    "Remove stream memberships before deleting."
+                ),
+            })
+
+        if errors:
+            return OpsResult(success=False, dry_run=dry_run, errors=errors, modified=[unit_id])
+
+        remaining_units = dict(all_units)
+        remaining_units.pop(unit_id, None)
+        validation_issues = V2Validator.validate_all(
+            remaining_units,
+            project_dir=repo.project_dir,
+            manifest=manifest,
+        )
+        validation_errors = [i.to_dict() for i in validation_issues if i.severity == IssueSeverity.ERROR]
+        validation_warnings = [i.to_dict() for i in validation_issues if i.severity == IssueSeverity.WARNING]
+
+        if validation_errors:
+            return OpsResult(
+                success=False,
+                dry_run=dry_run,
+                errors=validation_errors,
+                warnings=validation_warnings,
+                modified=[unit_id] + [p.unit_id for p in parents_to_cleanup],
+            )
+
+        modified_ids = [unit_id] + [p.unit_id for p in parents_to_cleanup]
+        if dry_run:
+            return OpsResult(
+                success=True,
+                dry_run=True,
+                warnings=validation_warnings,
+                modified=modified_ids,
+            )
+
+        deleted = repo.delete_unit(unit_id)
+        if not deleted:
+            return _err(unit_id, "unitId", f"Unit '{unit_id}' not found")
+
+        for parent in parents_to_cleanup:
+            repo.save_unit(parent)
+
+        return OpsResult(
+            success=True,
+            dry_run=False,
+            warnings=validation_warnings,
+            modified=modified_ids,
+        )

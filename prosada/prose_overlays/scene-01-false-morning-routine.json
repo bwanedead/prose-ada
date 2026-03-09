@@ -2,10 +2,25 @@
   "schemaVersion": "1.0.0",
   "unitId": "scene-01-false-morning-routine",
   "sourceTextRef": "../../chapters/01-chapter-1/scene-01-false-morning-routine.md",
-  "sourceHash": "b27c05f8135b23ad4dac90f6ba6e4b4b8cafc3a5f96f7930c63852a243aa7ef5",
-  "locks": [],
+  "sourceHash": "c6f02bb694b8770d79b985457cfd8e86b88f8cb4a8c0d7d573fa5b4aeb7b1ff8",
+  "locks": [
+    {
+      "id": "lock_1773054462449_bepa4h",
+      "directive": "KEEP",
+      "start": 105,
+      "end": 809,
+      "text": "The room was still too dark for anything in it to come clear at once. The furniture was all there, but the darkness between it did most of the work of holding it together\u2014outlines hinted at, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection\u2014an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada\u2019s pupil than in her actual attention, where the red numbers had blurred and blended into a diffuse lack of focus. They\u2019d become scenery, a backdrop for her first thoughts of the day to project over.",
+      "status": "resolved",
+      "resolvedBy": "unique_text",
+      "resolutionConfidence": "degraded",
+      "ambiguityCount": 0,
+      "lastResolvedAt": "2026-03-09T11:07:54.949042Z",
+      "beginAnchor": "54462449_bepa4h|start]]]",
+      "endAnchor": "[[[lock|KEEP|lock_177305"
+    }
+  ],
   "variants": [],
   "mergeRequests": [],
   "audio": {},
-  "updatedAt": "2026-03-06T09:15:24.161925Z"
+  "updatedAt": "2026-03-09T11:07:54.949042Z"
 }
