@@ -7,6 +7,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.12.2.md` — beat deletion prose reconciliation policies (`cancel`, `remove_span`, `strip_markers`, `keep_orphaned`) with fail-safe sequencing
 - `engine-1.12.1.md` — inline prose lock marker protocol (`[[[lock|...|start/end]]]`), lock-overlay derivation, and source-scrub expectations for reader/TTS/export surfaces
 - `engine-1.12.0.md` — canonical story guidance document stack (`/v2/guidance-doc-stack/{unitId}`), wrapper/doc de-duplication semantics, and story-agent resolver script
 - `engine-1.11.0.md` — inherited guidance governance stack protocol (`/v2/guidance-stack/{unitId}`), explicit applicability/ordering semantics, and hardening rollout updates

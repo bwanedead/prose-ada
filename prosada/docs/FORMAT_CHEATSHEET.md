@@ -1,6 +1,6 @@
 # ProsAda Format Cheatsheet
 
-> **Managed by ProsAda tooling** · Version 1.12.1
+> **Managed by ProsAda tooling** · Version 1.12.2
 
 ---
 

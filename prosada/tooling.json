@@ -10,207 +10,213 @@
   "tools": {
     "renderTimeline": {
       "version": "1.3.0",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "scriptPath": "scripts/render_timeline.py",
       "checksum": "567d60f8b667bb7c1678741a873cfea88a65afecc82223fd580a374062872d3f"
     },
     "checkToolingHealth": {
       "version": "1.0.0",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "scriptPath": "scripts/check_tooling_health.py",
       "checksum": "4f6cf387f65e1735b5171923bb7864144322cdaac80fb7644d629486a9d84fe2"
     },
     "resolveGuidanceDocStack": {
       "version": "1.0.0",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "scriptPath": "scripts/resolve_guidance_doc_stack.py",
       "checksum": "d6e74a9da53cb9913c1cc1fe61658cc48fae44c842d94eb9880e965e7b7e15f3"
     },
     "domainRuntime": {
       "version": "1.3.0",
-      "installedAt": "2026-03-09T11:09:03.219189Z",
+      "installedAt": "2026-03-10T08:01:42.789332Z",
       "scriptPath": "scripts/domain",
       "checksum": "365219b70a2d5d45ed94a5786fde0646a31fb76f1b3acb713d94cd732307e83a"
     },
     "persistenceRuntime": {
       "version": "1.3.0",
-      "installedAt": "2026-03-09T11:09:03.256350Z",
+      "installedAt": "2026-03-10T08:01:42.805245Z",
       "scriptPath": "scripts/persistence",
       "checksum": "dab1b6adf62e748a45b8ffb611c8a1353fffcd301ac2279d92baec17f19582a2"
     },
     "servicesRuntime": {
       "version": "1.3.0",
-      "installedAt": "2026-03-09T11:09:03.335536Z",
+      "installedAt": "2026-03-10T08:01:42.874444Z",
       "scriptPath": "scripts/services",
-      "checksum": "f3f7be1cd41606f4374943067b7b749a52f810b7262c9bcceac3d95da2168fd0"
+      "checksum": "fbd99b2801bed99c777fc73b68b06807aa3646f367fff49eedb714a455de2b67"
     }
   },
   "docs": {
     "AGENT_START_HERE.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/AGENT_START_HERE.md",
-      "checksum": "140a87f64680f3d7a432042651ea4540bea7af81573def4429896c2cc8711b22"
+      "checksum": "6b93f7ba3e823efcfe52df57da76d5a78595995a9c9c10e58263e7fd26cebfe3"
     },
     "FORMAT_CHEATSHEET.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/FORMAT_CHEATSHEET.md",
-      "checksum": "8faa02e4d646ad1b3639e14a07365cba4dc08e98537ba6da407c5c21b66b7fb2"
+      "checksum": "900417dfdeb1507124743d6799ab99914e15d6572d32a4b38a63c539181f9b71"
     },
     "WORKFLOWS.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/WORKFLOWS.md",
-      "checksum": "246405c8acb2bd02acddbd2f3993a03c85e0e26f453d465f8f1bee7f2e2e9af4"
+      "checksum": "f6bb417a3f1694a4d300ecae207fd6e5edb744394842446b0aa676ef4df47beb"
     },
     "PROTOCOL_RULES.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/PROTOCOL_RULES.md",
-      "checksum": "96da9627f870f2b038d36461adc60853f95c58eed3257fd4e0fb1ef258c88a85"
+      "checksum": "de1a041b397d9928b86545e41ef851baf7f7284b4a03a06da43e4c940421e7a8"
     },
     "TOOLING.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/TOOLING.md",
       "checksum": "e6d81d663c2773bab65757188eb3cb5fe28bf7b7d72970328f37f1c64d703f57"
     },
     "patch-notes/README.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/README.md",
-      "checksum": "4fd5e29c01af70473a45d29ef47c8468f11249ab04bf4af2edbf0b3769392909"
+      "checksum": "9dc99444abe75b1779877851b3b3e3fc6eb75aeaa26d5b5a3c9caf7083bdc5bb"
+    },
+    "patch-notes/engine-1.12.2.md": {
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
+      "docPath": "docs/patch-notes/engine-1.12.2.md",
+      "checksum": "62f2d009ff0d6ff2893600f975948ea81cb579f0b965deb5835e84e2599d2527"
     },
     "patch-notes/engine-1.12.1.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.12.1.md",
       "checksum": "80aa8723dab815c9f71cdd6941719a0ba8ba121ebb3f15e28f5d4a23e89cfacc"
     },
     "patch-notes/engine-1.12.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.12.0.md",
       "checksum": "e64808db6d12e5202dbbb591c78063f441d31d0a1ea278ba6016c6cf56041dba"
     },
     "patch-notes/engine-1.11.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.11.0.md",
       "checksum": "84578e59d9c23191a36a324e96bf72b4c7de91704a6a988d640d7ab8ba7db14c"
     },
     "patch-notes/engine-1.10.9.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.9.md",
       "checksum": "bf14c48a95dcd48c62149de9b9cdb50afab7d34cb23ad7a593cf3c27fcc83f30"
     },
     "patch-notes/engine-1.10.8.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.8.md",
       "checksum": "75206c5b8ccd316d5cf23ce1ad6558a5fddf0cddcd6e79a9bb6acc9e586659ca"
     },
     "patch-notes/engine-1.10.7.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.7.md",
       "checksum": "eb1a9b07fce1ab7fb39df21d4bacde49b757b6f4a18204b4870f9536d63bad61"
     },
     "patch-notes/engine-1.10.6.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.6.md",
       "checksum": "623ec5f07f3b4032242c4e7390094b0007fe96e2ddab8a0b52e21cb9abd072bd"
     },
     "patch-notes/engine-1.10.5.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.5.md",
       "checksum": "c3da89d1a06ea4b03e8f4e2d932ff9bedcefbf5dd94162ff45a19451152caf17"
     },
     "patch-notes/engine-1.10.4.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.4.md",
       "checksum": "8ce860158d9345362ba68dea04c878f737b3cfe50b3197f725ab70aadc51e256"
     },
     "patch-notes/engine-1.10.3.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.3.md",
       "checksum": "580f1fbe1ece8c1c31c5641f65afb35f2c9433c8d3a13320f2f7146638af48df"
     },
     "patch-notes/engine-1.10.2.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.2.md",
       "checksum": "01a210b31d011c90abdd66991b55ac6678598ed6ad98dee1b91dc8d3df3b2021"
     },
     "patch-notes/engine-1.10.1.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.1.md",
       "checksum": "a821c3809c65e2c86152f08ad327b5cd9c5301b97818f67cff383fda94655332"
     },
     "patch-notes/engine-1.10.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.10.0.md",
       "checksum": "cdce5f0dd6f51dff34e71cc3674dfbe2bd712b37148db4ffac17c7f7e1a9433c"
     },
     "patch-notes/engine-1.9.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.9.0.md",
       "checksum": "961cb67c7f70554fbefa36d7a97469939b895ccc10d2fde3aa1240eb79e98a2b"
     },
     "patch-notes/engine-1.8.1.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.8.1.md",
       "checksum": "5be85cbca4e70b74dc944b2da71bc4b11f5cdc15ab86b8509fedf79b5767a673"
     },
     "patch-notes/engine-1.8.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.8.0.md",
       "checksum": "a1143a9d4f2f4a706f197fcc53c24c47b666a8ecec924034414270da6eaf7305"
     },
     "patch-notes/engine-1.7.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.7.0.md",
       "checksum": "6f3f044a50a1c5e338f2985fea357240f03cb2021beceea0e012f6c7df182c8f"
     },
     "patch-notes/engine-1.6.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.6.0.md",
       "checksum": "ed03617637325af6af734f9a2eaa8cfe755c4b16db726ed2f06d6f19c0dee1f0"
     },
     "patch-notes/engine-1.5.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.5.0.md",
       "checksum": "dfe89e08c03688a1a25cce552a8413f11c4bb8ff5ad7c37ec31b3c7a2683e6e7"
     },
     "patch-notes/engine-1.4.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.4.0.md",
       "checksum": "6f72cc7f8ab841c101ea1642d434adea9021921a97fdca0b4b5c918469da8c19"
     },
     "patch-notes/engine-1.3.1.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.3.1.md",
       "checksum": "20f45ea5bbaf8bea3e1c5d10594e8a9ad0a0ef540c628d42909143f939edf95d"
     },
     "patch-notes/engine-1.3.0.md": {
-      "version": "1.12.1",
-      "installedAt": "2026-03-09T11:09:03.179253Z",
+      "version": "1.12.2",
+      "installedAt": "2026-03-10T08:01:42.757202Z",
       "docPath": "docs/patch-notes/engine-1.3.0.md",
       "checksum": "96a64a213cff5637d1d7489dfa27a1a273b7da9261135349d777b41188e8de9d"
     }

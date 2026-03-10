@@ -27,7 +27,9 @@ Link forward references:
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Dict, List, Optional
 
 from domain.narrative_unit import LinkType, NarrativeUnit, UnitLink, UnitType
@@ -89,6 +91,127 @@ def _err(unit_id: str, field: str, message: str) -> OpsResult:
         success=False, dry_run=False,
         errors=[{"severity": "error", "unitId": unit_id, "field": field, "message": message}],
     )
+
+
+_BEAT_MARKER_RE = re.compile(r"\[\[\[([^\]\n]+)\]\]\]")
+
+
+def _resolve_units_text_ref_path(project_dir: Path, text_ref: str) -> Optional[Path]:
+    units_dir = (project_dir / "units").resolve()
+    candidate = (units_dir / text_ref).resolve()
+    if units_dir not in [candidate, *candidate.parents]:
+        return None
+    return candidate
+
+
+def _marker_payload_parts(raw_marker: str) -> tuple[str, str]:
+    payload = raw_marker[3:-3]
+    parts = [p.strip() for p in payload.split("|")]
+    if not parts:
+        return "", "point"
+    marker_id = (parts[0] or "").strip()
+    boundary = "point"
+    if len(parts) >= 3:
+        maybe_boundary = (parts[-1] or "").strip().lower()
+        if maybe_boundary in {"start", "end", "point"}:
+            boundary = maybe_boundary
+    return marker_id, boundary
+
+
+def _find_beat_marker_occurrences(text: str, beat_id: str) -> list[dict]:
+    occurrences: list[dict] = []
+    for m in _BEAT_MARKER_RE.finditer(text or ""):
+        marker_text = m.group(0)
+        marker_id, boundary = _marker_payload_parts(marker_text)
+        if marker_id != beat_id:
+            continue
+        occurrences.append(
+            {
+                "start": m.start(),
+                "end": m.end(),
+                "boundary": boundary,
+                "text": marker_text,
+            }
+        )
+    return occurrences
+
+
+def _remove_beat_spans(text: str, beat_id: str) -> tuple[str, int, int]:
+    """
+    Remove all beat marker spans for a beat id.
+
+    Returns: (rewritten_text, pair_span_count, marker_only_count)
+    """
+    occurrences = _find_beat_marker_occurrences(text, beat_id)
+    if not occurrences:
+        return text, 0, 0
+
+    ranges_to_delete: list[tuple[int, int]] = []
+    starts = [o for o in occurrences if o["boundary"] == "start"]
+    ends = [o for o in occurrences if o["boundary"] == "end"]
+    points = [o for o in occurrences if o["boundary"] == "point"]
+    used_end_idx: set[int] = set()
+
+    pair_count = 0
+    marker_only_count = 0
+
+    for st in starts:
+        match_idx = None
+        for idx, en in enumerate(ends):
+            if idx in used_end_idx:
+                continue
+            if en["start"] >= st["start"]:
+                match_idx = idx
+                break
+        if match_idx is not None:
+            en = ends[match_idx]
+            used_end_idx.add(match_idx)
+            ranges_to_delete.append((st["start"], en["end"]))
+            pair_count += 1
+        else:
+            ranges_to_delete.append((st["start"], st["end"]))
+            marker_only_count += 1
+
+    for idx, en in enumerate(ends):
+        if idx in used_end_idx:
+            continue
+        ranges_to_delete.append((en["start"], en["end"]))
+        marker_only_count += 1
+
+    for pt in points:
+        ranges_to_delete.append((pt["start"], pt["end"]))
+        marker_only_count += 1
+
+    ranges_to_delete.sort(key=lambda r: (r[0], r[1]))
+    merged: list[tuple[int, int]] = []
+    for start, end in ranges_to_delete:
+        if not merged:
+            merged.append((start, end))
+            continue
+        prev_start, prev_end = merged[-1]
+        if start <= prev_end:
+            merged[-1] = (prev_start, max(prev_end, end))
+        else:
+            merged.append((start, end))
+
+    out_parts: list[str] = []
+    cursor = 0
+    for start, end in merged:
+        out_parts.append(text[cursor:start])
+        cursor = end
+    out_parts.append(text[cursor:])
+    rewritten = "".join(out_parts)
+    return rewritten, pair_count, marker_only_count
+
+
+def _strip_beat_markers(text: str, beat_id: str) -> tuple[str, int]:
+    occurrences = _find_beat_marker_occurrences(text, beat_id)
+    if not occurrences:
+        return text, 0
+    out = text
+    for occ in reversed(occurrences):
+        out = out[: occ["start"]] + out[occ["end"] :]
+    return out, len(occurrences)
 
 
 # ---------------------------------------------------------------------------
@@ -420,6 +543,7 @@ class UnitOps:
         repo,
         unit_id: str,
         dry_run: bool = False,
+        beat_prose_policy: str = "cancel",
     ) -> OpsResult:
         """
         Delete a unit only when doing so is structurally safe.
@@ -436,6 +560,18 @@ class UnitOps:
         unit = all_units.get(unit_id)
         if not unit:
             return _err(unit_id, "unitId", f"Unit '{unit_id}' not found")
+
+        policy = (beat_prose_policy or "cancel").strip().lower()
+        allowed_policies = {"cancel", "remove_span", "strip_markers", "keep_orphaned"}
+        if policy not in allowed_policies:
+            return _err(
+                unit_id,
+                "beatProsePolicy",
+                (
+                    f"Invalid beat prose policy '{beat_prose_policy}'. "
+                    f"Allowed values: {sorted(allowed_policies)}"
+                ),
+            )
 
         errors: List[dict] = []
 
@@ -463,15 +599,87 @@ class UnitOps:
             })
 
         parents_to_cleanup: List[NarrativeUnit] = []
+        parent_originals: Dict[str, NarrativeUnit] = {}
         for other in all_units.values():
             if other.unit_id == unit_id:
                 continue
             if unit_id in other.children:
                 cleaned_children = [cid for cid in other.children if cid != unit_id]
                 if cleaned_children != other.children:
+                    if other.unit_id not in parent_originals:
+                        parent_originals[other.unit_id] = other.model_copy(deep=True)
                     other.children = cleaned_children
                     all_units[other.unit_id] = other
                     parents_to_cleanup.append(other)
+
+        prose_reconciliation_candidates: List[dict] = []
+        prose_rewrites: List[dict] = []
+        if unit.type == UnitType.BEAT:
+            for parent in parents_to_cleanup:
+                text_ref = (parent.narrative.text_ref or "").strip()
+                if not text_ref:
+                    continue
+                prose_path = _resolve_units_text_ref_path(repo.project_dir, text_ref)
+                if prose_path is None or not prose_path.exists():
+                    continue
+                try:
+                    original = prose_path.read_text(encoding="utf-8")
+                except Exception:
+                    continue
+                occurrences = _find_beat_marker_occurrences(original, unit_id)
+                if not occurrences:
+                    continue
+                candidate = {
+                    "parentUnitId": parent.unit_id,
+                    "textRef": text_ref,
+                    "path": str(prose_path),
+                    "markerCount": len(occurrences),
+                    "boundaries": [o["boundary"] for o in occurrences],
+                }
+                prose_reconciliation_candidates.append(candidate)
+
+                if policy == "strip_markers":
+                    rewritten, stripped_count = _strip_beat_markers(original, unit_id)
+                    prose_rewrites.append(
+                        {
+                            **candidate,
+                            "originalContent": original,
+                            "content": rewritten,
+                            "action": "strip_markers",
+                            "strippedMarkers": stripped_count,
+                        }
+                    )
+                elif policy == "remove_span":
+                    rewritten, pair_count, marker_only_count = _remove_beat_spans(original, unit_id)
+                    prose_rewrites.append(
+                        {
+                            **candidate,
+                            "originalContent": original,
+                            "content": rewritten,
+                            "action": "remove_span",
+                            "removedPairs": pair_count,
+                            "removedMarkerOnly": marker_only_count,
+                        }
+                    )
+
+            if prose_reconciliation_candidates and policy == "cancel":
+                errors.append(
+                    {
+                        "severity": "error",
+                        "unitId": unit_id,
+                        "field": "prose.reconciliation",
+                        "message": (
+                            f"Beat '{unit_id}' has prose markers in parent prose files. "
+                            "Deletion requires explicit beatProsePolicy: "
+                            "remove_span | strip_markers | keep_orphaned."
+                        ),
+                        "details": {
+                            "candidates": prose_reconciliation_candidates,
+                            "allowedPolicies": ["remove_span", "strip_markers", "keep_orphaned"],
+                            "selectedPolicy": policy,
+                        },
+                    }
+                )
 
         inbound_link_sources = []
         inbound_stream_sources = []
@@ -506,7 +714,12 @@ class UnitOps:
             })
 
         if errors:
-            return OpsResult(success=False, dry_run=dry_run, errors=errors, modified=[unit_id])
+            return OpsResult(
+                success=False,
+                dry_run=dry_run,
+                errors=errors,
+                modified=[unit_id] + [p.unit_id for p in parents_to_cleanup],
+            )
 
         remaining_units = dict(all_units)
         remaining_units.pop(unit_id, None)
@@ -528,24 +741,109 @@ class UnitOps:
             )
 
         modified_ids = [unit_id] + [p.unit_id for p in parents_to_cleanup]
+        reconciliation_warnings: List[dict] = []
+        if prose_reconciliation_candidates:
+            if policy == "keep_orphaned":
+                reconciliation_warnings.append(
+                    {
+                        "severity": "warning",
+                        "unitId": unit_id,
+                        "field": "prose.reconciliation",
+                        "message": (
+                            f"Kept orphaned prose markers for deleted beat '{unit_id}' "
+                            "by explicit policy keep_orphaned."
+                        ),
+                        "details": {"candidates": prose_reconciliation_candidates},
+                    }
+                )
+            elif policy in {"strip_markers", "remove_span"}:
+                reconciliation_warnings.append(
+                    {
+                        "severity": "warning",
+                        "unitId": unit_id,
+                        "field": "prose.reconciliation",
+                        "message": (
+                            f"Applied prose reconciliation policy '{policy}' for deleted beat '{unit_id}'."
+                        ),
+                        "details": {
+                            "rewrites": [
+                                {
+                                    k: v
+                                    for k, v in rw.items()
+                                    if k != "content"
+                                }
+                                for rw in prose_rewrites
+                            ]
+                        },
+                    }
+                )
         if dry_run:
             return OpsResult(
                 success=True,
                 dry_run=True,
-                warnings=validation_warnings,
+                warnings=validation_warnings + reconciliation_warnings,
                 modified=modified_ids,
             )
 
-        deleted = repo.delete_unit(unit_id)
-        if not deleted:
-            return _err(unit_id, "unitId", f"Unit '{unit_id}' not found")
+        written_prose: List[dict] = []
+        for rewrite in prose_rewrites:
+            try:
+                Path(rewrite["path"]).write_text(rewrite["content"], encoding="utf-8")
+                written_prose.append(rewrite)
+            except Exception as exc:
+                for prior in reversed(written_prose):
+                    try:
+                        Path(prior["path"]).write_text(prior["originalContent"], encoding="utf-8")
+                    except Exception:
+                        continue
+                return _err(
+                    unit_id,
+                    "prose.reconciliation",
+                    (
+                        f"Failed writing prose reconciliation to {rewrite.get('path')!r}: {exc}. "
+                        "Structural deletion was not applied."
+                    ),
+                )
 
-        for parent in parents_to_cleanup:
-            repo.save_unit(parent)
+        deleted = False
+        try:
+            deleted = repo.delete_unit(unit_id)
+            if not deleted:
+                raise RuntimeError(f"Unit '{unit_id}' not found at delete time")
+
+            for parent in parents_to_cleanup:
+                repo.save_unit(parent)
+        except Exception as exc:
+            # Roll back structure first.
+            if deleted:
+                try:
+                    repo.save_unit(unit)
+                except Exception:
+                    pass
+            for original_parent in parent_originals.values():
+                try:
+                    repo.save_unit(original_parent)
+                except Exception:
+                    continue
+
+            # Roll back any prose rewrites.
+            for rewrite in reversed(written_prose):
+                try:
+                    Path(rewrite["path"]).write_text(rewrite["originalContent"], encoding="utf-8")
+                except Exception:
+                    continue
+            return _err(
+                unit_id,
+                "delete",
+                (
+                    f"Failed structural delete for '{unit_id}': {exc}. "
+                    "Attempted to roll back prose and structure."
+                ),
+            )
 
         return OpsResult(
             success=True,
             dry_run=False,
-            warnings=validation_warnings,
+            warnings=validation_warnings + reconciliation_warnings,
             modified=modified_ids,
         )

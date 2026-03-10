@@ -1,6 +1,6 @@
 # ProsAda Protocol Rules
 
-> **Managed by ProsAda tooling** · Version 1.12.1
+> **Managed by ProsAda tooling** · Version 1.12.2
 > Durable engine protocol contract for story-repo agents.
 
 ---

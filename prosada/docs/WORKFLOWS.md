@@ -1,6 +1,6 @@
 # ProsAda Workflows
 
-> **Managed by ProsAda tooling** · Version 1.12.1
+> **Managed by ProsAda tooling** · Version 1.12.2
 > Recipe-style task guide for agents working with ProsAda projects.
 
 ---

@@ -18,7 +18,7 @@ Bumping the version: increment DOCS_VERSION — all docs will be refreshed next 
 
 from __future__ import annotations
 
-DOCS_VERSION = "1.12.1"
+DOCS_VERSION = "1.12.2"
 _DOCS_SUBDIR = "docs"
 
 # ---------------------------------------------------------------------------
@@ -1391,6 +1391,7 @@ external repos so local agents can detect behavior changes quickly.
 
 Latest entries:
 
+- `engine-1.12.2.md` — beat deletion prose reconciliation policies (`cancel`, `remove_span`, `strip_markers`, `keep_orphaned`) with fail-safe sequencing
 - `engine-1.12.1.md` — inline prose lock marker protocol (`[[[lock|...|start/end]]]`), lock-overlay derivation, and source-scrub expectations for reader/TTS/export surfaces
 - `engine-1.12.0.md` — canonical story guidance document stack (`/v2/guidance-doc-stack/{unitId}`), wrapper/doc de-duplication semantics, and story-agent resolver script
 - `engine-1.11.0.md` — inherited guidance governance stack protocol (`/v2/guidance-stack/{unitId}`), explicit applicability/ordering semantics, and hardening rollout updates
@@ -1832,6 +1833,54 @@ records.
 - No canonical schema migration required.
 - Existing prose overlay endpoints remain supported; lock span payloads are
   derived from marker state during app workflows.
+"""
+
+
+_PATCH_NOTES_ENGINE_1122 = """\
+# Patch Notes — engine-1.12.2
+
+Date: 2026-03-10
+Scope: beat deletion vs prose-marker reconciliation safety
+
+## Summary
+
+This release hardens beat deletion so structural changes do not silently drift
+from prose marker content in parent scene prose files.
+
+## Added
+
+- `DELETE /v2/unit/{unitId}` now accepts:
+  - `beatProsePolicy=cancel` (default)
+  - `beatProsePolicy=remove_span`
+  - `beatProsePolicy=strip_markers`
+  - `beatProsePolicy=keep_orphaned`
+- Default-safe behavior for beat delete:
+  - if parent prose contains beat markers for the target beat and policy is
+    `cancel`, deletion is blocked with explicit reconciliation diagnostics.
+
+## Changed
+
+- Reconciliation writes are now failure-safe:
+  - prose rewrites are staged/applied before structural deletion
+  - if prose write fails, structural delete is not applied
+  - if structural phase fails after prose rewrite, engine attempts rollback of
+    prose + structure snapshots
+- Delete safety tests now cover:
+  - `keep_orphaned`
+  - invalid `beatProsePolicy`
+  - failed prose-write path (must keep structure intact)
+
+## Story Agent Guidance
+
+- On beat deletion, choose explicit prose reconciliation policy instead of
+  assuming marker cleanup.
+- Use `strip_markers` to keep prose body, `remove_span` to remove marker-wrapped
+  body, and `keep_orphaned` only when intentionally preserving detached draft text.
+
+## Compatibility Notes
+
+- No canonical schema migration required.
+- This is an operation-policy hardening update; story data model is unchanged.
 """
 
 
@@ -2287,6 +2336,7 @@ DOC_FILES: list[tuple[str, str]] = [
     ("PROTOCOL_RULES.md", _PROTOCOL_RULES),
     ("TOOLING.md", _TOOLING),
     ("patch-notes/README.md", _PATCH_NOTES_INDEX),
+    ("patch-notes/engine-1.12.2.md", _PATCH_NOTES_ENGINE_1122),
     ("patch-notes/engine-1.12.1.md", _PATCH_NOTES_ENGINE_1121),
     ("patch-notes/engine-1.12.0.md", _PATCH_NOTES_ENGINE_1120),
     ("patch-notes/engine-1.11.0.md", _PATCH_NOTES_ENGINE_1110),
