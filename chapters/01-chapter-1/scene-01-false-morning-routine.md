@@ -1,6 +1,6 @@
 [[[beat-01-wake-dark-room|Wake in the Dark Room|start]]]
 
-The room was still too dark for anything in it to come clear at once. The furniture vaguely there, but the darkness between did most of the work of holding it together — outlines suggested, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection — an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada's pupil than in her actual attention, where the red numbers had blurred and blended out of focus. They'd become scenery, a backdrop for her first thoughts of the day to project against.
+The room was still too dark for anything in it to come clear at once. The furniture was vaguely there, but the darkness between did most of the work of holding it together — outlines suggested, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection — an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada's pupil than in her actual attention, where the red numbers had blurred and blended out of focus. They'd become scenery, a backdrop for her first thoughts of the day to project against.
 
 The alarm sounded. The red smears drifted back into digits.
 
