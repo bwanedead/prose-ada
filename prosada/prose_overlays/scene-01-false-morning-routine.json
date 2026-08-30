@@ -2,10 +2,25 @@
   "schemaVersion": "1.0.0",
   "unitId": "scene-01-false-morning-routine",
   "sourceTextRef": "../../chapters/01-chapter-1/scene-01-false-morning-routine.md",
-  "sourceHash": "6318e6b2c1d591c2beef3fd6a9e76fe6032cf9e29d69c985f51eccf3a1a85040",
-  "locks": [],
+  "sourceHash": "fea6598a5503b7654db11a5b8d4743278955528e8b10aa4358d112bba716b635",
+  "locks": [
+    {
+      "id": "lock_1774426385172_gtedvo",
+      "directive": "KEEP",
+      "start": 105,
+      "end": 2518,
+      "text": "The room was still too dark for anything in it to come clear at once. The furniture was vaguely there, but the darkness between did most of the work of holding it together \u2014 outlines suggested, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection \u2014 an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada's pupil than in her actual attention, where the red numbers had blurred and blended out of focus. They'd become scenery, a backdrop for her first thoughts of the day to project against.\n\nThe alarm sounded. The red smears drifted back into digits.\n\nShe let it run \u2014 not in protest, and not because she wanted more sleep. Part of her was still elsewhere, following whatever thread had been running before the sound arrived, and she wasn't willing to drop it just because the clock insisted. She stayed where she was, still warm under the blanket, letting the sound exist without answering it.\n\nAfter the pressure of annoyance grew past her tolerance, she reached out from the warmth and silenced it.\n\nThe small facts of herself started arriving one by one.\n\nThe air sat cool against her face. One shoulder gave complaint from having taken too much of her weight through the night. Her mouth was dry. Her bladder was making itself known.\n\nShe looked at the clock again, though she never needed the exact minute at first. It was enough to know the sequence had begun.\n\nThe shade over the window kept most of the outside back. Only a thin row of yellow light showed at the bottom where it didn't quite meet the sill, but it carried enough information anyway \u2014 sunny, calm, no surprises.\n\nShe pushed the blanket down and sat up.\n\nThe mattress groaned under her shifting weight. Somewhere deeper in the apartment, the walls answered with a creak. The place always seemed to register her in little delayed acknowledgments, as if the boards and pipes kept their own record of her routines.\n\nShe sat hunched a moment longer, elbows on her knees, knowing this was the last pause before starting the day.\n\nThen she swung her legs over the side of the bed and found the rug with her toes. The corner nearest the door was arched upwards as it always was. She pressed it flat, knowing it would be curled again later.\n",
+      "status": "resolved",
+      "resolvedBy": "unique_text",
+      "resolutionConfidence": "degraded",
+      "ambiguityCount": 0,
+      "lastResolvedAt": "2026-03-25T23:19:10.379083Z",
+      "beginAnchor": "26385172_gtedvo|start]]]",
+      "endAnchor": "[[[lock|KEEP|lock_177442"
+    }
+  ],
   "variants": [],
   "mergeRequests": [],
   "audio": {},
-  "updatedAt": "2026-03-25T00:19:23.136082Z"
+  "updatedAt": "2026-03-25T23:19:10.380929Z"
 }
