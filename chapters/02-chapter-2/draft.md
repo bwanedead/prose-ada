@@ -1,5 +1,5 @@
 Prose Ada
-Chapter 2 (Draft 6)
+Chapter 2 (Draft 7)
 
 1
 
@@ -19,7 +19,7 @@ Jonas was at the desk with the weather up and a sleeve of crackers by the keyboa
 
 "Okay."
 
-She put her bag down and sat. She had slept in her jacket and woken with the light already going, and the day since then had been mostly showering and not eating. She hadn't been confused about what had happened to her. She knew what it had been like. She could call it up any time she let herself: how long it went on, long enough to get tired of being afraid and then be afraid again; how everything had been stacked on top of itself and not lined up; how the whole stack kept tearing and folding back and starting over from a little earlier, so that she lived the same stretch of seconds again and again and never got to the end of them. What she didn't know was what it was. She'd spent the drive in trying not to think about it, and then thinking about it anyway.
+She put her bag down and sat. She had slept in her jacket and woken with the light already going, and the day since then had been mostly showering and not eating. She didn't know what had happened to her. She knew only what it had felt like, and only some of the time. Now and then her body would remember it for a moment: her skin and the flesh under it coming apart and condensing again, over and over in a fast, uneven rhythm, as if every part of her had been set ringing at once. It had been in her breath and in her thoughts too, the same loosening and setting, none of it holding still long enough to be one thing. She had once seen a video of an alligator humming underwater, the sound so low that the water over its back rose into small standing spikes. It had been something like that, except the water was her. Then the feeling would go, and she couldn't call it back. It was too foreign to imagine on purpose. All she had were the flashes, there and gone. She'd spent the drive in trying not to think about it, and then thinking about it anyway.
 
 Jonas opened the dome and started the twilight flats. While the first frames came in, she opened the directory from the night before.
 
@@ -73,7 +73,7 @@ He turned around. "Oh. Yeah, okay." He looked at the schedule on the other scree
 
 She went home just long enough to get the laptop and the charger.
 
-The diner was at the edge of town where the main road bent down toward the harbor. It was about half full: two men in a booth talking about a boat, an older couple splitting a plate of fried clams, someone at the counter reading the paper. The radio behind the counter was on low.
+The diner was at the edge of town where the main road bent down toward the harbor. It was about half full: two men in a booth talking about a boat, an older couple splitting a plate of fried clams, a guy at the counter eating a burger with his phone propped against the napkin holder. The radio behind the counter was on low.
 
 Ben was hunched over the counter with the diner phone, an old office-style handset on a curly cord, wedged between his shoulder and his ear while he wrote an order on a pad. He was in his usual dark T-shirt and jeans with an apron tied over them, dark hair pushed back off his forehead and in need of a cut, the lean build of someone who was on his feet all day. He saw her come in, raised his pen in a small wave, and kept writing.
 
@@ -175,7 +175,7 @@ She sat back.
 
 She had wanted it to be there, which was a reason to distrust the wanting. It hadn't been there, which wasn't proof of anything either. The station was hundreds of miles away. Whatever had happened might have been small. She crossed off the line, lightly.
 
-The boat men had paid and gone. The man reading the paper at the counter folded it, unfolded it to another page, and started on that. She watched him do it twice.
+The boat men had paid and gone. The guy at the counter had finished his burger and was laughing quietly at something on his phone, scrolling and laughing again. She watched him for a minute.
 
 Ben stopped on his way past. "Kitchen's open another hour if you want anything."
 
@@ -223,17 +223,17 @@ The fourth was a patrol plate from a night in March 1937, an hour's exposure. Th
 
 She didn't let herself think anything about it yet. She put the plate through the same test as her own frame, because one plate that looked right meant nothing until she'd been as hard on it as she'd been on hers. She marked as many stars as she could make out on the old glass, drew the arrows and looked for any single movement that could explain them.
 
-There wasn't one. When she joined the copies up, the lines curled around a point on the plate, tight near it and loosening farther out. It wasn't as clean as her frame, because old emulsion was grainier than a modern detector. But it was the same spiral.
+There wasn't one. When she joined the copies up, the lines curled around a point on the plate, tight near it and loosening farther out. It wasn't as clean as her frame, because old emulsion was grainier than a modern detector. But the lines curled. It made a spiral too.
 
 Then she read the logbook page.
 
-The handwriting was careful and slanted, mostly plate numbers and exposure times. Next to that plate the observer had written more than usual, and the volunteer's typed version sat under the scan:
+The handwriting was careful and slanted, mostly plate numbers and exposure times. Next to that plate the observer had written a few more words than usual, and the volunteer's typed version sat under the scan:
 
-Images double, cause unknown. Drive checked & found true. Sky clear throughout. At about the middle of the exposure I had a strong impression of the sky not keeping its place, as though it had been jarred, though nothing was. I record this only because I did not like it.
+Images double, cause unknown. Drive checked, found true. Sky clear. Plate defect?
 
 There were initials after it. The volunteer had marked them as unclear.
 
-She read it three times.
+It was about what she would have written herself.
 
 The record linked to a scan of the plate's paper envelope, front side only. It was mostly a printed form, with the plate number and date filled in by hand. Along the bottom edge was a line of writing in a different pencil that ran off the scan, so only the tops of a few letters showed.
 
@@ -337,7 +337,7 @@ Not the observer, then. Someone who had taken the plate out afterward.
 
 Plates were borrowed. Researchers wrote in for them, or came and sat with a magnifier, and the collection kept a record of who had looked. If someone had looked at this one, maybe they'd written about it.
 
-She went back to the literature database and searched for the plate number. Nothing. People didn't usually cite plates by number, and the full text of older papers was patchy, scanned for some and only abstracts for others. She tried the date, March 1937, along with "patrol" and "double images." Nothing. She put the observer's phrase, "sky not keeping its place," in quotation marks on the off chance someone had quoted it. Nothing.
+She went back to the literature database and searched for the plate number. Nothing. People didn't usually cite plates by number, and the full text of older papers was patchy, scanned for some and only abstracts for others. She tried the date, March 1937, along with "patrol" and "double images." Nothing. She put the observer's note in quotation marks on the off chance someone had quoted it. Nothing.
 
 She tried something looser: patrol plates and image anomalies, limited to the years after the plate-taking started up again, when someone might have gone back through the old glass. Most of what came up was about variable stars. She went through it a page at a time, opening each abstract and closing it.
 
@@ -354,5 +354,3 @@ None of that proved anything. Old papers got lost all the time. Journals folded,
 She looked at the author line. There was one name on it.
 
 Potter, E.
-
-She lay there and looked at it until the screen dimmed, and she touched a key to bring it back.
