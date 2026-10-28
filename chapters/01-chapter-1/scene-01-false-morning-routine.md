@@ -1,6 +1,4 @@
-[[[beat-01-wake-dark-room|Wake in the Dark Room|start]]]
-
-[[[lock|KEEP|lock_1774426385172_gtedvo|start]]]The room was still too dark for anything in it to come clear at once. The furniture was vaguely there, but the darkness between did most of the work of holding it together — outlines suggested, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection — an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada's pupil than in her actual attention, where the red numbers had blurred and blended out of focus. They'd become scenery, a backdrop for her first thoughts of the day to project against.
+The room was still too dark for anything in it to come clear at once. The furniture was vaguely there, but the darkness between did most of the work of holding it together — outlines suggested, interiors soft and vague, all of it washed in a faint red tint. Nothing separated sharply from anything else except a set of four red glowing numerals and, a short distance away, a point of reflection — an eye already open, staring not at the numbers but past them. The numerals were clearer in the reflection of Ada's pupil than in her actual attention, where the red numbers had blurred and blended out of focus. They'd become scenery, a backdrop for her first thoughts of the day to project against.
 
 The alarm sounded. The red smears drifted back into digits.
 
@@ -23,10 +21,6 @@ Somewhere deeper in the apartment the boards answered, then the pipes. The place
 She sat hunched a moment longer, elbows on her knees, knowing this was the last pause before starting the day.
 
 Then she swung her legs over the side of the bed and found the rug with her toes. The corner nearest the door was arched upwards as it always was. She pressed it flat, knowing it would be curled again later.
-[[[lock|KEEP|lock_1774426385172_gtedvo|end]]]
-[[[beat-01-wake-dark-room|Wake in the Dark Room|end]]]
-
-[[[beat-02-morning-ritual|Morning Ritual|start]]]
 
 There were things in her apartment that accepted correction only temporarily. The kitchen drawer that liked to stop just short of closed. The bathroom door that had to be lifted slightly at the knob. Ada had lived there long enough to stop treating these as flaws. They were just the terms.
 
@@ -34,7 +28,7 @@ She stood and waited for herself to gather, like coming online in layers. First 
 
 She pulled on the T-shirt hanging over the chair and stepped into the sweatpants she had left as a grey knot on the floor.
 
-After the bathroom the lamp went on beside the couch. The room shifted to amber. Smaller. More complete somehow. The black in the corners thinned to a soft brown, and the shadows pulled in close behind the furniture. The surfaces remembered.
+After the bathroom she turned on the lamp. It glowed yellow and soft against the beige walls.
 
 That helped.
 
@@ -58,13 +52,13 @@ She kept looking.
 
 She wondered, briefly, whether it really was an illusion, and then she stopped wondering and let it be what it looked like. A hole in her hands with no bottom to it. Her eyes went looking for a floor and kept going. The counter and the lamp and the faint warmth of the room drifted out past the edges of her attention, and for a moment there was nothing but the dark and her, leaning a little closer to it. It was very quiet down there. It seemed to hold still for her, the way a deep thing would.
 
-Then one of the bubbles popped, and the cup was a cup again. The kitchen closed back in around her, the counter under her hand, the lamp's amber at the edge of her vision, the night's work waiting somewhere just ahead. Everything settled back into its lines.
+Then one of the bubbles popped, and the cup was a cup again. The kitchen closed back in around her, the counter under her hand, the lamp's warm light at the edge of her vision, the night's work waiting somewhere just ahead. Everything settled back into its lines.
 
 She breathed out through her nose, a little amused at herself.
 
 She picked up the mug. The heat came through the ceramic and into her palms, almost too much, which was the right amount. The smell had gone soft by now. She had been standing in it long enough that it belonged to the room.
 
-Then the cream. She tipped the carton and kept it tipped a beat longer than she should have. "Oops," she said to no one, and didn't pour any back.
+Then the cream. She tipped the carton and kept it tipped a beat longer than she should have. "Oops," she said to no one, and gave it a little more.
 
 It went in and vanished, then came back up from underneath, rolling outward in slow pale clouds that turned over on themselves before giving in and spreading until the whole thing went tan.
 
@@ -89,5 +83,3 @@ Her keys were on the hook, her bag by the door, her jacket over the back of the 
 She opened the door.
 
 The warmth of the apartment ended right at the threshold. Outside was a wall of low, bright light and a crisp chill that met her face first, then found its way through the jacket to her chest, and ran down through her in a fine shiver, out along every nerve to the ends of her fingers.
-
-[[[beat-02-morning-ritual|Morning Ritual|end]]]
