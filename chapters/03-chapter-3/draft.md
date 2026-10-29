@@ -1,226 +1,288 @@
 Prose Ada
 Chapter 3 (Draft 1)
 
-1
-
-The rain had been coming down steadily since she'd parked, hard enough that the windshield went to grey a few seconds after the wipers stopped. She left the engine running for the heat and dialed the observatory.
+She called the observatory from the car in the diner lot, with the engine running.
 
 Wade picked up on the fourth ring. "Blueberry Pond."
 
-"Hey, it's Ada."
+"Hey, Wade, it's Ada. Just letting you know I'm calling out again. Still not feeling well."
 
-"Hey. You coming in?"
+"Oh, sorry to hear that, Ada."
 
-"No, I'm sorry. I'm still sick. I'm not going to make it tonight either."
+From somewhere behind him, farther from the phone, Jonas yelled, "Tell her she still didn't text me!"
 
-"Oh. Okay." She could hear him writing something down. "Jonas said you weren't great yesterday. Is it a stomach thing?"
+"Hopefully I'll be good to come in tomorrow."
 
-"Something like that. I'll let Holloway know."
-
-"I'll tell her too. She's in this afternoon." He paused. "It's pouring up here anyway. You might not be missing much."
-
-"It's pouring here too."
-
-"Well. Feel better."
+"No worries. Just feel better."
 
 "Thanks, Wade."
 
-She hung up and sat for a minute with the phone in her lap. Then she turned the engine off, pulled her hood up, got the laptop bag from the passenger seat and ran for the door of the diner.
+She hung up and sat for a minute with the phone in her lap. Then she turned the engine off, got the laptop bag from the passenger seat and went in.
 
-Inside it was warm and smelled of coffee and fryer oil and wet coats. There were more people than usual for a weeknight, the way there always were when it rained: a family in the big booth by the window with two kids sharing a plate of pancakes, a couple of guys in work clothes at the counter, an older man by himself with a bowl of chowder. The radio was on.
+Inside it was warm and smelled of fryer oil. It was busier than usual. A family had the big booth by the window. Two guys in work clothes were at the counter, and a man in a Red Sox cap was reading the paper by himself. The radio was on.
 
-Ben was behind the counter refilling the ketchup bottles from a jug, lining them up in rows. He looked up when the bell over the door went.
+Ben was behind the counter refilling ketchup bottles from a jug. He looked up when the bell over the door went.
 
-"Hey," he said.
+"Hey, Benny."
 
-"Hey, Benny. Back table?"
+"Hey, Ada. I'll bring you a coffee in a sec."
 
-"It's all yours. Nobody wants it when the door's swinging." He tipped his head toward the coat rack. "You're dripping on my floor."
+She hung up her jacket and took the back table. When the diner's Wi-Fi asked, she told it to connect automatically from now on. She was here enough. A few minutes later the mug showed up beside her.
 
-She hung her jacket and went back. The table was where it always was, the outlet worked, and the Wi-Fi came up on the first try.
+She had a list from the night before of observatories that might have been looking at the sky when it happened. It was short. Out west the sun had still been up. In the East and in Canada there were a handful of places that ran a telescope or a camera on clear nights, and most of them had a phone number on their website.
 
-A few minutes later he brought a mug and set it down with two creamers beside it.
+The first was a college observatory in upstate New York. A student answered. She told him who she was and where she worked, and asked whether they'd had anything unusual in their data at 8:04 p.m. Eastern on the date she gave him. He put her on hold and came back and said the dome had been closed. They'd had clouds all night.
 
-"Two nights in a row," he said. "I'm going to start charging rent."
+The second was a small research telescope in Ontario. The operator who'd been on that night happened to be in. He looked it up while she waited and said they'd been on the other side of the sky, low in the east, doing photometry on a cluster. He'd have nothing near her field. "I can check the frames anyway, if you want."
 
-"I'll pay it."
+"If it's not a bother. Anything that looks off. A jump, or stars doing something they shouldn't."
 
-"I know you will. That's the problem." He went back to the counter.
+"Sure. I'll email you."
 
-2
+The third was a university in Pennsylvania with a telescope on its roof. The woman who answered said they'd been taking spectra that night, one star at a time through a narrow slit, and nothing outside that slit would have been recorded. She was sorry. She asked what Ada had seen, and Ada said she wasn't sure yet.
 
-She opened the record from the night before. The paper was where she'd left it, with the title and the dead link and the single name.
+When she put the phone down, Ben was wiping the counter at her end. He moved on without saying anything.
 
-Potter, E.
+She wrote down the three answers. They were all reasonable. Then she opened her notes on the paper.
 
-She'd thought about it while she was falling asleep and again in the shower. She didn't expect much. A paper that had vanished from its own journal was strange, but strange things happened to old paper all the time, and an author was just an author. Still, he was the only person she knew of who'd looked at the 1937 plate and thought it was worth writing about, and she wanted to know who he was.
+It was where she'd left it: a 1971 paper about the Harvard plates, a dead link, and one name. Potter, E. As far as she knew, he was the only person who had ever looked at the 1937 plate and thought it was worth writing about, and she wanted to know who he was.
 
-She started with the literature database, because that was where he'd turned up. She searched for the author name and got hundreds of results, most of them obviously not him: a chemist in the eighties, a geologist in Australia, a medical researcher with dozens of papers on kidney function. Potter was a common name, and "E." could be anyone. She narrowed it to physics and astronomy and to the years around 1971, and the list shrank to something she could read.
+She started with the literature database, since that was where he'd turned up. Potter was a common name, and the first search gave her hundreds of results: a chemist, a geologist in Australia, a doctor with dozens of papers on kidneys. She limited it to physics and astronomy, and it came down to something she could read. Six entries might have been the same man. Each one was just a line: E. Potter, the title, the journal, the volume, the year, all between 1969 and 1972. Most of the titles were dry and short and could have come from any physics department. The last one, from 1972, was called "On the Interaction of Nearby Solutions." She read it once and copied it onto her notepad. There were no abstracts. The journals were small ones she'd never heard of, and none of them had been put online for those years. There was nothing to open.
 
-There were six that might have been the same person. They ran from the mid-sixties to the early seventies, in small journals, and they started out ordinary. One was about the statistics of counting experiments. One was about errors in timing measurements. Then the titles got broader and less conventional, and the last two read more like philosophy than physics, something about the observer's role in measurement and something about "coincident records." None of them had a full text she could open. Most had no abstract. The one that did had three sentences that told her almost nothing.
+She tried earlier years to see if he'd published before 1969. There was one hit. A short physics paper from 1949, by two other men, ended with a line thanking "Mr. E. Potter" for his help with the measurements. A student, probably, or a lab assistant. After that, nothing under the name for twenty years.
 
-None of them listed an institution she could read. The affiliation field was blank on four and cut off on two.
+She tried the open web next, knowing it was mostly hopeless for anyone who'd published before about 1990. "E. Potter physics" gave her a children's author, a painter, a high school teacher in Ohio, and a lot of Harry Potter.
 
-She wrote the six titles down and the years, and then sat back.
+What did help was the scanned paperwork. A lot of universities had put their old course catalogs, alumni magazines and department newsletters online in big searchable collections. A computer had read the pages, and it had made plenty of mistakes, but you could search inside them. She searched for "Potter, E." with "physics," from 1945 to 1980.
 
-Across the room one of the kids in the booth was trying to stack the creamer cups into a tower, and his sister kept knocking it down. Their father let it go on for a while and then took the cups away. There was a low roll of thunder somewhere out over the water, long enough that the radio seemed to get quieter while it went on.
+A state university in the Midwest had him. Its course catalog listed Potter, E., assistant professor of physics, in 1969. He was in the 1970 and 1971 catalogs too. He wasn't in 1972. She checked 1973 to make sure it wasn't a scanning error, and he wasn't there either. Nothing earlier in the collection had his name on it.
 
-She tried the open web next, which she knew was mostly hopeless for anyone who'd published before about 1990. "E. Potter physics" gave her a children's book author, a painter, a high school physics teacher in Ohio with a website, and a lot of Harry Potter. She added the title words from the 1971 paper and got the same two automatic bibliography pages she'd found the night before, and nothing else. She tried "Potter" with "patrol plates," "Potter" with "Harvard plates," "Potter" with "coincident records." Nothing.
+She went back to the six entries in the database and looked at them more closely. Two of them had an author's address under the name, cut off partway, and what was left of it was the name of that university. So it was him.
 
-There was a whole category of things from that era that weren't on the open web but had been scanned anyway: old university catalogs, alumni magazines, department newsletters, the dull paperwork institutions had been printing for a hundred years. Some libraries had put them online in big searchable collections where you could look inside the text of a scanned page. It was slow and the search was clumsy, because a computer had read the old pages and made plenty of mistakes doing it, but it was better than nothing.
+Ben came by with the pot.
 
-She tried the full name format a catalog would use, "Potter, E." with "physics," and limited it to 1960 through 1980.
+"You eating?"
 
-That got her something. A scanned course catalog from a mid-sized state university in the Midwest listed, among the physics faculty for 1969 and again for 1970, an assistant professor: Potter, E. The 1971 catalog had him too, with the same title. The 1972 catalog didn't. She checked 1973 to make sure it wasn't a scanning mistake. He wasn't there either.
+"I'll have the soup."
 
-The catalogs didn't give his first name. She went back to the 1969 one and looked at the whole faculty page, in case there was a fuller listing somewhere else, and found the department's own section a few pages later. It had the same line.
+"Got it. One chowder."
 
-Ben came by with the pot and topped off her mug.
+It came. She ate some of it and kept going.
 
-"You want something to eat or are you running on coffee?"
-
-"What's the soup?"
-
-"Chowder. It's always chowder."
-
-"Then chowder."
-
-"Good choice," he said. "Bold."
-
-She looked out the front window while she waited. The parking lot lights had come on, and the rain was blowing across them sideways. A pickup pulled in, sat with its wipers going for a while, and then pulled out again without anyone getting out.
-
-The chowder came. She ate some of it and kept going.
-
-If he'd taught at that university, the university's alumni magazine might have mentioned him, or its faculty newsletter. She tried both. The alumni magazine had been scanned back to the forties. She searched it for Potter and physics and got a few hits, mostly about a different Potter who had given money for a new library wing. One was a short notice in the back of an issue from 1974, in a column of faculty and staff news, between a retirement and a new hire:
+If he'd taught there, the alumni magazine might have mentioned him. It had been scanned back to the forties. Most of the hits for Potter were about a different Potter who had given money for a library wing. One was a notice from 1974, in the back of an issue, in a column of short notices about faculty and former students.
 
 Edgar Potter, formerly assistant professor of physics, died in March. He had been on leave from the University since 1971.
 
-That was all. No cause, no age, no survivors, no memorial service. Most of the other notices in the column had at least a line about family.
+That was all of it. No age, no cause, nothing about family. Most of the other notices in the column had at least a line about family.
 
-She read it twice and wrote down the first name, the year he'd died and the year the leave had started.
+She wrote down the first name and the dates. She looked for a newspaper obituary from that town, but the local papers from 1974 weren't searchable anywhere she could get to, and she didn't know enough to look for a death record.
 
-So that was probably the end of it. He'd written a few odd papers, taken a leave the same year the plate paper was supposed to have come out, and died three years later. People did die. Young academics took leaves for all sorts of reasons and didn't come back, and sometimes they died, and the notice in the alumni magazine was two lines because nobody had been asked to write more.
+So that was probably it. A man helped with someone's measurements in 1949, turned up twenty years later teaching physics, published a handful of papers in small journals, took a leave, and died. People did die. It wasn't much of a story.
 
-She looked for a newspaper obituary anyway. The local papers from that town in 1974 weren't searchable anywhere she could get to without a subscription to something, and she couldn't find a death record without knowing much more than she did. There was no faculty page to look up; he'd been gone two decades before universities had websites. She tried the Internet Archive anyway on the off chance someone had put up a department history. The department had a history page, written for an anniversary sometime in the 2000s. It listed every chair the department had had, the buildings it had moved through, and a handful of famous alumni. It didn't mention him.
+She almost didn't try the department newsletter. It was in the same collection, a few photocopied pages a term. The search found "Potter" in an issue from the spring of 1970. It was a letter. Someone had printed a value for a constant in the previous issue, copied from an old edition of a reference table, and Potter had written in to say the newer value differed in the third decimal place. It was four sentences long and polite.
 
-She sat back and finished the chowder, which had gone lukewarm.
+It was signed: E. Potter, provisionally.
 
-At the counter the two guys in work clothes were paying. One of them was telling Ben a long story about a dock that had washed out up the coast, and Ben was nodding and making change and saying "No kidding," at the places where it seemed to be wanted.
+It was an odd way to sign a note about a decimal place. She copied it into her notes, signature and all.
 
-3
+When she packed up, Ben was flipping chairs onto the tables at the front.
 
-She almost didn't try the newsletter.
+"Night, Benny."
 
-It turned up in the same collection as the catalogs: a department newsletter, a few photocopied pages a term, scanned as a batch by the university library along with a lot of other departmental odds and ends. The search found "Potter" in an issue from the spring of 1970. She expected another faculty list.
+"Night. Drive careful."
 
-It was a letter. Someone had written in to the previous issue about an experiment in the undergraduate lab, giving a figure for some measured constant, and this was a reply correcting it. It was four sentences long. It pointed out, politely, that the figure in the previous issue had been copied from an older edition of a reference table and that the newer value differed in the third decimal place. It gave the newer value and the source. It said the difference didn't matter for the purposes of the lab but might matter to someone someday.
+At home she put the laptop on the kitchen table and didn't open it. She took a shower, ate some toast standing up, and went to bed early, and for once she slept straight through.
 
-It was signed:
 
-E. Potter, provisionally.
 
-She looked at the signature. It was an odd way to sign something. She couldn't tell if it was a joke or a habit or an inside reference she didn't have. Maybe he signed everything that way. Maybe it meant he was still provisional in some departmental sense, not yet tenured, and it was a little dig at that. She'd known people who signed their emails with stranger things.
+The next night she returned to the observatory. Wade said, "Hey, you're back," and went on eating his sandwich. Jonas came in as she was taking over the control room.
 
-She copied the letter into her notes, signature and all, and went on.
+"Hey, Ada. How are you feeling?"
 
-There was nothing else in the newsletter. He wasn't in any issue after 1971. She went back through the catalogs, the alumni magazine and the department pages once more, slower, to see if she'd missed anything, and she hadn't. She'd found a man who taught physics at a university for three years, wrote a few papers that got stranger as they went, wrote one about old glass plates that no longer seemed to exist, took a leave, and died.
+"Better. Thanks."
 
-She made a list of what she could do next. Find a librarian at that university and ask whether they had his papers or any record of the leave. Request the six articles through interlibrary loan, if the journals could be found. Write to the plate collection and ask whether their loan records went back far enough to show who had looked at the 1937 plate. All of it would take days or weeks, if it worked at all.
+"Good. It was quiet without you. Wade doesn't talk." He hung his coat on the back of the door. "There's a note from Holloway about the focus. It's on the desk."
 
-She drafted the email to the plate collection and left it unsent in case she thought of something better to ask.
+"Thanks, Jonas."
 
-Then she sat and didn't do anything for a while.
+The nights after that were clear and ordinary. She ran Holloway's fields in the order Holloway wanted them, checked focus, watched the guider, and wrote the log. She went up to the catwalk once to look at the sky before a long sequence, the way she always had. At the top of the ladder she stopped with one hand on the rail. It was cold up there, and the spot where she'd stood that night was right in front of her. For a moment she didn't want to step out. Then she did, looked at the sky for as long as she usually did, and came back down. One night a fan in the camera cooler started to rattle, and she spent an hour with Wade's notes and a flashlight finding which one. Holloway emailed once, to say the data from the week looked good.
 
-Thunder came again, closer this time, and the lights over the counter dipped for half a second and came back. The kids in the booth both said "Whoa," and their mother laughed. Ben looked up at the ceiling like it had personally done something, then went back to what he was doing.
+The Ontario operator wrote, as he'd said he would. He'd gone through the frames from that night and found nothing out of the ordinary. She thanked him. He asked what she'd been looking for, in case he ever came across it. She started an answer twice and said in the end that it had probably been something local. He wrote back, "Clear skies."
 
-4
+She filled out interlibrary loan requests for Potter's six papers, one at a time, copying each journal name and volume from the index, and wrote to the university library to ask whether they had anything of his. The loan office sent back a form saying the requests had been received, and that older and smaller journals could take some time to locate. Nothing else came. That was all she did, and on most nights she didn't think about it until she was driving home.
 
-The family left, and then the older man with the chowder. Someone new came in out of the rain, a man about sixty in a canvas work jacket gone dark at the shoulders, and sat at the counter with his back to her. He ordered without looking at the menu, and Ben poured him a coffee without asking.
 
-The jacket had a patch sewn on the back, between the shoulder blades. It was the kind of embroidered souvenir patch they sold in gift shops at national parks, a little worn at the edge, with the name of a park stitched across the top in a curved band of letters. She couldn't read it from where she was. What she noticed was the picture in the middle.
 
-It was a spiral. A simple one, stitched in a dark red thread on tan, a single line winding in on itself a few times, with a couple of small stick figures beside it, made to look like it had been carved into rock.
+On her next night off she went back to the diner. It was blowing hard off the water, rain coming and going in bursts, and there were only a few people inside. Ben said, "Hey," and brought her a coffee without asking.
 
-She looked at it for a while. Then she opened the render from the night before, the one she'd made from the copies of the stars, and looked at that. They didn't look alike, really. Hers was a field of thin curved lines, opening out from a point in empty sky. The patch was one line, drawn by a person on purpose. It was the kind of resemblance you'd laugh off if someone else pointed it out.
+She had decided on the drive over to leave Potter alone for a while. The library would write or it wouldn't. What she hadn't really looked at was the plate itself, beyond the one scan, and that was something she could do from here.
 
-She didn't laugh it off. She didn't make anything of it either. She just didn't have anything else to do, and she was curious.
+She opened the archive and found the 1937 plate again. She had looked at the glass before, but under the scan there was a second image she hadn't paid attention to: a photograph of the paper jacket the plate had been kept in. It was a printed form, filled in by hand. The plate number, the date, the telescope, the length of the exposure. The observer's initials, which she couldn't make out. At the bottom, in the space for remarks, were the words she already knew from the logbook, "Images double, cause unknown," in a neat hand. Under them were a few more words in a different pen, smaller and slanted. She zoomed in until they broke into blocks. She tried brightening it, and then darkening it, and neither helped. The photo was just too small.
 
-When the man shifted on his stool she could read the top of the patch. MESA VERDE.
+She sat back and drank some of the coffee.
 
-She knew Mesa Verde the way most people did: the cliff dwellings in Colorado, built into the overhangs of the canyon walls, abandoned around seven hundred years ago. She hadn't known there were spirals there.
+If whoever had written that second note had seen something, they might have seen it on another plate too. The archive let her search by position on the sky and sort by date, so she asked it for every plate that covered the same patch of sky as the 1937 one.
 
-There were, it turned out, a lot of them. The park's own pages had an article about the rock art along one of its trails, a long panel of figures pecked into the sandstone by the people who had lived there. Near one end there was a squarish spiral, a line that turned in on itself at right angles, and at the far end a rounder one. In 1942, four Hopi men had come to the canyon and been asked what the panel meant. According to them, as the park retold it, it wasn't a picture of animals so much as a record of a migration. The square spiral was the sipapu, the place where the people had emerged into this world. The figures along the line were clans breaking off from the main group to go their own ways. The spiral at the end was either where the migration had finished, there at Mesa Verde, or where it was going to finish, at the Hopi villages in Arizona. The page was careful to say this was one elder's reading, and that the stories and the readings changed over time.
+It came back with a long list. She started at the top and scrolled slowly, reading the dates.
 
-She read it all the way through. Then she looked up what "emerged" meant, because the page used it as if everyone already knew.
+The 1890s were sparse, then it grew. By the twenties and thirties there were plates almost every clear night, sometimes several in one night from different telescopes. The forties were nearly as thick. She opened a few at random from around 1937 and looked at the same stars, and they were just stars, round and single.
 
-The Hopi, it seemed, told the history of the world as a sequence of worlds. Different clans told it with different details, but the shape was the same: people had once lived in a lower world, in darkness, and climbed up out of it into another, and another, until they came up through an opening into this one, the fourth. In some versions they climbed up a hollow reed. In others it was a pine tree. The opening was the sipapu, and there was a small hole in the floor of every kiva that stood for it. She found a book from the 1930s, out of copyright and online in full, that summarized one version of it collected by an anthropologist who had lived among the Hopi in the nineteenth century. When the song that brought the people up ran out, it said, no more could get through, and many had to stay behind.
+Then, around 1953, the list thinned out.
 
-She read that line again.
+She had noticed this before, in passing, and had looked it up then and found the short answer: the observatory had cut back to save money. This time she looked more closely. There were still plates in those years, a few a year from this telescope or that one, but only a few. It stayed that way until about 1968, and then the dates got thicker again.
 
-There had been a world under this one, and people who came up through a narrow place, and people who didn't.
+She checked that it wasn't her search. She widened the patch of sky and got more plates but the same shape. She tried a different part of the sky altogether. Same shape. She looked at the archive's own notes, in case those years just hadn't been scanned yet. The notes described the gap plainly. It even had a name. People called it the Menzel Gap, after Donald Menzel, who had been the director then.
 
-She told herself she was reading her own week into an old story, which was exactly the kind of thing she'd have warned a student about. She kept reading anyway.
+She kept reading. Plate-taking had been cut back to save money. That was the answer she'd seen before. But a little further on there was something she hadn't seen. Dorrit Hoffleit, an astronomer who had worked with the collection for years, had written later that Menzel, early in his time as director, had told his secretary to destroy about a third of the plates, without anyone looking at them first. Another account said that in the early sixties a committee had voted to get rid of whole series of plates.
 
-The man in the work jacket was eating a cheeseburger now. Ben leaned on the counter across from him and they talked about the rain and the Patriots, and the man laughed at something and wiped his hands.
+So it wasn't only that they'd stopped taking pictures. Some of the ones they already had were gone too. Which ones, the notes didn't say.
 
-She looked up spirals in Southwestern rock art more generally, half expecting to find a mess of crystal-shop websites, and found plenty of those. Spirals as portals, spirals as energy, spirals as maps of the soul. She skipped them. Underneath them, though, was the real thing, and the real thing was more interesting.
+She wrote down the name. Menzel. Then she opened her Potter notes beside the list and looked at them together for a while. 1949, and then nothing. 1969, the catalog. The thin years ran from about 1953 to about 1968. She wrote the two sets of years one above the other and put a question mark after them, and didn't add anything else.
 
-In Chaco Canyon in New Mexico, near the top of a lone butte, three big slabs of sandstone leaned against a cliff face. On the cliff behind them were two spirals carved into the rock. In 1977 an artist named Anna Sofaer had climbed up there on the summer solstice to record the rock art and seen a thin blade of sunlight come down between the slabs and cut straight through the middle of the larger spiral. It turned out the slabs and the spirals marked the year. At the summer solstice a single dagger of light split the big spiral down the center. At the winter solstice two daggers framed it on either side. At the equinoxes a shaft of light crossed the smaller spiral. Sofaer and two colleagues had published it in Science in 1979. The site had been closed to the public since the early eighties, and by 1989 the slabs had shifted from erosion, partly from all the visitors, so the light no longer fell where it used to.
 
-She found a photograph of it. The large spiral had about nine and a half turns, winding outward from the center. A narrow bright wedge of light lay across it.
 
-That was the Chacoan people, she noted, the ancestors of today's Pueblo peoples, not specifically Hopi. The sources were careful about that, and she wrote it down so she'd be careful too. It was also, as far as anyone could say, a calendar: a way of marking where the sun was in the year. That was a very different thing from what she was looking for. She didn't know exactly what she was looking for.
+The wind had been getting worse. Rain was coming across the windows in sheets. Lightning lit the whole parking lot white, and the thunder came at the same moment, one huge crack right over the building, and the lights went out.
 
-Still, she sat and looked at the photograph for a while. People had watched the sky closely enough to build that. Someone had carved a spiral and set three stone slabs just so, and it had worked for centuries.
+The refrigerator case behind the counter went quiet. The exit sign over the back door came on, faint and red, and something under the register started beeping.
 
-5
+"Okay," Ben said, from near the counter. "Hang on."
 
-The man in the work jacket paid and left. Ben cleared the man's plate and stopped at her table on his way back to the kitchen.
+A drawer opened and a flashlight came on. He found the beeping and shut it off. He went to the front window and looked up and down the street.
 
-"You still on the same thing?" he said.
+"Whole street's out."
 
-"Sort of. It went sideways."
+The two other customers paid by flashlight and left. Ben locked the door behind them and turned the sign. He went into the kitchen, and she heard him shutting things off, the gas, the fryer, and a door opening and closing. He came back out and called the power company from the phone on the wall. He stood there with the receiver to his ear and the face of someone listening to a recording.
 
-"Sideways how?"
+Ada watched the rain on the window and found herself back on the 1937 plate. Every star on it had shifted, and the shifts curled around one point, tight near it and opening out farther away, the way they did in her own frame. She tried to think what could do that. Not a bad drive, which would move everything the same way. Not a bump, not a warped plate. Something that turned the whole field around one spot in the sky. She went through what she knew and none of it would make that shape, and she kept turning it over anyway.
 
-She turned the laptop a little so he could see the photograph of the butte, the slabs and the spiral.
+Ben hung up. "Two hours, they think."
 
-"Huh," he said. "What's that, Arizona?"
+He took two paper menus from the stack by the register and came over with a second flashlight. He stood one flashlight on its end on their table, pointing up, and wrapped a folded menu around it so the bulb didn't shine in their eyes. He did the same with the other on the next table over. The light went up through the paper and made two soft circles on the ceiling, and the room came back enough to see.
 
-"New Mexico. It's a calendar. The sun comes through those rocks and hits the spiral on the solstice."
+"I was going to close up soon anyway," he said. "I have to stay till it's back, though, and make sure the freezer comes back on with it. You're welcome to stay. Don't blame me if you don't want to sit in the dark that long."
 
-"No kidding." He looked at it a while longer than she'd expected. "That's actually cool."
+"I'll keep you company."
 
-"It is."
+He went behind the counter and came back with a flat wooden box. "You play?"
 
-"That's what you're working on?"
+"I know how. I haven't in a long time."
 
-"No. I just ended up here."
+"That's fine." He opened it and set up the pieces without looking at them much. "Kept it under the register. Slow nights."
 
-"Well," he said, "that's how most of my days go too." He went off toward the kitchen.
+He gave her white. She opened with the king's pawn, two squares, and he answered the same way. She brought out a knight and he did the same. She remembered, from a book she'd read in high school, that you were supposed to get your pieces out and castle early, and she tried to do that. He played quickly and didn't say much. Once, when she put a bishop where his pawn could take it, he waited a second and said, "You want that back?" and she took it back.
 
-She went back to the Hopi pages.
+"So the phone calls the other day," he said. "Something weird in your data?"
 
-There was one more thing that kept coming up whenever she searched for Hopi and anything to do with time or worlds. It came up on websites she didn't trust and a few she did. They called it Prophecy Rock: a petroglyph on a boulder near Oraibi, one of the oldest Hopi villages, on the Third Mesa in Arizona.
+"Maybe. Probably nothing."
 
-The drawings she found of it were simple. On the left was a tall figure. Running away from it to the right were two long horizontal lines, one above the other, like two roads. A short vertical line connected them partway along. On the upper line stood a row of small human figures, and the upper line ended in a broken, zigzag scrawl. The lower line ran on to the right edge, past a figure tending corn and another leaning on a staff.
+"What kind of weird?"
 
-The usual explanation, the one on most of the websites, was that it was a prophecy. The tall figure was the Creator, or Maasaw, the spirit who had given the Hopi their land. The two lines were two paths humanity could take. The upper one was the way of machines and money, and it ended in ruin. The lower one was the way of the land and the old instructions, and it went on through old age and corn and continuity. The short line between them was the last chance to step from one road to the other.
+"One set of pictures had something in it that wasn't in the ones before or after."
 
-She found almost as quickly that it wasn't that simple. A paper from a university press laid out the history. The earliest written record of the rock was from John Wesley Powell in 1875, the one-armed explorer of the Grand Canyon. A Hopi man had told him it showed something else entirely: the time the Spanish had attacked the village, and the defenders had driven them back down the stone stairway. The "two paths" reading came much later, mostly from one group of traditionalist elders in the twentieth century, and had been picked up and embroidered by outsiders since. The tribal council and the traditionalists still disagreed about what the rock meant. A scholar had written a whole book about how Hopi prophecy changed as it was retold.
+"And nobody else got it."
 
-She appreciated that. It made her trust the rest more, not less. Whatever the rock meant, people were still arguing about it, which meant it was still being read.
+"Nobody else was looking there. One place had clouds. The others were pointed somewhere else."
 
-She found a clearer picture of it in an old book someone had scanned, the lines pecked pale into the dark stone. The two roads ran side by side, the upper one breaking up, with the short line between them where you could cross.
+"So what are you doing about it?"
 
-Then she noticed she had been looking at it for some time without reading anything.
+"Going through old pictures of the sky. Harvard has an archive of them, on glass plates, going back over a hundred years. I'm looking to see if anything like it ever showed up before."
 
-She pulled up her own render beside it. The pinwheel of thin curved lines, opening out from a point in empty sky. Next to it the rock, two straight lines, one breaking. They didn't look anything alike.
+"Has it?"
 
-She thought about the plate from 1937, and the logbook note that called it a plate defect. She thought about the newsletter, and the signature. She thought about how it had felt on the catwalk, being stretched apart and crushed together at the same time, and how she'd lived the same few seconds over and over without them ever ending. It didn't fit anything she knew. Two roads side by side wasn't one road. A world that people climbed up out of, leaving others behind, wasn't one world.
+"I don't know yet. There's a big stretch in the middle where they barely took any. The fifties and sixties, about fifteen years. And they threw some of the old ones out too."
 
-She didn't know what she was doing. She knew this was not how she'd been trained to think, jumping from a scanned envelope to a dead physicist to a rock in Arizona because of a patch on a stranger's jacket.
+He looked up. "They threw them out?"
 
-Out over the harbor, thunder rolled a long way, and the rain came down harder against the front windows. Behind the counter Ben turned the radio up a notch to cover it.
+"That's what it sounds like. One of the astronomers who worked there wrote about it later."
 
-She opened a new search window, typed "Hopi" and "worlds," and started reading from the top.
+"Does that make sense? For a place like that?"
+
+"I don't know. I'm still trying to figure it out."
+
+"Huh. Well. Nothing to see there."
+
+"You know anything about the guy who was running it?"
+
+"Just his name. Menzel. He was the director. I haven't looked him up."
+
+He nodded and moved his queen out, and she spent a while working out what it was doing before she blocked it with a pawn. He took the pawn anyway.
+
+She castled, a move later than she should have. He asked how work was, and she said fine, quiet. She asked how long he'd been running nights.
+
+"Since my dad's knee. Four years, maybe. He still does the books and the ordering. I do everything once it gets slow."
+
+"Do you like it?"
+
+"It's fine. I know where everything is. I did a summer in Boston after high school, line cook at a place on the water. Busiest I've ever been in my life. I loved it."
+
+"Did you think about going back?"
+
+"Not to Boston, necessarily. I want to go everywhere." He grinned at the board. "This is a good gig for now. I'm saving up. I've never even been on a plane."
+
+"Never?"
+
+"Drove to Montreal once. That's the farthest." He moved a rook. "First real trip, I want it to be somewhere I can't drive to. Then I'll figure out the next one."
+
+"Where first?"
+
+"Changes every week."
+
+The rain had eased off a little. They played for a while without talking, and she could hear the wind working at the sign out front. His bishop and queen ended up in front of her king, and she moved it, and moved it again.
+
+"That's mate, I think," he said.
+
+She looked. Her king had nowhere to go.
+
+"You had me earlier, though," he said. "You could've taken my knight on f6 with your bishop, and then queen to b3 was check. My bishop on b4 was just sitting there. You'd have been a piece up."
+
+"I didn't see it."
+
+"I know."
+
+The lights came back a few minutes later, all at once and too bright, and the refrigerator case started up again. Ben squinted at the ceiling.
+
+"I'm closing anyway," he said.
+
+He left the board where it was. She paid, and he waved it off, and she left it under the napkin holder.
+
+
+
+At home she sat down at the kitchen table without taking her coat off and opened the laptop.
+
+She wrote to the plate collection first, while she still had the jacket in her head. She'd read enough about the scanning to know what to ask for. The people who'd scanned the plates had photographed the jackets too, because the observers wrote their notes on them, and many of the plates had had ink marks on the glass that were cleaned off before scanning. So she asked three things: whether they could send a better image of the jacket for the 1937 plate, whether any marks on the glass had been photographed before it was cleaned, and whether there was any record of who had handled or requested the plate over the years. She read it over, took out a sentence that explained too much, and sent it.
+
+An automatic reply came back almost right away. Thank you for contacting the plate stacks. We have received your message and will respond as soon as we are able. Please allow up to two weeks.
+
+Two weeks. She closed the email.
+
+She took her coat off and hung it up and made tea. She thought about going to bed. Then she sat back down and typed his name.
+
+Donald Menzel. He had been an astronomer, mostly of the sun. His early work was on the sun's outer atmosphere, from photographs taken during total eclipses. He'd come to Harvard in 1932 and stayed there the rest of his career.
+
+He had chased eclipses all his life, to Fryeburg, Maine, in 1932, to the steppes of Russia in 1936, to Greece and Peru and Mauritania, and for years he'd held the informal record for seeing more of them than anyone else.
+
+He'd become acting director of the observatory in 1952 and director two years later, and stayed until 1966. He retired from Harvard in 1971. The same year Potter went on leave, she thought, and kept reading.
+
+During the war he'd been in the Navy, a commander in intelligence, working on codes. After the war he did work for the Navy on the sun and radio for years. A busy man, she thought. An astronomer doing all that on the side.
+
+Further down there was a list of his books. Most were what she'd have guessed. Books on the sun, on mathematical physics, a field guide to the stars and planets that she was fairly sure she'd seen in a used bookstore once.
+
+She scrolled past them, and stopped.
+
+There were three more.
+
+Flying Saucers. Harvard University Press, 1953.
+
+The World of Flying Saucers, with Lyle Boyd. 1963.
+
+The UFO Enigma, with Ernest Taves. 1977. He had died the year before it came out.
+
+She read the descriptions. They were an astronomer's look at the reports, case by case: what people had seen, and what in the sky or the air could have produced it. Mirages. Reflections off layers of warm air. Bright planets. Balloons. Radar echoes.
+
+In 1968 Congress had held a hearing on the sightings, and he'd sent a statement for the record. The next year there was a symposium on them in Boston, run by one of the big scientific societies. He'd argued against how it was being organized, and then he'd contributed a paper. It was called "UFO's, the Modern Myth."
+
+The tea had gone cold.
+
+A doubled plate, a man who kept appearing and disappearing, a gap in the record, and now Menzel standing somewhere in the middle of all of it. Every thread she pulled seemed to be tied to another one.
+
+She sat back in her chair. The lamp was the only light on in the apartment, and beyond it the rooms were dark. She stayed like that a long time, turning it over, until the pieces stopped moving and she was only tired. Then she closed the laptop, turned off the lamp, and went to bed.

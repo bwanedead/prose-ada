@@ -1,7 +1,6 @@
 Prose Ada
 Chapter 2 (Draft 7)
 
-1
 
 Wade had already left when she got in. His notes were in the log, three lines, nothing about the shutter.
 
@@ -69,7 +68,6 @@ He turned around. "Oh. Yeah, okay." He looked at the schedule on the other scree
 
 "I will."
 
-2
 
 She went home just long enough to get the laptop and the charger.
 
@@ -105,7 +103,6 @@ She opened a blank document next to the image and started a list. When something
 
 She looked at the last one for a while. Then she added an eighth line, and left it blank.
 
-3
 
 She started with the telescope, because it was the likeliest and because she'd already half answered it.
 
@@ -153,7 +150,6 @@ The fourth line had three things on it, and none of them held up for long. A sat
 
 She crossed it off and looked at the four lines with lines through them. She'd started the list half expecting to find something embarrassing in the first ten minutes. She hadn't.
 
-4
 
 Line five was whether anyone else had seen it. If something had really happened in the sky at that moment, it shouldn't exist only in one exposure at one small observatory in Maine.
 
@@ -183,7 +179,6 @@ Ben stopped on his way past. "Kitchen's open another hour if you want anything."
 
 "Okay. Toast is free for people who look at spreadsheets." He went back to the counter.
 
-5
 
 Line seven was the one she'd been putting off: that this was a known effect, written up somewhere, and she just hadn't heard of it.
 
@@ -241,7 +236,6 @@ At the top of the page, the archive noted that the plate was held in the collect
 
 She sat and looked at that line for a while.
 
-6
 
 The kitchen got quiet. The couple with the clams paid and left, and then the boat men. Ben turned the radio down and then off and started putting chairs up on the tables in the front.
 
@@ -327,7 +321,6 @@ He waited a little longer to see if she'd say more. She didn't.
 
 She packed up the laptop. He held the door for her, then locked it behind them.
 
-7
 
 She meant to sleep. She got into bed and put the laptop on the blanket beside her to charge. A while later it was on her chest, and she was looking at the envelope again.
 
